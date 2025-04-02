@@ -2,7 +2,12 @@
  export default {
   content: ["./src/**/*.{html,js}"],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        blue: "#366f9a",
+        grey: "#d4d6cb"
+      }
+    },
     fontFamily: {
       sans: "DM Sans, sans-serif",
     }
