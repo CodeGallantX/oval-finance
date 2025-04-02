@@ -3,9 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="./output.css" />
     <title>Oval Finances</title>
     <link
@@ -14,147 +17,275 @@
     />
   </head>
   <body class="font-sans">
-    <header class="flex flex-row items-center justify-between py-4 px-6 lg:px-24 sticky top-0 bg-white z-40 shadow-sm">
-        <!-- Logo -->
-        <a href="/" class="w-32 lg:w-40 z-40">
-          <img src="/logo.png" alt="Company logo" class="w-full object-cover" />
-        </a>
-  
-        <!-- Desktop Navigation -->
-        <nav class="hidden lg:flex gap-10">
-          <div class="relative">
-            <a href="/" class="font-medium flex items-center gap-2 py-2 hover:text-teal-600 transition-colors"> 
-              Home 
-            </a>
-          </div>
-  
-          <div class="relative group">
-            <button class="font-medium flex items-center gap-2 py-2 hover:text-teal-600 transition-colors group">
-              Products
-              <i class="bi bi-chevron-down text-xs transition-transform duration-200 group-hover:rotate-180"></i>
-            </button>
-            <ul class="absolute hidden group-hover:block left-0 top-10 w-48 rounded-md shadow-lg bg-white p-2 z-50 border border-gray-100">
-              <li class="py-2 px-4 hover:bg-teal-50 rounded transition">
-                <a href="/personal" class="block w-full">Personal Banking</a>
-              </li>
-              <li class="py-2 px-4 hover:bg-teal-50 rounded transition">
-                <a href="/business" class="block w-full">Business Solutions</a>
-              </li>
-              <li class="py-2 px-4 hover:bg-teal-50 rounded transition">
-                <a href="/loan-calculator" class="block w-full">Loan Calculator</a>
-              </li>
-            </ul>
-          </div>
-  
-          <div class="relative group">
-            <button class="font-medium flex items-center gap-2 py-2 hover:text-teal-600 transition-colors group">
-              About Us
-              <i class="bi bi-chevron-down text-xs transition-transform duration-200 group-hover:rotate-180"></i>
-            </button>
-            <ul class="absolute hidden group-hover:block left-0 top-10 w-48 rounded-md shadow-lg bg-white p-2 z-50 border border-gray-100">
-              <li class="py-2 px-4 hover:bg-teal-50 rounded transition">
-                <a href="/about" class="block w-full">Our Story</a>
-              </li>
-              <li class="py-2 px-4 hover:bg-teal-50 rounded transition">
-                <a href="/faqs" class="block w-full">FAQs</a>
-              </li>
-            </ul>
-          </div>
-  
-          <div class="relative">
-            <a href="/contact" class="font-medium flex items-center gap-2 py-2 hover:text-teal-600 transition-colors">
-              Contact Us
-            </a>
-          </div>
-        </nav>
-  
-        <div class="hidden lg:flex items-center space-x-6">
-          <div class="relative">
-            <a href="/login" class="font-medium flex items-center gap-2 py-2 hover:text-teal-600 transition-colors">
-              Login
-            </a>
-          </div>
-          <!-- Desktop CTA Button -->
-          <a href="/auth/signup" class="px-4 py-2.5 border-2 border-teal-600 font-medium bg-teal-600 text-white rounded-md hover:bg-teal-700 hover:border-teal-700 transition-colors">
-            Apply for loan
+    <header
+      class="flex flex-row items-center justify-between py-4 px-6 lg:px-24 sticky top-0 bg-white z-40 shadow-sm"
+    >
+      <!-- Logo -->
+      <a href="/" class="w-32 lg:w-40 z-40">
+        <img src="/logo.png" alt="Company logo" class="w-full object-cover" />
+      </a>
+
+      <!-- Desktop Navigation -->
+      <nav class="hidden lg:flex gap-10">
+        <div class="relative">
+          <a
+            href="/"
+            class="font-medium flex items-center gap-2 py-2 hover:text-teal-600 transition-colors"
+          >
+            Home
           </a>
         </div>
-  
-        <!-- Mobile Menu Button -->
-        <button id="mobile-menu-button" class="lg:hidden z-40">
-          <i class="bi bi-list text-2xl"></i>
-        </button>
-  
-        <!-- Mobile Sidebar Overlay -->
-        <div id="mobile-overlay" class="hidden fixed inset-0 bg-black/50 z-30 overlay-transition opacity-0"></div>
-  
-        <!-- Mobile Sidebar Navigation -->
-        <aside id="mobile-sidebar" class="hidden fixed top-0 right-0 h-full w-80 bg-white p-6 z-40 sidebar-transition translate-x-full shadow-xl">
-          <div class="relative flex flex-row items-start justify-between py-4">
-            <a href="/" class="w-32">
-              <img src="/logo.png" alt="Company logo" class="w-full object-cover" />
-            </a>
-            <button id="close-sidebar-button" class="text-gray-500 hover:text-gray-700">
-              <i class="bi bi-x text-2xl"></i>
-            </button>
-          </div>
-  
-          <!-- Mobile Nav Links -->
-          <ul class="space-y-2 mt-6">
-            <li>
-              <a href="/" class="block font-medium py-3 px-4 hover:bg-teal-50 rounded-md transition-colors">Home</a>
+
+        <div class="relative group">
+          <button
+            class="font-medium flex items-center gap-2 py-2 hover:text-teal-600 transition-colors group"
+          >
+            Products
+            <i
+              class="bi bi-chevron-down text-xs transition-transform duration-200 group-hover:rotate-180"
+            ></i>
+          </button>
+          <ul
+            class="absolute hidden group-hover:block left-0 top-10 w-48 rounded-md shadow-lg bg-white p-2 z-50 border border-gray-100"
+          >
+            <li class="py-2 px-4 hover:bg-teal-50 rounded transition">
+              <a href="/personal" class="block w-full">Personal Banking</a>
             </li>
-  
-            <li>
-              <button class="flex justify-between items-center w-full font-medium py-3 px-4 hover:bg-teal-50 rounded-md transition-colors" id="mobile-products-button">
-                <span>Products</span>
-                <i class="bi bi-chevron-down text-xs transition-transform" id="mobile-products-icon"></i>
-              </button>
-              <ul id="mobile-products-dropdown" class="hidden w-full pl-0 mt-1 dropdown-transition max-h-0 overflow-hidden">
-                <li class="py-2">
-                  <a href="/personal" class="block w-full py-2 px-6 hover:bg-teal-50 rounded-md transition-colors">Personal Banking</a>
-                </li>
-                <li class="py-2">
-                  <a href="/business" class="block w-full py-2 px-6 hover:bg-teal-50 rounded-md transition-colors">Business Solutions</a>
-                </li>
-                <li class="py-2">
-                  <a href="/loan-calculator" class="block w-full py-2 px-6 hover:bg-teal-50 rounded-md transition-colors">Loan Calculator</a>
-                </li>
-              </ul>
+            <li class="py-2 px-4 hover:bg-teal-50 rounded transition">
+              <a href="/business" class="block w-full">Business Solutions</a>
             </li>
-  
-            <li>
-              <button class="flex justify-between items-center w-full font-medium py-3 px-4 hover:bg-teal-50 rounded-md transition-colors" id="mobile-about-button">
-                <span>About Us</span>
-                <i class="bi bi-chevron-down text-xs transition-transform" id="mobile-about-icon"></i>
-              </button>
-              <ul id="mobile-about-dropdown" class="hidden w-full pl-0 mt-1 dropdown-transition max-h-0 overflow-hidden">
-                <li class="py-2">
-                  <a href="/about" class="block w-full py-2 px-6 hover:bg-teal-50 rounded-md transition-colors">Our Story</a>
-                </li>
-                <li class="py-2">
-                  <a href="/faqs" class="block w-full py-2 px-6 hover:bg-teal-50 rounded-md transition-colors">FAQs</a>
-                </li>
-              </ul>
-            </li>
-  
-            <li>
-              <a href="/contact" class="block font-medium py-3 px-4 hover:bg-teal-50 rounded-md transition-colors">Contact Us</a>
-            </li>
-  
-            <li>
-              <a href="/login" class="block font-medium py-3 px-4 hover:bg-teal-50 rounded-md transition-colors">Login</a>
-            </li>
-  
-            <li class="mt-8 pt-4 border-t border-gray-100">
-              <a href="/auth/signup" class="block px-4 py-3 text-center font-medium bg-teal-600 text-white rounded-md hover:bg-teal-700 transition-colors">
-                Apply for loan
-              </a>
+            <li class="py-2 px-4 hover:bg-teal-50 rounded transition">
+              <a href="/loan-calculator" class="block w-full"
+                >Loan Calculator</a
+              >
             </li>
           </ul>
-        </aside>
-      </header>
-    <section id="Hero"></section>
+        </div>
+
+        <div class="relative group">
+          <button
+            class="font-medium flex items-center gap-2 py-2 hover:text-teal-600 transition-colors group"
+          >
+            About Us
+            <i
+              class="bi bi-chevron-down text-xs transition-transform duration-200 group-hover:rotate-180"
+            ></i>
+          </button>
+          <ul
+            class="absolute hidden group-hover:block left-0 top-10 w-48 rounded-md shadow-lg bg-white p-2 z-50 border border-gray-100"
+          >
+            <li class="py-2 px-4 hover:bg-teal-50 rounded transition">
+              <a href="/about" class="block w-full">Our Story</a>
+            </li>
+            <li class="py-2 px-4 hover:bg-teal-50 rounded transition">
+              <a href="/faqs" class="block w-full">FAQs</a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="relative">
+          <a
+            href="/contact"
+            class="font-medium flex items-center gap-2 py-2 hover:text-teal-600 transition-colors"
+          >
+            Contact Us
+          </a>
+        </div>
+      </nav>
+
+      <div class="hidden lg:flex items-center space-x-6">
+        <div class="relative">
+          <a
+            href="/login"
+            class="font-medium flex items-center gap-2 py-2 hover:text-teal-600 transition-colors"
+          >
+            Login
+          </a>
+        </div>
+        <!-- Desktop CTA Button -->
+        <a
+          href="/auth/signup"
+          class="px-4 py-2.5 border-2 border-teal-600 font-medium bg-teal-600 text-white rounded-md hover:bg-teal-700 hover:border-teal-700 transition-colors"
+        >
+          Apply for loan
+        </a>
+      </div>
+
+      <!-- Mobile Menu Button -->
+      <button id="mobile-menu-button" class="lg:hidden z-40">
+        <i class="bi bi-list text-2xl"></i>
+      </button>
+
+      <!-- Mobile Sidebar Overlay -->
+      <div
+        id="mobile-overlay"
+        class="hidden fixed inset-0 bg-black/50 z-30 overlay-transition opacity-0"
+      ></div>
+
+      <!-- Mobile Sidebar Navigation -->
+      <aside
+        id="mobile-sidebar"
+        class="hidden fixed top-0 right-0 h-full w-80 bg-white p-6 z-40 sidebar-transition translate-x-full shadow-xl"
+      >
+        <div class="relative flex flex-row items-start justify-between py-4">
+          <a href="/" class="w-32">
+            <img
+              src="/logo.png"
+              alt="Company logo"
+              class="w-full object-cover"
+            />
+          </a>
+          <button
+            id="close-sidebar-button"
+            class="text-gray-500 hover:text-gray-700"
+          >
+            <i class="bi bi-x text-2xl"></i>
+          </button>
+        </div>
+
+        <!-- Mobile Nav Links -->
+        <ul class="space-y-2 mt-6">
+          <li>
+            <a
+              href="/"
+              class="block font-medium py-3 px-4 hover:bg-teal-50 rounded-md transition-colors"
+              >Home</a
+            >
+          </li>
+
+          <li>
+            <button
+              class="flex justify-between items-center w-full font-medium py-3 px-4 hover:bg-teal-50 rounded-md transition-colors"
+              id="mobile-products-button"
+            >
+              <span>Products</span>
+              <i
+                class="bi bi-chevron-down text-xs transition-transform"
+                id="mobile-products-icon"
+              ></i>
+            </button>
+            <ul
+              id="mobile-products-dropdown"
+              class="hidden w-full pl-0 mt-1 dropdown-transition max-h-0 overflow-hidden"
+            >
+              <li class="py-2">
+                <a
+                  href="/personal"
+                  class="block w-full py-2 px-6 hover:bg-teal-50 rounded-md transition-colors"
+                  >Personal Banking</a
+                >
+              </li>
+              <li class="py-2">
+                <a
+                  href="/business"
+                  class="block w-full py-2 px-6 hover:bg-teal-50 rounded-md transition-colors"
+                  >Business Solutions</a
+                >
+              </li>
+              <li class="py-2">
+                <a
+                  href="/loan-calculator"
+                  class="block w-full py-2 px-6 hover:bg-teal-50 rounded-md transition-colors"
+                  >Loan Calculator</a
+                >
+              </li>
+            </ul>
+          </li>
+
+          <li>
+            <button
+              class="flex justify-between items-center w-full font-medium py-3 px-4 hover:bg-teal-50 rounded-md transition-colors"
+              id="mobile-about-button"
+            >
+              <span>About Us</span>
+              <i
+                class="bi bi-chevron-down text-xs transition-transform"
+                id="mobile-about-icon"
+              ></i>
+            </button>
+            <ul
+              id="mobile-about-dropdown"
+              class="hidden w-full pl-0 mt-1 dropdown-transition max-h-0 overflow-hidden"
+            >
+              <li class="py-2">
+                <a
+                  href="/about"
+                  class="block w-full py-2 px-6 hover:bg-teal-50 rounded-md transition-colors"
+                  >Our Story</a
+                >
+              </li>
+              <li class="py-2">
+                <a
+                  href="/faqs"
+                  class="block w-full py-2 px-6 hover:bg-teal-50 rounded-md transition-colors"
+                  >FAQs</a
+                >
+              </li>
+            </ul>
+          </li>
+
+          <li>
+            <a
+              href="/contact"
+              class="block font-medium py-3 px-4 hover:bg-teal-50 rounded-md transition-colors"
+              >Contact Us</a
+            >
+          </li>
+
+          <li>
+            <a
+              href="./login.html"
+              class="block font-medium py-3 px-4 hover:bg-teal-50 rounded-md transition-colors"
+              >Login</a
+            >
+          </li>
+
+          <li class="mt-8 pt-4 border-t border-gray-100">
+            <a
+              href="./signup.html"
+              class="block px-4 py-3 text-center font-medium bg-teal-600 text-white rounded-md hover:bg-teal-700 transition-colors"
+            >
+              Apply for loan
+            </a>
+          </li>
+        </ul>
+      </aside>
+    </header>
+    <section
+      id="Hero"
+      class="py-16 md:py-20 px-6 lg:px-24 flex flex-row items-center justify-between"
+    >
+      <div
+        class="w-full lg:w-1/2 flex flex-col items-start justify-start space-y-4"
+      >
+        <h1
+          class="text-4xl md:text-5xl lg:text-7xl text-center md:text-left font-bold"
+        >
+          Smart tools for SMEs and lenders
+        </h1>
+        <p class="text-base md:text-lg text-center md:text-left text-slate-500">
+          We help small businesses access loans and grow with tools for
+          bookkeeping, invoices, selling online, and managing inventory. We help
+          banks and microfinance banks give loans to SMEs without increasing
+          NPLs.
+        </p>
+        <div
+          class="flex flex-row items-center justify-center md:justify-start space-x-4"
+        >
+          <a
+            href="./signup.html"
+            class="bg-teal-600 text-white px-5 py-3 rounded-lg border-2 border-teal-600 hover:text-teal-700 hover:bg-white transition-colors duration-300 ease-in-out"
+            >Get Started</a
+          >
+          <a
+            href="./about.html"
+            class="border-2 border-teal-600 text-teal-700 hover:bg-teal-600 hover:text-white px-5 py-3 rounded-lg transition-colors duration-300 ease-in-out"
+            >Learn More</a
+          >
+        </div>
+      </div>
+      <div></div>
+    </section>
 
     <script src="./script.js"></script>
   </body>
