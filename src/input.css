@@ -1,3 +1,31 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+.rotate-180 {
+    transform: rotate(180deg);
+}
+.transition-all {
+    transition-property: all;
+}
+.duration-300 {
+    transition-duration: 300ms;
+}
+.translate-x-full {
+    transform: translateX(100%);
+}
+.translate-x-0 {
+    transform: translateX(0);
+}
+
+
+.sidebar-transition {
+    transition: transform 0.3s ease-out;
+  }
+  .dropdown-transition {
+    transition: max-height 0.3s ease-out, opacity 0.2s ease;
+  }
+  .overlay-transition {
+    transition: opacity 0.3s ease;
+  }
