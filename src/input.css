@@ -29,3 +29,14 @@
   .overlay-transition {
     transition: opacity 0.3s ease;
   }
+
+
+
+  @keyframes infinite-scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+  .animate-infinite-scroll {
+    display: inline-block;
+    animation: infinite-scroll 30s linear infinite;
+  }

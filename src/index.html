@@ -253,44 +253,537 @@
       </aside>
     </header>
     <section
-      id="Hero"
-      class="relative py-16 md:py-20 px-6 lg:px-24 flex flex-row items-center justify-between"
-    >
-      <div
-        class="w-full lg:w-1/2 flex flex-col items-start justify-start space-y-4"
+  id="hero"
+  class="relative py-16 md:py-24 px-6 lg:px-16 xl:px-24 flex flex-col lg:flex-row items-center justify-between min-h-[90vh] bg-gradient-to-br from-blue-50 to-white"
+>
+  <!-- Left Content -->
+  <div
+    class="w-full lg:w-1/2 flex flex-col items-center lg:items-start justify-center space-y-6 z-10"
+    data-aos="fade-right"
+    data-aos-duration="800"
+  >
+    <h1 class="text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-center lg:text-left font-bold text-gray-900 leading-tight">
+      Empowering Nigerian Entrepreneurs with Affordable Microloans
+    </h1>
+    <p class="text-lg md:text-xl text-center lg:text-left text-gray-600 max-w-lg">
+      Oval Finance provides inclusive financial solutions for low-income entrepreneurs across Nigeria, offering microloans from ₦50,000 to ₦1,000,000 with competitive rates and flexible repayment terms.
+    </p>
+    <div class="flex flex-row items-center justify-center lg:justify-start space-x-4 pt-4">
+      <a
+        href="./apply-now.html"
+        class="bg-blue text-white px-8 py-4 rounded-lg border-2 border-blue hover:text-blue hover:bg-white transition-all duration-300 ease-in-out font-medium shadow-lg hover:shadow-xl"
+        data-aos="fade-up"
+        data-aos-delay="200"
       >
-        <h1
-          class="text-4xl md:text-5xl lg:text-7xl text-center md:text-left font-bold"
-        >
-          Smart tools for SMEs and lenders
-        </h1>
-        <p class="text-base md:text-lg text-center md:text-left text-slate-500">
-          We help small businesses access loans and grow with tools for
-          bookkeeping, invoices, selling online, and managing inventory. We help
-          banks and microfinance banks give loans to SMEs without increasing
-          NPLs.
-        </p>
-        <div
-          class="flex flex-row items-center justify-center md:justify-start space-x-4"
-        >
-          <a
-            href="./signup.html"
-            class="bg-blue text-white px-5 py-3 rounded-lg border-2 border-blue hover:text-blue-700 hover:bg-white transition-colors duration-300 ease-in-out"
-            >Get Started</a
-          >
-          <a
-            href="./about.html"
-            class="border-2 border-blue text-blue hover:bg-blue hover:text-white px-5 py-3 rounded-lg transition-colors duration-300 ease-in-out"
-            >Learn More</a
-          >
+        Apply Now
+      </a>
+      <a
+        href="./investment-opportunities.html"
+        class="border-2 border-blue text-blue hover:bg-blue hover:text-white px-8 py-4 rounded-lg transition-all duration-300 ease-in-out font-medium shadow-lg hover:shadow-xl"
+        data-aos="fade-up"
+        data-aos-delay="300"
+      >
+        Invest With Us
+      </a>
+    </div>
+  </div>
+
+  <!-- Right Image with Decorative Elements -->
+  <div 
+    class="relative w-full lg:w-1/2 h-full flex items-center justify-center mt-12 lg:mt-0"
+    data-aos="fade-left"
+    data-aos-duration="1000"
+  >
+    <!-- Decorative background elements -->
+    <div class="absolute w-80 h-96 bg-grey rounded-3xl right-0 top-1/2 transform -translate-y-1/2 rotate-6"></div>
+    <div class="absolute w-80 h-96 bg-blue rounded-3xl right-10 top-1/2 transform -translate-y-1/2 -rotate-3"></div>
+    
+    <!-- Main image with floating effect -->
+    <div class="relative z-20 w-full max-w-md xl:max-w-lg" data-aos="zoom-in" data-aos-delay="400">
+      <img 
+        src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
+        alt="Nigerian small business owner receiving financial assistance"
+        class="rounded-2xl shadow-2xl object-cover w-full h-auto border-8 border-white transform hover:scale-105 transition-transform duration-500"
+      />
+      
+      <!-- Floating card elements -->
+      <div 
+        class="absolute -bottom-8 -left-8 bg-white p-4 rounded-xl shadow-lg border border-gray-100"
+        data-aos="fade-up"
+        data-aos-delay="600"
+      >
+        <div class="flex items-center space-x-2">
+          <div class="p-2 bg-blue/10 rounded-lg">
+            <i class="bi bi-check-circle-fill text-blue text-xl"></i>
+          </div>
+          <div>
+            <p class="font-bold text-gray-800">95%</p>
+            <p class="text-sm text-gray-500">Repayment Rate</p>
+          </div>
         </div>
       </div>
-      <div class="relative w-1/2">
-        <div class="bg-blue/50 w-80 h-96 absolute right-10 rounded-3xl z-10"></div>
-        <div class="bg-grey/50 w-80 h-96 absolute right-0 rounded-3xl"></div>
+
+      <div 
+        class="absolute -top-8 -right-8 bg-white p-4 rounded-xl shadow-lg border border-gray-100"
+        data-aos="fade-up"
+        data-aos-delay="700"
+      >
+        <div class="flex items-center space-x-2">
+          <div class="p-2 bg-blue/10 rounded-lg">
+            <i class="bi bi-people-fill text-blue text-xl"></i>
+          </div>
+          <div>
+            <p class="font-bold text-gray-800">500K+</p>
+            <p class="text-sm text-gray-500">Potential Customers</p>
+          </div>
+        </div>
       </div>
-    </section>
+
+      <div 
+        class="absolute bottom-20 -right-12 bg-white p-4 rounded-xl shadow-lg border border-gray-100"
+        data-aos="fade-up"
+        data-aos-delay="800"
+      >
+        <div class="flex items-center space-x-2">
+          <div class="p-2 bg-blue/10 rounded-lg">
+            <i class="bi bi-graph-up-arrow text-blue text-xl"></i>
+          </div>
+          <div>
+            <p class="font-bold text-gray-800">30%</p>
+            <p class="text-sm text-gray-500">Annual Growth</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="py-16 bg-gray-50">
+  <div class="container mx-auto px-6">
+    <!-- Trusted By Header -->
+    <div class="text-center mb-16" data-aos="fade-up">
+      <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+        Trusted by <span class="text-blue">150,000+</span> Nigerian Entrepreneurs
+      </h2>
+      <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+        We don't just provide microloans, we build financial solutions with our community to foster economic growth in underserved markets.
+      </p>
+    </div>
+
+    <!-- Services Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+      <!-- Personal Microloans -->
+      <div class="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition-shadow" data-aos="fade-up" data-aos-delay="100">
+        <div class="w-14 h-14 bg-blue/10 rounded-lg flex items-center justify-center mb-6">
+          <i class="bi bi-wallet2 text-blue text-2xl"></i>
+        </div>
+        <h3 class="text-xl font-bold text-gray-900 mb-3">Personal Microloans</h3>
+        <p class="text-gray-600">
+          Emergency loans for education, healthcare, and personal needs with flexible repayment terms for salary earners.
+        </p>
+        <a href="#" class="mt-4 inline-flex items-center text-blue font-medium hover:text-[#2a5778]">
+          Learn more <i class="bi bi-arrow-right ml-2"></i>
+        </a>
+      </div>
+
+      <!-- Business Microloans -->
+      <div class="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition-shadow" data-aos="fade-up" data-aos-delay="200">
+        <div class="w-14 h-14 bg-blue/10 rounded-lg flex items-center justify-center mb-6">
+          <i class="bi bi-shop-window text-blue text-2xl"></i>
+        </div>
+        <h3 class="text-xl font-bold text-gray-900 mb-3">Business Microloans</h3>
+        <p class="text-gray-600">
+          ₦50,000 to ₦1,000,000 loans to help small business owners grow and sustain their operations across Nigeria.
+        </p>
+        <a href="#" class="mt-4 inline-flex items-center text-blue font-medium hover:text-[#2a5778]">
+          Learn more <i class="bi bi-arrow-right ml-2"></i>
+        </a>
+      </div>
+
+      <!-- Group Loans -->
+      <div class="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition-shadow" data-aos="fade-up" data-aos-delay="300">
+        <div class="w-14 h-14 bg-blue/10 rounded-lg flex items-center justify-center mb-6">
+          <i class="bi bi-people-fill text-blue text-2xl"></i>
+        </div>
+        <h3 class="text-xl font-bold text-gray-900 mb-3">Group Loans</h3>
+        <p class="text-gray-600">
+          Community-based lending with joint accountability for cooperatives and associations at preferential rates.
+        </p>
+        <a href="#" class="mt-4 inline-flex items-center text-blue font-medium hover:text-[#2a5778]">
+          Learn more <i class="bi bi-arrow-right ml-2"></i>
+        </a>
+      </div>
+
+      <!-- Financial Education -->
+      <div class="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition-shadow" data-aos="fade-up" data-aos-delay="400">
+        <div class="w-14 h-14 bg-blue/10 rounded-lg flex items-center justify-center mb-6">
+          <i class="bi bi-journal-bookmark-fill text-blue text-2xl"></i>
+        </div>
+        <h3 class="text-xl font-bold text-gray-900 mb-3">Financial Education</h3>
+        <p class="text-gray-600">
+          Community workshops and resources to promote financial literacy and responsible borrowing practices.
+        </p>
+        <a href="#" class="mt-4 inline-flex items-center text-blue font-medium hover:text-[#2a5778]">
+          Learn more <i class="bi bi-arrow-right ml-2"></i>
+        </a>
+      </div>
+    </div>
+
+  </div>
+</section>
+  
+<section class="px-6 lg:px-24 py-16 bg-gray-50">
+  <div class="">
+    <!-- Header -->
+    <div class="text-center mb-12 max-w-3xl mx-auto">
+      <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Our Trusted Network</h2>
+      <p class="text-lg text-gray-600">
+        We partner with financial institutions and fintechs committed to supporting small business growth. 
+        After pairing you with a partner, we ensure you have the best experience possible.
+      </p>
+    </div>
+
+    <!-- Loan Partners Slider -->
+    <div class="mb-16 overflow-hidden">
+      <div class="relative">
+        <!-- Infinite Scrolling Logos -->
+        <div class="flex items-center space-x-12 animate-infinite-scroll whitespace-nowrap">
+          <!-- Duplicate set for infinite effect -->
+          <div class="flex items-center space-x-12">
+            <img src="https://via.placeholder.com/180x80?text=Ecobank" alt="Ecobank" class="h-16 object-contain opacity-80 hover:opacity-100 transition-opacity">
+            <img src="https://via.placeholder.com/180x80?text=Solis" alt="Solis" class="h-16 object-contain opacity-80 hover:opacity-100 transition-opacity">
+            <img src="https://via.placeholder.com/180x80?text=Kasdaf" alt="Kasdaf" class="h-16 object-contain opacity-80 hover:opacity-100 transition-opacity">
+            <img src="https://via.placeholder.com/180x80?text=Partner+1" alt="Partner 1" class="h-16 object-contain opacity-80 hover:opacity-100 transition-opacity">
+            <img src="https://via.placeholder.com/180x80?text=Partner+2" alt="Partner 2" class="h-16 object-contain opacity-80 hover:opacity-100 transition-opacity">
+            <img src="https://via.placeholder.com/180x80?text=Partner+3" alt="Partner 3" class="h-16 object-contain opacity-80 hover:opacity-100 transition-opacity">
+          </div>
+          <!-- Duplicate set (for seamless looping) -->
+          <div class="flex items-center space-x-12" aria-hidden="true">
+            <img src="https://via.placeholder.com/180x80?text=Ecobank" alt="" class="h-16 object-contain opacity-80">
+            <img src="https://via.placeholder.com/180x80?text=Solis" alt="" class="h-16 object-contain opacity-80">
+            <img src="https://via.placeholder.com/180x80?text=Kasdaf" alt="" class="h-16 object-contain opacity-80">
+            <img src="https://via.placeholder.com/180x80?text=Partner+1" alt="" class="h-16 object-contain opacity-80">
+            <img src="https://via.placeholder.com/180x80?text=Partner+2" alt="" class="h-16 object-contain opacity-80">
+            <img src="https://via.placeholder.com/180x80?text=Partner+3" alt="" class="h-16 object-contain opacity-80">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="px-6 lg:px-24 py-20 bg-gradient-to-br from-blue-50 to-white">
+  <div class="">
+    <div class="text-center mb-16">
+      <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Trusted by Nigerian Entrepreneurs</h2>
+      <p class="text-lg text-gray-600 max-w-2xl mx-auto">Hear how Oval Finance microloans are transforming businesses across Nigeria</p>
+    </div>
+
+    <div class="relative max-w-6xl mx-auto" x-data="{
+      activeSlide: 0,
+      slides: [
+        {
+          name: 'Omolara Gbademosi',
+          role: 'Nurse & Business Owner',
+          category: 'Personal Microloan',
+          quote: 'When my daughter was to go back to school, the money I was expecting wasn\'t forthcoming. Oval Finance\'s loan helped us. I started a new business in school - it\'s been growing ever since.',
+          image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=688&q=80'
+        },
+        {
+          name: 'Cheta Odigbo',
+          role: 'Small Business Owner',
+          category: 'Business Microloan',
+          quote: 'The ₦500,000 business loan from Oval Finance helped me stock inventory during peak season. Their repayment plan matched my cash flow perfectly - no stress!',
+          image: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80'
+        },
+        {
+          name: 'Sarah Ladipo',
+          role: 'Fashion Entrepreneur',
+          category: 'Group Loan',
+          quote: 'Our cooperative got a ₦1,000,000 group loan to buy wholesale fabrics. Oval Finance understood our needs and processed everything in 48 hours!',
+          image: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=761&q=80'
+        },
+        {
+          name: 'Udeme Udoh',
+          role: 'Agricultural Supplier',
+          category: 'Business Expansion',
+          quote: 'Oval Finance is my financial lifeline. Their loans helped me scale from roadside seller to supplying supermarkets. The ₦750,000 loan changed everything!',
+          image: 'https://images.unsplash.com/photo-1545167622-3a6ac756afa4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=712&q=80'
+        }
+      ],
+      interval: null,
+      init() {
+        this.startAutoplay();
+      },
+      startAutoplay() {
+        this.interval = setInterval(() => {
+          this.next();
+        }, 8000);
+      },
+      stopAutoplay() {
+        clearInterval(this.interval);
+      },
+      next() {
+        this.activeSlide = (this.activeSlide + 1) % this.slides.length;
+      },
+      prev() {
+        this.activeSlide = (this.activeSlide - 1 + this.slides.length) % this.slides.length;
+      },
+      goTo(index) {
+        this.activeSlide = index;
+      }
+    }" x-init="init()" @mouseenter="stopAutoplay()" @mouseleave="startAutoplay()">
+
+      <!-- Main Carousel -->
+      <div class="relative bg-white rounded-xl shadow-lg overflow-hidden">
+        <!-- Slides -->
+        <div class="relative h-[32rem]">
+          <template x-for="(slide, index) in slides" :key="index">
+            <div 
+              x-show="activeSlide === index"
+              x-transition:enter="transition ease-out duration-500"
+              x-transition:enter-start="opacity-0 translate-y-4"
+              x-transition:enter-end="opacity-100 translate-y-0"
+              x-transition:leave="transition ease-in duration-300"
+              x-transition:leave-start="opacity-100 translate-y-0"
+              x-transition:leave-end="opacity-0 -translate-y-4"
+              class="absolute inset-0 flex flex-col md:flex-row"
+            >
+              <!-- Customer Photo -->
+              <div class="w-full md:w-2/5 h-1/2 md:h-full relative">
+                <img 
+                  :src="slide.image" 
+                  :alt="slide.name" 
+                  class="w-full h-full object-cover"
+                >
+                <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-6">
+                  <h3 class="text-xl font-bold text-white" x-text="slide.name"></h3>
+                  <p class="text-blue-100" x-text="slide.role"></p>
+                </div>
+              </div>
+              
+              <!-- Testimonial Content -->
+              <div class="w-full md:w-3/5 h-1/2 md:h-full p-8 md:p-12 flex flex-col justify-center">
+                <span class="inline-block bg-[#366f9a]/10 text-[#366f9a] px-4 py-1 rounded-full text-sm font-medium mb-4" x-text="slide.category"></span>
+                <blockquote class="text-2xl md:text-3xl font-light text-gray-700 leading-relaxed mb-6" x-text="'“' + slide.quote + '”'"></blockquote>
+                <div class="flex items-center space-x-4">
+                  <div class="flex space-x-1">
+                    <template x-for="i in 5" :key="i">
+                      <i class="bi bi-star-fill text-yellow-400"></i>
+                    </template>
+                  </div>
+                  <a href="#" class="text-[#366f9a] font-medium hover:underline">Read full story →</a>
+                </div>
+              </div>
+            </div>
+          </template>
+        </div>
+
+        <!-- Navigation -->
+        <div class="absolute bottom-6 left-6 right-6">
+          <div class="flex justify-between items-center">
+            <!-- Arrows -->
+            <div class="flex space-x-3">
+              <button 
+                @click="prev()" 
+                class="w-10 h-10 bg-white rounded-full shadow-md flex items-center justify-center hover:bg-[#366f9a] hover:text-white transition-colors"
+                aria-label="Previous testimonial"
+              >
+                <i class="bi bi-chevron-left"></i>
+              </button>
+              <button 
+                @click="next()" 
+                class="w-10 h-10 bg-white rounded-full shadow-md flex items-center justify-center hover:bg-[#366f9a] hover:text-white transition-colors"
+                aria-label="Next testimonial"
+              >
+                <i class="bi bi-chevron-right"></i>
+              </button>
+            </div>
+            
+            <!-- Thumbnail Indicators -->
+            <div class="hidden md:flex space-x-2">
+              <template x-for="(slide, index) in slides" :key="index">
+                <button
+                  @click="goTo(index)"
+                  :class="{ 'ring-2 ring-[#366f9a]': activeSlide === index }"
+                  class="w-12 h-12 rounded-full overflow-hidden border-2 border-white shadow-md transition-all"
+                  aria-label="Go to testimonial"
+                >
+                  <img 
+                    :src="slide.image" 
+                    :alt="slide.name" 
+                    class="w-full h-full object-cover"
+                  >
+                </button>
+              </template>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- View All CTA -->
+    <div class="text-center mt-16">
+      <a href="/success-stories" class="inline-flex items-center px-8 py-3 bg-[#366f9a] text-white rounded-lg hover:bg-[#2a5778] transition-colors">
+        <span>View All Customer Stories</span>
+        <i class="bi bi-arrow-right ml-2"></i>
+      </a>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<footer class="bg-gray-900 text-white pt-16 pb-8">
+  <div class="container mx-auto px-6">
+    <!-- Top Section - Newsletter -->
+    <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 border-b border-gray-700 pb-12">
+      <div class="mb-8 md:mb-0 md:w-1/2">
+        <h3 class="text-2xl font-bold mb-4">For next level financial insights</h3>
+        <p class="text-gray-400">Sign up to the Oval Finance mailing list</p>
+      </div>
+      <div class="w-full md:w-1/2">
+        <form class="flex flex-col sm:flex-row gap-4">
+          <div class="flex-grow">
+            <label for="email" class="sr-only">Email</label>
+            <input 
+              type="email" 
+              id="email" 
+              placeholder="Email*" 
+              class="w-full px-6 py-4 rounded-lg bg-gray-800 border border-gray-700 focus:outline-none focus:ring-2 focus:ring-[#366f9a]"
+              required
+            >
+          </div>
+          <button 
+            type="submit" 
+            class="px-8 py-4 bg-[#366f9a] hover:bg-[#2a5778] text-white rounded-lg font-medium transition-colors whitespace-nowrap"
+          >
+            Subscribe
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Middle Section - Main Footer Content -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+      <!-- About Column -->
+      <div>
+        <h4 class="text-lg font-semibold mb-6">About us</h4>
+        <p class="text-gray-400 mb-6">
+          Oval Finance is on a mission to help small businesses grow. Our vision is to provide inclusive financial solutions for low-income entrepreneurs across Nigeria.
+        </p>
+      </div>
+
+      <!-- Offices Column -->
+      <div>
+        <h4 class="text-lg font-semibold mb-6">Our Offices</h4>
+        <div class="mb-8">
+          <h5 class="font-medium text-gray-300 mb-2">Nigeria Office</h5>
+          <p class="text-gray-400 mb-1">+234 909 000 206 | +234 706 444 5282</p>
+          <p class="text-gray-400">10A Ashimi Close, Atunrase Estate, Gbagada, Lagos</p>
+        </div>
+      </div>
+
+      <!-- Company Links Column -->
+      <div>
+        <h4 class="text-lg font-semibold mb-6">Company</h4>
+        <ul class="space-y-3">
+          <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Business App</a></li>
+          <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Loans Management</a></li>
+          <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Contact Us</a></li>
+          <li><a href="#" class="text-gray-400 hover:text-white transition-colors">About Oval Finance</a></li>
+          <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Careers</a></li>
+          <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Help Centre</a></li>
+        </ul>
+      </div>
+
+      <!-- Legal & Business Types Column -->
+      <div class="grid grid-cols-2 gap-8">
+        <div>
+          <h4 class="text-lg font-semibold mb-6">Legal</h4>
+          <ul class="space-y-3">
+            <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Terms of Service</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Privacy Policy</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-lg font-semibold mb-6">Your Business</h4>
+          <ul class="space-y-3">
+            <li><a href="#" class="text-gray-400 hover:text-white transition-colors">For Small Businesses</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-white transition-colors">For Banks</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-white transition-colors">For Microfinance</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-white transition-colors">For Corporates</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom Section - App Download & Social -->
+    <div class="flex flex-col md:flex-row justify-between items-center pt-8 border-t border-gray-700">
+      <!-- App Download -->
+      <div class="mb-6 md:mb-0">
+        <h5 class="text-gray-300 mb-4">Download the app</h5>
+        <div class="flex space-x-4">
+          <a href="#" aria-label="Download on App Store">
+            <img src="https://cdn-icons-png.flaticon.com/512/179/179457.png" alt="App Store" class="h-10">
+          </a>
+          <a href="#" aria-label="Get it on Google Play">
+            <img src="https://cdn-icons-png.flaticon.com/512/179/179457.png" alt="Google Play" class="h-10">
+          </a>
+        </div>
+      </div>
+
+      <!-- Social Media -->
+      <div class="flex items-center space-x-6">
+        <a href="#" aria-label="Facebook" class="text-gray-400 hover:text-white transition-colors">
+          <i class="bi bi-facebook text-2xl"></i>
+        </a>
+        <a href="#" aria-label="Twitter" class="text-gray-400 hover:text-white transition-colors">
+          <i class="bi bi-twitter-x text-2xl"></i>
+        </a>
+        <a href="#" aria-label="Instagram" class="text-gray-400 hover:text-white transition-colors">
+          <i class="bi bi-instagram text-2xl"></i>
+        </a>
+        <a href="#" aria-label="LinkedIn" class="text-gray-400 hover:text-white transition-colors">
+          <i class="bi bi-linkedin text-2xl"></i>
+        </a>
+      </div>
+    </div>
+
+    <!-- Copyright -->
+    <div class="mt-8 text-center text-gray-500 text-sm">
+      <p>© 2023 Oval Finance Limited. All rights reserved.</p>
+    </div>
+  </div>
+
+</footer>  
+
+
 
     <script src="./script.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+<!-- Initialize AOS -->
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    AOS.init({
+      // once: true, // Animations only happen once
+      duration: 800,
+      easing: 'ease-out-quart',
+    });
+  });
+</script>
   </body>
 </html>
