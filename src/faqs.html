@@ -15,7 +15,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./output.css" />
-    <title>Personal - Oval Finances</title>
+    <title>FAQs - Oval Finances</title>
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css"
@@ -60,13 +60,13 @@
             class="absolute hidden group-hover:block left-0 top-10 w-48 rounded-md shadow-lg bg-white p-2 z-50 border border-gray-100"
           >
             <li class="py-2 px-4 hover:bg-blue/50 rounded transition">
-              <a href="./personal.html" class="block w-full">Personal Banking</a>
+              <a href="/personal" class="block w-full">Personal Banking</a>
             </li>
             <li class="py-2 px-4 hover:bg-blue/50 rounded transition">
-              <a href="./business.html" class="block w-full">Business Solutions</a>
+              <a href="/business" class="block w-full">Business Solutions</a>
             </li>
             <li class="py-2 px-4 hover:bg-blue/50 rounded transition">
-              <a href="./loan-calculator.html" class="block w-full"
+              <a href="/loan-calculator" class="block w-full"
                 >Loan Calculator</a
               >
             </li>
@@ -262,9 +262,185 @@
         </ul>
       </aside>
     </header>
-    
 
-    
+    <!-- Main Content -->
+    <main class="px-6 lg:px-24 py-12 bg-gray-50 min-h-screen">
+      <section class="max-w-4xl mx-auto">
+        <!-- Page Header -->
+        <div class="text-center mb-16" data-aos="fade-up">
+          <h1 class="text-4xl font-bold text-gray-900 mb-4">Frequently Asked Questions</h1>
+          <p class="text-lg text-gray-600">Find answers to common questions about Oval Finance products and services.</p>
+        </div>
+
+        <!-- FAQ Categories -->
+        <div class="mb-12" data-aos="fade-up" data-aos-delay="100">
+          <div class="flex flex-wrap justify-center gap-4">
+            <button class="px-6 py-2 bg-blue text-white rounded-full font-medium">All Questions</button>
+            <button class="px-6 py-2 border border-gray-300 rounded-full font-medium hover:bg-blue hover:text-white transition-colors">Accounts</button>
+            <button class="px-6 py-2 border border-gray-300 rounded-full font-medium hover:bg-blue hover:text-white transition-colors">Loans</button>
+            <button class="px-6 py-2 border border-gray-300 rounded-full font-medium hover:bg-blue hover:text-white transition-colors">Payments</button>
+            <button class="px-6 py-2 border border-gray-300 rounded-full font-medium hover:bg-blue hover:text-white transition-colors">Security</button>
+          </div>
+        </div>
+
+        <!-- FAQ Accordion -->
+        <div class="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden" data-aos="fade-up" data-aos-delay="200">
+          <!-- FAQ Item 1 -->
+          <div class="border-b border-gray-200 p-6 transition-all duration-300">
+            <button class="faq-header w-full flex justify-between items-center text-left group" onclick="toggleFAQ(this)">
+              <h3 class="text-lg font-semibold text-gray-900 group-hover:text-blue transition-colors">What types of accounts does Oval Finance offer?</h3>
+              <span class="text-blue">
+                <i class="bi bi-plus-lg text-xl faq-plus"></i>
+                <i class="bi bi-dash-lg text-xl faq-minus hidden"></i>
+              </span>
+            </button>
+            <div class="faq-content mt-4 text-gray-600 max-h-0 overflow-hidden transition-all duration-300">
+              <p>Oval Finance offers a range of account options including:</p>
+              <ul class="list-disc pl-5 mt-2 space-y-1">
+                <li>Personal Checking Accounts</li>
+                <li>Savings Accounts with competitive interest rates</li>
+                <li>Business Accounts for small and medium enterprises</li>
+                <li>Joint Accounts for shared finances</li>
+                <li>Student Accounts with special benefits</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- FAQ Item 2 -->
+          <div class="border-b border-gray-200 p-6 transition-all duration-300">
+            <button class="faq-header w-full flex justify-between items-center text-left group" onclick="toggleFAQ(this)">
+              <h3 class="text-lg font-semibold text-gray-900 group-hover:text-blue transition-colors">How do I apply for a loan?</h3>
+              <span class="text-blue">
+                <i class="bi bi-plus-lg text-xl faq-plus"></i>
+                <i class="bi bi-dash-lg text-xl faq-minus hidden"></i>
+              </span>
+            </button>
+            <div class="faq-content mt-4 text-gray-600 max-h-0 overflow-hidden transition-all duration-300">
+              <p>Applying for a loan with Oval Finance is simple:</p>
+              <ol class="list-decimal pl-5 mt-2 space-y-2">
+                <li>Log in to your online banking account or create one if you're new</li>
+                <li>Navigate to the Loans section and select the type of loan you need</li>
+                <li>Fill out the application form with your personal and financial details</li>
+                <li>Upload any required documents (ID, proof of income, etc.)</li>
+                <li>Submit your application for review</li>
+              </ol>
+              <p class="mt-3">Most applicants receive a decision within 24-48 hours.</p>
+            </div>
+          </div>
+
+          <!-- FAQ Item 3 -->
+          <div class="border-b border-gray-200 p-6 transition-all duration-300">
+            <button class="faq-header w-full flex justify-between items-center text-left group" onclick="toggleFAQ(this)">
+              <h3 class="text-lg font-semibold text-gray-900 group-hover:text-blue transition-colors">What security measures protect my account?</h3>
+              <span class="text-blue">
+                <i class="bi bi-plus-lg text-xl faq-plus"></i>
+                <i class="bi bi-dash-lg text-xl faq-minus hidden"></i>
+              </span>
+            </button>
+            <div class="faq-content mt-4 text-gray-600 max-h-0 overflow-hidden transition-all duration-300">
+              <p>At Oval Finance, we prioritize your security with multiple layers of protection:</p>
+              <ul class="list-disc pl-5 mt-2 space-y-1">
+                <li>256-bit SSL encryption for all online transactions</li>
+                <li>Multi-factor authentication for account access</li>
+                <li>Real-time fraud monitoring systems</li>
+                <li>Biometric login options (fingerprint, facial recognition)</li>
+                <li>Instant notifications for account activity</li>
+                <li>FDIC insurance up to $250,000 per account</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- FAQ Item 4 -->
+          <div class="border-b border-gray-200 p-6 transition-all duration-300">
+            <button class="faq-header w-full flex justify-between items-center text-left group" onclick="toggleFAQ(this)">
+              <h3 class="text-lg font-semibold text-gray-900 group-hover:text-blue transition-colors">How can I contact customer support?</h3>
+              <span class="text-blue">
+                <i class="bi bi-plus-lg text-xl faq-plus"></i>
+                <i class="bi bi-dash-lg text-xl faq-minus hidden"></i>
+              </span>
+            </button>
+            <div class="faq-content mt-4 text-gray-600 max-h-0 overflow-hidden transition-all duration-300">
+              <p>We offer several ways to get in touch with our support team:</p>
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-3">
+                <div>
+                  <h4 class="font-medium text-gray-800">Phone Support</h4>
+                  <p>+234 909 000 206 (24/7)</p>
+                  <p>+234 706 444 5282 (Business Hours)</p>
+                </div>
+                <div>
+                  <h4 class="font-medium text-gray-800">Email Support</h4>
+                  <p>support@ovalfinance.com</p>
+                  <p>Response within 2 business hours</p>
+                </div>
+                <div>
+                  <h4 class="font-medium text-gray-800">Live Chat</h4>
+                  <p>Available in our mobile app and website</p>
+                  <p>24/7 with average wait time under 3 minutes</p>
+                </div>
+                <div>
+                  <h4 class="font-medium text-gray-800">In-Person</h4>
+                  <p>Visit any of our branches nationwide</p>
+                  <p>10A Ashimi Close, Atunrase Estate, Gbagada, Lagos</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ Item 5 -->
+          <div class="border-b border-gray-200 p-6 transition-all duration-300">
+            <button class="faq-header w-full flex justify-between items-center text-left group" onclick="toggleFAQ(this)">
+              <h3 class="text-lg font-semibold text-gray-900 group-hover:text-blue transition-colors">What are the fees for international transfers?</h3>
+              <span class="text-blue">
+                <i class="bi bi-plus-lg text-xl faq-plus"></i>
+                <i class="bi bi-dash-lg text-xl faq-minus hidden"></i>
+              </span>
+            </button>
+            <div class="faq-content mt-4 text-gray-600 max-h-0 overflow-hidden transition-all duration-300">
+              <p>Our international transfer fees are competitive and transparent:</p>
+              <table class="min-w-full mt-3 border border-gray-200">
+                <thead class="bg-gray-50">
+                  <tr>
+                    <th class="px-4 py-2 text-left text-sm font-medium text-gray-700">Transfer Type</th>
+                    <th class="px-4 py-2 text-left text-sm font-medium text-gray-700">Fee</th>
+                    <th class="px-4 py-2 text-left text-sm font-medium text-gray-700">Processing Time</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-gray-200">
+                  <tr>
+                    <td class="px-4 py-2 text-sm">Standard Transfer</td>
+                    <td class="px-4 py-2 text-sm">$15 or 1% (whichever is higher)</td>
+                    <td class="px-4 py-2 text-sm">2-5 business days</td>
+                  </tr>
+                  <tr class="bg-gray-50">
+                    <td class="px-4 py-2 text-sm">Express Transfer</td>
+                    <td class="px-4 py-2 text-sm">$25 or 1.5% (whichever is higher)</td>
+                    <td class="px-4 py-2 text-sm">1-2 business days</td>
+                  </tr>
+                  <tr>
+                    <td class="px-4 py-2 text-sm">Oval Finance to Oval Finance</td>
+                    <td class="px-4 py-2 text-sm">Free</td>
+                    <td class="px-4 py-2 text-sm">Instant</td>
+                  </tr>
+                </tbody>
+              </table>
+              <p class="mt-3 text-sm">* Additional intermediary bank fees may apply depending on the destination country.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Still have questions section -->
+        <div class="mt-16 text-center" data-aos="fade-up">
+          <h2 class="text-2xl font-bold text-gray-900 mb-4">Still have questions?</h2>
+          <p class="text-gray-600 mb-6">Can't find the answer you're looking for? Our support team is happy to help.</p>
+          <a
+            href="/contact"
+            class="inline-block px-6 py-3 border-2 border-blue font-medium bg-blue text-white rounded-md hover:bg-[#2a5778] hover:border-[#2a5778] transition-colors"
+          >
+            Contact Support
+          </a>
+        </div>
+      </section>
+    </main>
 
     <footer class="bg-gray-900 text-white pt-16 pb-8 px-6 lg:px-24">
       <div class="">
@@ -501,20 +677,21 @@
       </div>
     </footer>
 
-    <script src="./script.js"></script>
+    <script src="./assets/js/faqs.js"></script>
     <script
       defer
       src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
     ></script>
-    <!-- Initialize AOS -->
+    <!-- Initialize AOS and FAQ functionality -->
     <script>
       document.addEventListener("DOMContentLoaded", () => {
         AOS.init({
-          once: false, // Animations only happen once
+          once: false,
           duration: 800,
           easing: "ease-out-quart",
         });
-      });
+
+    });
     </script>
   </body>
 </html>
