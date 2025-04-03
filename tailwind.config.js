@@ -5,7 +5,9 @@
     extend: {
       colors: {
         blue: "#366f9a",
-        grey: "#d4d6cb"
+        grey: "#d4d6cb",
+        dark: "#2a5778",
+        light: "#e1e8f0",
       }
     },
     fontFamily: {
