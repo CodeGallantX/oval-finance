@@ -1,4 +1,4 @@
- // Toggle password visibility
+ // password visibility
  document.getElementById('togglePassword').addEventListener('click', function() {
     const passwordInput = document.getElementById('password');
     const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
@@ -18,9 +18,7 @@ document.getElementById('loginForm').addEventListener('submit', function(e) {
     loginSpinner.classList.remove('hidden');
     loginBtn.disabled = true;
 
-    // Simulate API call
     setTimeout(() => {
-        // Hide loading state
         loginText.classList.remove('hidden');
         loginSpinner.classList.add('hidden');
         loginBtn.disabled = false;
