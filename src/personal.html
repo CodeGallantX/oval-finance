@@ -1,6 +1,6 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
+<html lang="en" x-data="{ activeTab: 'personal', mobileMenuOpen: false, mobileProductsOpen: false, mobileAboutOpen: false }">
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Get instant personal loans from ₦1,500 to ₦3,000,000 with Oval Finance. Quick approval, no collateral, competitive rates. Apply online in 5 minutes!">
@@ -9,969 +9,693 @@
     <link rel="shortcut icon" href="./assets/images/favicon.ico" type="image/x-icon" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="./output.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css"
-    />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" />
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-  </head>
-  <body class="font-sans">
-    <header
-      class="flex flex-row items-center justify-between py-4 px-6 lg:px-24 sticky top-0 bg-white z-40 shadow-sm"
-    >
-      <!-- Logo -->
-      <a href="index.html" class="w-32 lg:w-40">
-        <img
-          src="./assets/images/logo.jpg"
-          alt="Oval Finance logo - Your Financial Bridge"
-          class="w-full object-cover"
-        />
-      </a>
-
-      <!-- Desktop Navigation -->
-      <nav class="hidden lg:flex gap-10">
-        <div class="relative">
-          <a
-            href="index.html"
-            class="font-medium flex items-center gap-2 py-2 hover:text-blue transition-colors"
-          >
-            Home
-          </a>
-        </div>
-
-        <div class="relative group">
-          <button
-            class="font-medium flex items-center gap-2 py-2 hover:text-blue transition-colors group"
-          >
-            Products
-            <i
-              class="bi bi-chevron-down text-xs transition-transform duration-200 group-hover:rotate-180"
-            ></i>
-          </button>
-          <ul
-            class="absolute hidden group-hover:block left-0 top-10 w-48 rounded-md shadow-lg bg-white p-2 z-50 border border-gray-100"
-          >
-            <li class="py-2 px-4 hover:bg-blue/50 rounded transition">
-              <a href="./personal.html" class="block w-full">Personal Banking</a>
-            </li>
-            <li class="py-2 px-4 hover:bg-blue/50 rounded transition">
-              <a href="./business.html" class="block w-full">Business Solutions</a>
-            </li>
-            <li class="py-2 px-4 hover:bg-blue/50 rounded transition">
-              <a href="./loan-calculator.html" class="block w-full">Loan Calculator</a>
-            </li>
-          </ul>
-        </div>
-
-        <div class="relative group">
-          <button
-            class="font-medium flex items-center gap-2 py-2 hover:text-blue transition-colors group"
-          >
-            About Us
-            <i
-              class="bi bi-chevron-down text-xs transition-transform duration-200 group-hover:rotate-180"
-            ></i>
-          </button>
-          <ul
-            class="absolute hidden group-hover:block left-0 top-10 w-48 rounded-md shadow-lg bg-white p-2 z-50 border border-gray-100"
-          >
-            <li class="py-2 px-4 hover:bg-blue/50 rounded transition">
-              <a href="about.html" class="block w-full">Our Story</a>
-            </li>
-            <li class="py-2 px-4 hover:bg-blue/50 rounded transition">
-              <a href="faqs.html" class="block w-full">FAQs</a>
-            </li>
-          </ul>
-        </div>
-
-        <div class="relative">
-          <a
-            href="contact.html"
-            class="font-medium flex items-center gap-2 py-2 hover:text-blue transition-colors"
-          >
-            Contact Us
-          </a>
-        </div>
-      </nav>
-
-      <div class="hidden lg:flex items-center space-x-6">
-        <div class="relative">
-          <a
-            href="login.html"
-            class="font-medium flex items-center gap-2 py-2 hover:text-blue transition-colors"
-          >
-            Login
-          </a>
-        </div>
-        <!-- Desktop CTA Button -->
-        <a
-          href="apply.html"
-          class="px-4 py-2.5 border-2 border-blue font-medium bg-blue text-white rounded-md hover:bg-[#2a5778] hover:border-[#2a5778] transition-colors"
-        >
-          Apply for loan
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+</head>
+<body class="font-sans">
+    <header class="flex flex-row items-center justify-between py-4 px-6 lg:px-24 sticky top-0 bg-white z-40 shadow-sm">
+        <!-- Logo -->
+        <a href="index.html" class="w-32 lg:w-40">
+            <img src="./assets/images/logo.jpg" 
+                 alt="Oval Finance logo" 
+                 class="w-full object-cover rounded-lg">
         </a>
-      </div>
 
-      <!-- Mobile Menu Button -->
-      <button id="mobile-menu-button" class="lg:hidden z-40">
-        <i class="bi bi-list text-2xl"></i>
-      </button>
+        <!-- Desktop Navigation -->
+        <nav class="hidden lg:flex gap-10">
+            <div class="relative">
+                <a href="index.html" class="font-medium flex items-center gap-2 py-2 hover:text-blue transition-colors">Home</a>
+            </div>
+            <div class="relative group">
+                <button class="font-medium flex items-center gap-2 py-2 hover:text-blue transition-colors group">
+                    Products
+                    <i class="bi bi-chevron-down text-xs transition-transform duration-200 group-hover:rotate-180"></i>
+                </button>
+                <ul class="absolute hidden group-hover:block left-0 top-10 w-48 rounded-md shadow-lg bg-white p-2 z-50 border border-gray-100">
+                    <li class="py-2 px-4 hover:bg-blue/50 rounded transition">
+                        <a href="personal.html" class="block w-full">Personal Banking</a>
+                    </li>
+                    <li class="py-2 px-4 hover:bg-blue/50 rounded transition">
+                        <a href="business.html" class="block w-full">Business Solutions</a>
+                    </li>
+                    <li class="py-2 px-4 hover:bg-blue/50 rounded transition">
+                        <a href="loan-calculator.html" class="block w-full">Loan Calculator</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="relative group">
+                <button class="font-medium flex items-center gap-2 py-2 hover:text-blue transition-colors group">
+                    About Us
+                    <i class="bi bi-chevron-down text-xs transition-transform duration-200 group-hover:rotate-180"></i>
+                </button>
+                <ul class="absolute hidden group-hover:block left-0 top-10 w-48 rounded-md shadow-lg bg-white p-2 z-50 border border-gray-100">
+                    <li class="py-2 px-4 hover:bg-blue/50 rounded transition">
+                        <a href="about.html" class="block w-full">Our Story</a>
+                    </li>
+                    <li class="py-2 px-4 hover:bg-blue/50 rounded transition">
+                        <a href="faqs.html" class="block w-full">FAQs</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="relative">
+                <a href="contact.html" class="font-medium flex items-center gap-2 py-2 hover:text-blue transition-colors">Contact Us</a>
+            </div>
+        </nav>
 
-      <!-- Mobile Sidebar Navigation -->
-      <aside
-        id="mobile-sidebar"
-        class="hidden fixed top-0 right-0 h-full w-80 bg-white p-6 z-40 translate-x-full shadow-xl transition-transform duration-300"
-      >
-        <div class="relative flex flex-row items-start justify-between py-4">
-          <a href="index.html" class="w-32">
-            <img
-              src="./assets/images/logo.jpg"
-              alt="Oval Finance logo"
-              class="w-full object-cover"
-            />
-          </a>
-          <button
-            id="close-sidebar-button"
-            class="text-gray-500 hover:text-gray-700"
-          >
-            <i class="bi bi-x text-2xl"></i>
-          </button>
+        <div class="hidden lg:flex items-center space-x-6">
+            <div class="relative">
+                <a href="login.html" class="font-medium flex items-center gap-2 py-2 hover:text-blue transition-colors">Login</a>
+            </div>
+            <a href="apply.html" class="px-4 py-2.5 border-2 border-blue font-medium bg-blue text-white rounded-md hover:bg-[#2a5778] hover:border-[#2a5778] transition-colors">
+                Apply for loan
+            </a>
         </div>
 
-        <!-- Mobile Nav Links -->
-        <ul class="space-y-2 mt-6">
-          <li>
-            <a
-              href="index.html"
-              class="block font-medium py-3 px-4 hover:bg-blue/50 rounded-md transition-colors"
-              >Home</a
-            >
-          </li>
-
-          <li>
-            <button
-              class="flex justify-between items-center w-full font-medium py-3 px-4 hover:bg-blue/50 rounded-md transition-colors"
-              id="mobile-products-button"
-            >
-              <span>Products</span>
-              <i
-                class="bi bi-chevron-down text-xs transition-transform"
-                id="mobile-products-icon"
-              ></i>
-            </button>
-            <ul
-              id="mobile-products-dropdown"
-              class="hidden w-full pl-0 mt-1 max-h-0 overflow-hidden transition-all duration-300"
-            >
-              <li class="py-2">
-                <a
-                  href="personal.html"
-                  class="block w-full py-2 px-6 hover:bg-blue/50 rounded-md transition-colors"
-                  >Personal Banking</a
-                >
-              </li>
-              <li class="py-2">
-                <a
-                  href="business.html"
-                  class="block w-full py-2 px-6 hover:bg-blue/50 rounded-md transition-colors"
-                  >Business Solutions</a
-                >
-              </li>
-              <li class="py-2">
-                <a
-                  href="loan-calculator.html"
-                  class="block w-full py-2 px-6 hover:bg-blue/50 rounded-md transition-colors"
-                  >Loan Calculator</a
-                >
-              </li>
-            </ul>
-          </li>
-
-          <li>
-            <button
-              class="flex justify-between items-center w-full font-medium py-3 px-4 hover:bg-blue/50 rounded-md transition-colors"
-              id="mobile-about-button"
-            >
-              <span>About Us</span>
-              <i
-                class="bi bi-chevron-down text-xs transition-transform"
-                id="mobile-about-icon"
-              ></i>
-            </button>
-            <ul
-              id="mobile-about-dropdown"
-              class="hidden w-full pl-0 mt-1 max-h-0 overflow-hidden transition-all duration-300"
-            >
-              <li class="py-2">
-                <a
-                  href="about.html"
-                  class="block w-full py-2 px-6 hover:bg-blue/50 rounded-md transition-colors"
-                  >Our Story</a
-                >
-              </li>
-              <li class="py-2">
-                <a
-                  href="faqs.html"
-                  class="block w-full py-2 px-6 hover:bg-blue/50 rounded-md transition-colors"
-                  >FAQs</a
-                >
-              </li>
-            </ul>
-          </li>
-
-          <li>
-            <a
-              href="contact.html"
-              class="block font-medium py-3 px-4 hover:bg-blue/50 rounded-md transition-colors"
-              >Contact Us</a
-            >
-          </li>
-
-          <li>
-            <a
-              href="login.html"
-              class="block font-medium py-3 px-4 hover:bg-blue/50 rounded-md transition-colors"
-              >Login</a
-            >
-          </li>
-
-          <li class="mt-8 pt-4 border-t border-gray-100">
-            <a
-              href="apply.html"
-              class="block px-4 py-3 text-center font-medium bg-blue text-white rounded-md hover:bg-[#2a5778] transition-colors"
-            >
-              Apply for loan
-            </a>
-          </li>
-        </ul>
-      </aside>
+        <!-- Mobile Menu Button -->
+        <button @click="mobileMenuOpen = true" class="lg:hidden z-40">
+            <i class="bi bi-list text-2xl"></i>
+        </button>
     </header>
+
+    <!-- Mobile Sidebar Navigation -->
+    <aside x-show="mobileMenuOpen" 
+           @click.away="mobileMenuOpen = false"
+           class="fixed inset-0 z-50 overflow-hidden">
+        <div class="absolute inset-0 bg-black/50" @click="mobileMenuOpen = false"></div>
+        <div class="absolute top-0 right-0 h-full w-80 bg-white p-6 shadow-xl transform transition-transform duration-300"
+             :class="mobileMenuOpen ? 'translate-x-0' : 'translate-x-full'">
+            <div class="relative flex flex-row items-start justify-between py-4">
+                <a href="index.html" class="w-32">
+                    <img src="./assets/images/logo.jpg" 
+                         alt="Oval Finance logo" 
+                         class="w-full object-cover rounded-lg">
+                </a>
+                <button @click="mobileMenuOpen = false" class="text-gray-500 hover:text-gray-700">
+                    <i class="bi bi-x text-2xl"></i>
+                </button>
+            </div>
+
+            <!-- Mobile Nav Links -->
+            <ul class="space-y-2 mt-6">
+                <li>
+                    <a href="index.html" class="block font-medium py-3 px-4 hover:bg-blue/50 rounded-md transition-colors">Home</a>
+                </li>
+                <li>
+                    <button @click="mobileProductsOpen = !mobileProductsOpen" class="flex justify-between items-center w-full font-medium py-3 px-4 hover:bg-blue/50 rounded-md transition-colors">
+                        <span>Products</span>
+                        <i class="bi bi-chevron-down text-xs transition-transform" :class="mobileProductsOpen ? 'rotate-180' : ''"></i>
+                    </button>
+                    <ul x-show="mobileProductsOpen" 
+                        x-collapse
+                        class="w-full pl-0 mt-1 overflow-hidden transition-all duration-300">
+                        <li class="py-2">
+                            <a href="personal.html" class="block w-full py-2 px-6 hover:bg-blue/50 rounded-md transition-colors">Personal Banking</a>
+                        </li>
+                        <li class="py-2">
+                            <a href="business.html" class="block w-full py-2 px-6 hover:bg-blue/50 rounded-md transition-colors">Business Solutions</a>
+                        </li>
+                        <li class="py-2">
+                            <a href="loan-calculator.html" class="block w-full py-2 px-6 hover:bg-blue/50 rounded-md transition-colors">Loan Calculator</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <button @click="mobileAboutOpen = !mobileAboutOpen" class="flex justify-between items-center w-full font-medium py-3 px-4 hover:bg-blue/50 rounded-md transition-colors">
+                        <span>About Us</span>
+                        <i class="bi bi-chevron-down text-xs transition-transform" :class="mobileAboutOpen ? 'rotate-180' : ''"></i>
+                    </button>
+                    <ul x-show="mobileAboutOpen" 
+                        x-collapse
+                        class="w-full pl-0 mt-1 overflow-hidden transition-all duration-300">
+                        <li class="py-2">
+                            <a href="about.html" class="block w-full py-2 px-6 hover:bg-blue/50 rounded-md transition-colors">Our Story</a>
+                        </li>
+                        <li class="py-2">
+                            <a href="faqs.html" class="block w-full py-2 px-6 hover:bg-blue/50 rounded-md transition-colors">FAQs</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="contact.html" class="block font-medium py-3 px-4 hover:bg-blue/50 rounded-md transition-colors">Contact Us</a>
+                </li>
+                <li>
+                    <a href="login.html" class="block font-medium py-3 px-4 hover:bg-blue/50 rounded-md transition-colors">Login</a>
+                </li>
+                <li class="mt-8 pt-4 border-t border-gray-100">
+                    <a href="apply.html" class="block px-4 py-3 text-center font-medium bg-blue text-white rounded-md hover:bg-[#2a5778] transition-colors">
+                        Apply for loan
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </aside>
 
     <!-- Hero Section -->
     <section class="bg-blue text-white py-16 px-6 lg:px-24">
-      <div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-        <div data-aos="fade-right">
-          <h1 class="text-4xl md:text-5xl font-bold mb-6">Get Instant Personal Loans from ₦1,500 - ₦3,000,000</h1>
-          <p class="text-xl mb-8">Life happens, but we are here to help you get back on track and achieve your goals with a quick and easy, collateral-free personal loan.</p>
-          <div class="flex flex-col sm:flex-row gap-4">
-            <a href="apply.html" class="px-8 py-4 bg-white text-blue font-bold rounded-lg hover:bg-gray-100 transition-colors text-center">
-              Get a Quick Loan
-            </a>
-            <a href="loan-calculator.html" class="px-8 py-4 border-2 border-white text-white font-bold rounded-lg hover:bg-white hover:text-blue transition-colors text-center">
-              Calculate Loan
-            </a>
-          </div>
-          <div class="mt-8 flex items-center gap-6">
-            <img src="./assets/images/cbn-logo.png" alt="Licensed by CBN" class="h-12">
-            <img src="./assets/images/ndic-logo.png" alt="Deposits Insured by NDIC" class="h-12">
-          </div>
+        <div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div data-aos="fade-right">
+                <h1 class="text-4xl md:text-5xl font-bold mb-6">Get Instant Personal Loans from ₦1,500 - ₦3,000,000</h1>
+                <p class="text-xl mb-8">Life happens, but we are here to help you get back on track and achieve your goals with a quick and easy, collateral-free personal loan.</p>
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <a href="apply.html" class="px-8 py-4 bg-white text-blue font-bold rounded-lg hover:bg-gray-100 transition-colors text-center">
+                        Get a Quick Loan
+                    </a>
+                    <a href="loan-calculator.html" class="px-8 py-4 border-2 border-white text-white font-bold rounded-lg hover:bg-white hover:text-blue transition-colors text-center">
+                        Calculate Loan
+                    </a>
+                </div>
+                <div class="mt-8 flex items-center gap-6">
+                    <img src="https://images.unsplash.com/photo-1604594849809-dfedbc827105?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=80" 
+                         alt="Licensed by CBN" 
+                         class="h-12 object-contain">
+                    <img src="https://images.unsplash.com/photo-1553729459-efe14ef6055d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=80" 
+                         alt="Deposits Insured by NDIC" 
+                         class="h-12 object-contain">
+                </div>
+            </div>
+            <div data-aos="fade-left" class="hidden lg:block">
+                <img src="https://images.unsplash.com/photo-1607860108855-64acf2078ed9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80" 
+                     alt="Happy customer using Oval Finance app" 
+                     class="w-full rounded-lg shadow-xl">
+            </div>
         </div>
-        <div data-aos="fade-left" class="hidden lg:block">
-          <img src="./assets/images/loan-hero.png" alt="Happy customer using Oval Finance app" class="w-full rounded-lg shadow-xl">
-        </div>
-      </div>
     </section>
 
-    <!-- Features Section -->
+    <!-- Loan Types Tabs -->
     <section class="py-16 px-6 lg:px-24 bg-gray-50">
-      <div class="max-w-6xl mx-auto">
-        <h2 class="text-3xl font-bold text-center mb-12" data-aos="fade-up">Our Best Features</h2>
-        
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          <!-- Feature 1 -->
-          <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-200 hover:shadow-md transition-shadow" data-aos="fade-up" data-aos-delay="100">
-            <div class="w-16 h-16 bg-blue/10 rounded-full flex items-center justify-center mb-4">
-              <i class="bi bi-cash-coin text-3xl text-blue"></i>
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-3xl font-bold text-center mb-12" data-aos="fade-up">Our Loan Products</h2>
+            
+            <div class="bg-white rounded-xl shadow-sm overflow-hidden" data-aos="fade-up">
+                <!-- Tabs Navigation -->
+                <div class="flex flex-col sm:flex-row border-b border-gray-200">
+                    <button @click="activeTab = 'personal'" 
+                            :class="activeTab === 'personal' ? 'bg-blue text-white' : 'text-gray-600 hover:text-blue'"
+                            class="px-6 py-4 font-medium text-center transition-colors">
+                        Personal Loans
+                    </button>
+                    <button @click="activeTab = 'business'" 
+                            :class="activeTab === 'business' ? 'bg-blue text-white' : 'text-gray-600 hover:text-blue'"
+                            class="px-6 py-4 font-medium text-center transition-colors">
+                        Business Loans
+                    </button>
+                    <button @click="activeTab = 'group'" 
+                            :class="activeTab === 'group' ? 'bg-blue text-white' : 'text-gray-600 hover:text-blue'"
+                            class="px-6 py-4 font-medium text-center transition-colors">
+                        Group Loans
+                    </button>
+                </div>
+                
+                <!-- Tabs Content -->
+                <div class="p-6">
+                    <!-- Personal Loans -->
+                    <div x-show="activeTab === 'personal'" x-transition>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                            <div>
+                                <h3 class="text-2xl font-semibold mb-4">Personal Microloans</h3>
+                                <p class="text-gray-600 mb-6">For urgent personal expenses like education, healthcare, or emergencies for salary earners.</p>
+                                <ul class="space-y-3">
+                                    <li class="flex items-start">
+                                        <i class="bi bi-check-circle-fill text-blue mr-2 mt-1"></i>
+                                        <span>Loan amounts: ₦1,500 - ₦3,000,000</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="bi bi-check-circle-fill text-blue mr-2 mt-1"></i>
+                                        <span>Repayment: 61 days to 24 months</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="bi bi-check-circle-fill text-blue mr-2 mt-1"></i>
+                                        <span>No collateral required</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div>
+                                <img src="https://images.unsplash.com/photo-1579621970795-87facc2f976d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80" 
+                                     alt="Personal loans" 
+                                     class="w-full rounded-lg shadow-md">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Business Loans -->
+                    <div x-show="activeTab === 'business'" x-transition>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                            <div>
+                                <h3 class="text-2xl font-semibold mb-4">Business Microloans</h3>
+                                <p class="text-gray-600 mb-6">For small business owners and entrepreneurs to grow or sustain their operations.</p>
+                                <ul class="space-y-3">
+                                    <li class="flex items-start">
+                                        <i class="bi bi-check-circle-fill text-blue mr-2 mt-1"></i>
+                                        <span>Loan amounts: ₦50,000 - ₦5,000,000</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="bi bi-check-circle-fill text-blue mr-2 mt-1"></i>
+                                        <span>Flexible repayment terms</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="bi bi-check-circle-fill text-blue mr-2 mt-1"></i>
+                                        <span>Quick approval process</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div>
+                                <img src="https://images.unsplash.com/photo-1556740738-b6a63e27c4df?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80" 
+                                     alt="Business loans" 
+                                     class="w-full rounded-lg shadow-md">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Group Loans -->
+                    <div x-show="activeTab === 'group'" x-transition>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                            <div>
+                                <h3 class="text-2xl font-semibold mb-4">Group Loans</h3>
+                                <p class="text-gray-600 mb-6">For community groups, associations, or cooperatives to ensure joint accountability in repayment.</p>
+                                <ul class="space-y-3">
+                                    <li class="flex items-start">
+                                        <i class="bi bi-check-circle-fill text-blue mr-2 mt-1"></i>
+                                        <span>Lower interest rates for groups</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="bi bi-check-circle-fill text-blue mr-2 mt-1"></i>
+                                        <span>Collective responsibility</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="bi bi-check-circle-fill text-blue mr-2 mt-1"></i>
+                                        <span>Flexible repayment options</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div>
+                                <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80" 
+                                     alt="Group loans" 
+                                     class="w-full rounded-lg shadow-md">
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <h3 class="text-xl font-semibold mb-3">Access personal loans of up to ₦3,000,000</h3>
-            <p class="text-gray-600">Get the funds you need for any personal expense or emergency.</p>
-          </div>
-          
-          <!-- Feature 2 -->
-          <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-200 hover:shadow-md transition-shadow" data-aos="fade-up" data-aos-delay="200">
-            <div class="w-16 h-16 bg-blue/10 rounded-full flex items-center justify-center mb-4">
-              <i class="bi bi-graph-up-arrow text-3xl text-blue"></i>
-            </div>
-            <h3 class="text-xl font-semibold mb-3">Loan top-ups available</h3>
-            <p class="text-gray-600">Access more funds as you service your existing loan.</p>
-          </div>
-          
-          <!-- Feature 3 -->
-          <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-200 hover:shadow-md transition-shadow" data-aos="fade-up" data-aos-delay="300">
-            <div class="w-16 h-16 bg-blue/10 rounded-full flex items-center justify-center mb-4">
-              <i class="bi bi-calendar-check text-3xl text-blue"></i>
-            </div>
-            <h3 class="text-xl font-semibold mb-3">Flexible repayment options</h3>
-            <p class="text-gray-600">Extend your loan tenure for convenient repayment.</p>
-          </div>
-          
-          <!-- Feature 4 -->
-          <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-200 hover:shadow-md transition-shadow" data-aos="fade-up" data-aos-delay="400">
-            <div class="w-16 h-16 bg-blue/10 rounded-full flex items-center justify-center mb-4">
-              <i class="bi bi-percent text-3xl text-blue"></i>
-            </div>
-            <h3 class="text-xl font-semibold mb-3">Competitive interest rates</h3>
-            <p class="text-gray-600">Affordable rates tailored to your financial situation.</p>
-          </div>
         </div>
-      </div>
     </section>
 
-    <!-- Why Choose Us Section -->
+    <!-- Features Grid -->
     <section class="py-16 px-6 lg:px-24 bg-white">
-      <div class="max-w-6xl mx-auto">
-        <h2 class="text-3xl font-bold text-center mb-12" data-aos="fade-up">Why Choose Oval Finance?</h2>
-        
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-          <div data-aos="fade-right">
-            <div class="space-y-8">
-              <!-- Reason 1 -->
-              <div class="flex gap-4">
-                <div class="flex-shrink-0">
-                  <div class="w-12 h-12 bg-blue/10 rounded-full flex items-center justify-center">
-                    <i class="bi bi-lightning text-xl text-blue"></i>
-                  </div>
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-3xl font-bold text-center mb-12" data-aos="fade-up">Why Choose Oval Finance?</h2>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8" data-aos="fade-up">
+                <!-- Feature 1 -->
+                <div class="bg-gray-50 p-8 rounded-xl h-full">
+                    <div class="w-16 h-16 bg-blue/10 rounded-full flex items-center justify-center mb-6 mx-auto">
+                        <i class="bi bi-lightning text-3xl text-blue"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-center mb-3">Fast Approval</h3>
+                    <p class="text-gray-600 text-center">Get approved and receive funds in just 5 minutes with our streamlined application process.</p>
                 </div>
-                <div>
-                  <h3 class="text-xl font-semibold mb-2">Fast and easy process</h3>
-                  <p class="text-gray-600">Get approved and receive funds in just 5 minutes with our streamlined application.</p>
+                
+                <!-- Feature 2 -->
+                <div class="bg-gray-50 p-8 rounded-xl h-full">
+                    <div class="w-16 h-16 bg-blue/10 rounded-full flex items-center justify-center mb-6 mx-auto">
+                        <i class="bi bi-shield-check text-3xl text-blue"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-center mb-3">No Collateral</h3>
+                    <p class="text-gray-600 text-center">Enjoy collateral-free loans with minimal documentation requirements.</p>
                 </div>
-              </div>
-              
-              <!-- Reason 2 -->
-              <div class="flex gap-4">
-                <div class="flex-shrink-0">
-                  <div class="w-12 h-12 bg-blue/10 rounded-full flex items-center justify-center">
-                    <i class="bi bi-shield-check text-xl text-blue"></i>
-                  </div>
+                
+                <!-- Feature 3 -->
+                <div class="bg-gray-50 p-8 rounded-xl h-full">
+                    <div class="w-16 h-16 bg-blue/10 rounded-full flex items-center justify-center mb-6 mx-auto">
+                        <i class="bi bi-percent text-3xl text-blue"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-center mb-3">Competitive Rates</h3>
+                    <p class="text-gray-600 text-center">Some of the best interest rates in the market tailored to your needs.</p>
                 </div>
-                <div>
-                  <h3 class="text-xl font-semibold mb-2">No Collateral Required</h3>
-                  <p class="text-gray-600">Enjoy collateral-free loans with minimal documentation requirements.</p>
+                
+                <!-- Feature 4 -->
+                <div class="bg-gray-50 p-8 rounded-xl h-full">
+                    <div class="w-16 h-16 bg-blue/10 rounded-full flex items-center justify-center mb-6 mx-auto">
+                        <i class="bi bi-phone text-3xl text-blue"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-center mb-3">Mobile App</h3>
+                    <p class="text-gray-600 text-center">Manage your loans anytime, anywhere with our user-friendly mobile app.</p>
                 </div>
-              </div>
-              
-              <!-- Reason 3 -->
-              <div class="flex gap-4">
-                <div class="flex-shrink-0">
-                  <div class="w-12 h-12 bg-blue/10 rounded-full flex items-center justify-center">
-                    <i class="bi bi-coin text-xl text-blue"></i>
-                  </div>
+                
+                <!-- Feature 5 -->
+                <div class="bg-gray-50 p-8 rounded-xl h-full">
+                    <div class="w-16 h-16 bg-blue/10 rounded-full flex items-center justify-center mb-6 mx-auto">
+                        <i class="bi bi-arrow-repeat text-3xl text-blue"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-center mb-3">Loan Top-ups</h3>
+                    <p class="text-gray-600 text-center">Access more funds as you service your existing loan.</p>
                 </div>
-                <div>
-                  <h3 class="text-xl font-semibold mb-2">Competitive interest rates</h3>
-                  <p class="text-gray-600">Some of the best rates in the market tailored to your needs.</p>
+                
+                <!-- Feature 6 -->
+                <div class="bg-gray-50 p-8 rounded-xl h-full">
+                    <div class="w-16 h-16 bg-blue/10 rounded-full flex items-center justify-center mb-6 mx-auto">
+                        <i class="bi bi-headset text-3xl text-blue"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-center mb-3">24/7 Support</h3>
+                    <p class="text-gray-600 text-center">Our customer service team is always available to assist you.</p>
                 </div>
-              </div>
-              
-              <!-- Reason 4 -->
-              <div class="flex gap-4">
-                <div class="flex-shrink-0">
-                  <div class="w-12 h-12 bg-blue/10 rounded-full flex items-center justify-center">
-                    <i class="bi bi-calendar-range text-xl text-blue"></i>
-                  </div>
-                </div>
-                <div>
-                  <h3 class="text-xl font-semibold mb-2">Flexible loan tenures</h3>
-                  <p class="text-gray-600">Repayment periods from 61 days up to 24 months available.</p>
-                </div>
-              </div>
             </div>
-          </div>
-          
-          <div data-aos="fade-left">
-            <img src="./assets/images/why-choose-us.png" alt="Woman using Oval Finance app on her phone" class="w-full rounded-lg shadow-xl">
-          </div>
         </div>
-      </div>
-    </section>
-
-    <!-- Eligibility & Requirements -->
-    <section class="py-16 px-6 lg:px-24 bg-gray-50">
-      <div class="max-w-6xl mx-auto">
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
-          <!-- Eligibility -->
-          <div data-aos="fade-right">
-            <h2 class="text-3xl font-bold mb-8">Eligibility</h2>
-            <div class="space-y-6">
-              <div class="flex gap-4">
-                <div class="flex-shrink-0 w-12 h-12 bg-blue text-white rounded-full flex items-center justify-center font-bold text-xl">01</div>
-                <div>
-                  <h3 class="text-xl font-semibold mb-2">Must have the Oval Finance app</h3>
-                  <p class="text-gray-600">Download our app on your Android or iOS smartphone to apply.</p>
-                </div>
-              </div>
-              
-              <div class="flex gap-4">
-                <div class="flex-shrink-0 w-12 h-12 bg-blue text-white rounded-full flex items-center justify-center font-bold text-xl">02</div>
-                <div>
-                  <h3 class="text-xl font-semibold mb-2">Must be 18 years old and above</h3>
-                  <p class="text-gray-600">Legal age requirement for loan applications in Nigeria.</p>
-                </div>
-              </div>
-              
-              <div class="flex gap-4">
-                <div class="flex-shrink-0 w-12 h-12 bg-blue text-white rounded-full flex items-center justify-center font-bold text-xl">03</div>
-                <div>
-                  <h3 class="text-xl font-semibold mb-2">Must be a Nigerian citizen</h3>
-                  <p class="text-gray-600">With valid Nigerian identification documents.</p>
-                </div>
-              </div>
-            </div>
-          </div>
-          
-          <!-- Requirements -->
-          <div data-aos="fade-left">
-            <h2 class="text-3xl font-bold mb-8">Requirements</h2>
-            <div class="space-y-6">
-              <div class="flex gap-4">
-                <div class="flex-shrink-0 w-12 h-12 bg-blue text-white rounded-full flex items-center justify-center font-bold text-xl">01</div>
-                <div>
-                  <h3 class="text-xl font-semibold mb-2">Bank Verification Number (BVN)</h3>
-                  <p class="text-gray-600">Required for identity verification and credit checks.</p>
-                </div>
-              </div>
-              
-              <div class="flex gap-4">
-                <div class="flex-shrink-0 w-12 h-12 bg-blue text-white rounded-full flex items-center justify-center font-bold text-xl">02</div>
-                <div>
-                  <h3 class="text-xl font-semibold mb-2">Proof of income/employment</h3>
-                  <p class="text-gray-600">For salaried, self-employed, or students with income.</p>
-                </div>
-              </div>
-              
-              <div class="flex gap-4">
-                <div class="flex-shrink-0 w-12 h-12 bg-blue text-white rounded-full flex items-center justify-center font-bold text-xl">03</div>
-                <div>
-                  <h3 class="text-xl font-semibold mb-2">Minimum monthly income</h3>
-                  <p class="text-gray-600">At least ₦20,000 monthly income for qualification.</p>
-                </div>
-              </div>
-              
-              <div class="flex gap-4">
-                <div class="flex-shrink-0 w-12 h-12 bg-blue text-white rounded-full flex items-center justify-center font-bold text-xl">04</div>
-                <div>
-                  <h3 class="text-xl font-semibold mb-2">Credit history</h3>
-                  <p class="text-gray-600">We'll check your creditworthiness before approval.</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
     </section>
 
     <!-- How It Works -->
-    <section class="py-16 px-6 lg:px-24 bg-white">
-      <div class="max-w-6xl mx-auto">
-        <h2 class="text-3xl font-bold text-center mb-12" data-aos="fade-up">How Our Instant Loan App Works</h2>
-        
-        <div class="grid grid-cols-1 md:grid-cols-5 gap-8">
-          <!-- Step 1 -->
-          <div class="text-center" data-aos="fade-up" data-aos-delay="100">
-            <div class="relative mb-4">
-              <div class="w-20 h-20 bg-blue text-white rounded-full flex items-center justify-center mx-auto text-3xl font-bold">1</div>
-            </div>
-            <h3 class="text-xl font-semibold mb-2">Download the App</h3>
-            <p class="text-gray-600">Get our app from Google Play or App Store</p>
-          </div>
-          
-          <!-- Arrow -->
-          <div class="hidden md:flex items-center justify-center">
-            <i class="bi bi-arrow-right text-3xl text-gray-300"></i>
-          </div>
-          
-          <!-- Step 2 -->
-          <div class="text-center" data-aos="fade-up" data-aos-delay="200">
-            <div class="relative mb-4">
-              <div class="w-20 h-20 bg-blue text-white rounded-full flex items-center justify-center mx-auto text-3xl font-bold">2</div>
-            </div>
-            <h3 class="text-xl font-semibold mb-2">Sign up/Log in</h3>
-            <p class="text-gray-600">Create your account or login if existing user</p>
-          </div>
-          
-          <!-- Arrow -->
-          <div class="hidden md:flex items-center justify-center">
-            <i class="bi bi-arrow-right text-3xl text-gray-300"></i>
-          </div>
-          
-          <!-- Step 3 -->
-          <div class="text-center" data-aos="fade-up" data-aos-delay="300">
-            <div class="relative mb-4">
-              <div class="w-20 h-20 bg-blue text-white rounded-full flex items-center justify-center mx-auto text-3xl font-bold">3</div>
-            </div>
-            <h3 class="text-xl font-semibold mb-2">Complete Registration</h3>
-            <p class="text-gray-600">Provide required details for verification</p>
-          </div>
-          
-          <!-- Arrow -->
-          <div class="hidden md:flex items-center justify-center">
-            <i class="bi bi-arrow-right text-3xl text-gray-300"></i>
-          </div>
-          
-          <!-- Step 4 -->
-          <div class="text-center" data-aos="fade-up" data-aos-delay="400">
-            <div class="relative mb-4">
-              <div class="w-20 h-20 bg-blue text-white rounded-full flex items-center justify-center mx-auto text-3xl font-bold">4</div>
-            </div>
-            <h3 class="text-xl font-semibold mb-2">Select Loan Offer</h3>
-            <p class="text-gray-600">Choose from available loan options</p>
-          </div>
-          
-          <!-- Arrow -->
-          <div class="hidden md:flex items-center justify-center">
-            <i class="bi bi-arrow-right text-3xl text-gray-300"></i>
-          </div>
-          
-          <!-- Step 5 -->
-          <div class="text-center" data-aos="fade-up" data-aos-delay="500">
-            <div class="relative mb-4">
-              <div class="w-20 h-20 bg-blue text-white rounded-full flex items-center justify-center mx-auto text-3xl font-bold">5</div>
-            </div>
-            <h3 class="text-xl font-semibold mb-2">Receive Funds</h3>
-            <p class="text-gray-600">Get money in your account instantly</p>
-          </div>
-        </div>
-        
-        <div class="mt-12" data-aos="fade-up">
-          <img src="./assets/images/app-screens.png" alt="Oval Finance app screens showing loan process" class="w-full max-w-3xl mx-auto rounded-lg shadow-md">
-        </div>
-      </div>
-    </section>
-
-    <!-- Loan Details -->
     <section class="py-16 px-6 lg:px-24 bg-gray-50">
-      <div class="max-w-6xl mx-auto">
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
-          <div data-aos="fade-right">
-            <h2 class="text-3xl font-bold mb-6">Loan Details</h2>
-            <div class="space-y-6">
-              <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
-                <h3 class="text-xl font-semibold mb-3 text-blue">Loan Amounts</h3>
-                <p class="text-gray-700">Range between ₦1,500 to ₦3,000,000</p>
-              </div>
-              
-              <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
-                <h3 class="text-xl font-semibold mb-3 text-blue">Repayment Periods</h3>
-                <p class="text-gray-700">From 61 days to 24 months</p>
-              </div>
-              
-              <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
-                <h3 class="text-xl font-semibold mb-3 text-blue">Interest Rates</h3>
-                <p class="text-gray-700">Monthly rates from 2.5% to 30% (APRs from 30% to 260%)</p>
-              </div>
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-3xl font-bold text-center mb-12" data-aos="fade-up">How Our Instant Loan App Works</h2>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <!-- Steps -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <!-- Step 1 -->
+                    <div class="bg-white p-6 rounded-xl shadow-sm" data-aos="fade-up" data-aos-delay="100">
+                        <div class="w-12 h-12 bg-blue text-white rounded-full flex items-center justify-center mb-4 text-lg font-bold">1</div>
+                        <h3 class="text-xl font-semibold mb-2">Download the App</h3>
+                        <p class="text-gray-600">Get our app from Google Play or App Store</p>
+                    </div>
+                    
+                    <!-- Step 2 -->
+                    <div class="bg-white p-6 rounded-xl shadow-sm" data-aos="fade-up" data-aos-delay="200">
+                        <div class="w-12 h-12 bg-blue text-white rounded-full flex items-center justify-center mb-4 text-lg font-bold">2</div>
+                        <h3 class="text-xl font-semibold mb-2">Sign up/Log in</h3>
+                        <p class="text-gray-600">Create your account or login if existing user</p>
+                    </div>
+                    
+                    <!-- Step 3 -->
+                    <div class="bg-white p-6 rounded-xl shadow-sm" data-aos="fade-up" data-aos-delay="300">
+                        <div class="w-12 h-12 bg-blue text-white rounded-full flex items-center justify-center mb-4 text-lg font-bold">3</div>
+                        <h3 class="text-xl font-semibold mb-2">Complete Registration</h3>
+                        <p class="text-gray-600">Provide required details for verification</p>
+                    </div>
+                    
+                    <!-- Step 4 -->
+                    <div class="bg-white p-6 rounded-xl shadow-sm" data-aos="fade-up" data-aos-delay="400">
+                        <div class="w-12 h-12 bg-blue text-white rounded-full flex items-center justify-center mb-4 text-lg font-bold">4</div>
+                        <h3 class="text-xl font-semibold mb-2">Select Loan Offer</h3>
+                        <p class="text-gray-600">Choose from available loan options</p>
+                    </div>
+                </div>
+                
+                <!-- Phone Mockups -->
+                <div class="relative" data-aos="fade-left">
+                    <div class="relative max-w-xs mx-auto">
+                        <!-- Main phone -->
+                        <div class="relative z-10">
+                            <img src="https://images.unsplash.com/photo-1555774698-0b77e0d5fac6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=80" 
+                                 alt="App screens" 
+                                 class="w-full rounded-xl shadow-xl border-8 border-gray-900">
+                        </div>
+                        <!-- Secondary phone (smaller, offset) -->
+                        <div class="absolute -bottom-10 -right-10 z-0 w-2/3">
+                            <img src="https://images.unsplash.com/photo-1555774698-0b77e0d5fac6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=80" 
+                                 alt="App screens" 
+                                 class="w-full rounded-xl shadow-xl border-8 border-gray-900">
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
-          
-          <div data-aos="fade-left">
-            <h2 class="text-3xl font-bold mb-6">Loan Example</h2>
-            <div class="bg-white p-8 rounded-lg shadow-sm border border-gray-200">
-              <h3 class="text-xl font-semibold mb-4">Borrow ₦100,000 over 3 months</h3>
-              <div class="space-y-3">
-                <div class="flex justify-between border-b border-gray-100 pb-2">
-                  <span class="text-gray-600">Loan amount:</span>
-                  <span class="font-medium">₦100,000</span>
-                </div>
-                <div class="flex justify-between border-b border-gray-100 pb-2">
-                  <span class="text-gray-600">Interest (30% rate):</span>
-                  <span class="font-medium">₦30,000</span>
-                </div>
-                <div class="flex justify-between border-b border-gray-100 pb-2">
-                  <span class="text-gray-600">Monthly payments:</span>
-                  <span class="font-medium">₦43,333</span>
-                </div>
-                <div class="flex justify-between border-b border-gray-100 pb-2">
-                  <span class="text-gray-600">Total amount payable:</span>
-                  <span class="font-medium">₦130,000</span>
-                </div>
-                <div class="flex justify-between pt-4">
-                  <span class="text-gray-600">Representative APR:</span>
-                  <span class="font-medium">120%</span>
-                </div>
-              </div>
-              
-              <div class="mt-8">
-                <h3 class="text-xl font-semibold mb-4">Calculate Your Monthly Payments</h3>
-                <p class="text-gray-600 mb-4">Use our loan calculator to estimate your repayments:</p>
-                <a href="loan-calculator.html" class="inline-block px-6 py-3 bg-blue text-white rounded-lg font-medium hover:bg-[#2a5778] transition-colors">
-                  Open Calculator
-                </a>
-              </div>
-            </div>
-          </div>
         </div>
-      </div>
     </section>
 
-    <!-- Testimonials -->
+    <!-- Testimonials Carousel -->
     <section class="py-16 px-6 lg:px-24 bg-white">
-      <div class="max-w-6xl mx-auto">
-        <h2 class="text-3xl font-bold text-center mb-12" data-aos="fade-up">What Our Customers Say</h2>
-        
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <!-- Testimonial 1 -->
-          <div class="bg-gray-50 p-6 rounded-xl" data-aos="fade-up" data-aos-delay="100">
-            <div class="flex items-center mb-4">
-              <div class="w-12 h-12 rounded-full bg-blue/10 flex items-center justify-center text-blue font-bold text-xl">OG</div>
-              <div class="ml-4">
-                <h4 class="font-semibold">Omolara Gbademosi</h4>
-                <p class="text-gray-500 text-sm">Nurse</p>
-              </div>
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-3xl font-bold text-center mb-12" data-aos="fade-up">What Our Customers Say</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8" data-aos="fade-up">
+                <!-- Testimonial 1 -->
+                <div class="bg-gray-50 p-8 rounded-xl h-full">
+                    <div class="flex items-center mb-6">
+                        <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=80" 
+                             alt="Omolara Gbademosi" 
+                             class="w-16 h-16 rounded-full object-cover mr-4">
+                        <div>
+                            <h4 class="font-semibold">Omolara Gbademosi</h4>
+                            <p class="text-gray-500 text-sm">Nurse</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-700">"When ASUU called off the strike and my daughter was to go back to school, the money I was expecting wasn't forthcoming. It's Oval Finance loans that helped us. I'm so grateful for their quick service."</p>
+                </div>
+                
+                <!-- Testimonial 2 -->
+                <div class="bg-gray-50 p-8 rounded-xl h-full">
+                    <div class="flex items-center mb-6">
+                        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=80" 
+                             alt="Oramalu Immaculate" 
+                             class="w-16 h-16 rounded-full object-cover mr-4">
+                        <div>
+                            <h4 class="font-semibold">Oramalu Immaculate</h4>
+                            <p class="text-gray-500 text-sm">Entrepreneur</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-700">"A run to app when Sapa comes knocking! Great interest rate. Unable to pay your loan when due? No worry! You can get an extension! Still need more funds while currently on a loan? Top up is ready!"</p>
+                </div>
+                
+                <!-- Testimonial 3 -->
+                <div class="bg-gray-50 p-8 rounded-xl h-full">
+                    <div class="flex items-center mb-6">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=80" 
+                             alt="Donoral Emmanuel" 
+                             class="w-16 h-16 rounded-full object-cover mr-4">
+                        <div>
+                            <h4 class="font-semibold">Donoral Emmanuel</h4>
+                            <p class="text-gray-500 text-sm">Business Owner</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-700">"This loan app is far the best because it has features which others don't, especially the loan extension. I have been using loan apps for years but didn't know there is one like Oval Finance."</p>
+                </div>
             </div>
-            <p class="text-gray-700">"When ASUU called off the strike and my daughter was to go back to school, the money I was expecting wasn't forthcoming. It's Oval Finance loans that helped us. I'm so grateful for their quick service."</p>
-          </div>
-          
-          <!-- Testimonial 2 -->
-          <div class="bg-gray-50 p-6 rounded-xl" data-aos="fade-up" data-aos-delay="200">
-            <div class="flex items-center mb-4">
-              <div class="w-12 h-12 rounded-full bg-blue/10 flex items-center justify-center text-blue font-bold text-xl">OI</div>
-              <div class="ml-4">
-                <h4 class="font-semibold">Oramalu Immaculate</h4>
-                <p class="text-gray-500 text-sm">Entrepreneur</p>
-              </div>
-            </div>
-            <p class="text-gray-700">"A run to app when Sapa comes knocking! Great interest rate. Unable to pay your loan when due? No worry! You can get an extension! Still need more funds while currently on a loan? Top up is ready!"</p>
-          </div>
-          
-          <!-- Testimonial 3 -->
-          <div class="bg-gray-50 p-6 rounded-xl" data-aos="fade-up" data-aos-delay="300">
-            <div class="flex items-center mb-4">
-              <div class="w-12 h-12 rounded-full bg-blue/10 flex items-center justify-center text-blue font-bold text-xl">DE</div>
-              <div class="ml-4">
-                <h4 class="font-semibold">Donoral Emmanuel</h4>
-                <p class="text-gray-500 text-sm">Business Owner</p>
-              </div>
-            </div>
-            <p class="text-gray-700">"This loan app is far the best because it has features which others don't, especially the loan extension. I have been using loan apps for years but didn't know there is one like Oval Finance."</p>
-          </div>
         </div>
-      </div>
     </section>
 
     <!-- FAQ Section -->
     <section class="py-16 px-6 lg:px-24 bg-gray-50">
-      <div class="max-w-4xl mx-auto">
-        <h2 class="text-3xl font-bold text-center mb-12" data-aos="fade-up">Frequently Asked Questions</h2>
-        
-        <div class="space-y-4">
-          <!-- FAQ Item 1 -->
-          <div class="border border-gray-200 rounded-lg overflow-hidden" data-aos="fade-up">
-            <button class="faq-toggle w-full flex justify-between items-center p-6 bg-white hover:bg-gray-50 transition-colors text-left" onclick="toggleFAQ(this)">
-              <h3 class="text-lg font-semibold">Can I get another loan immediately?</h3>
-              <i class="bi bi-plus-lg text-blue text-xl"></i>
-            </button>
-            <div class="faq-content px-6 pb-6 bg-white max-h-0 overflow-hidden transition-all duration-300">
-              <p class="text-gray-600">Yes, you can apply for a new loan once your current loan is fully repaid. We also offer loan top-ups if you need additional funds while servicing an existing loan.</p>
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-3xl font-bold text-center mb-12" data-aos="fade-up">Frequently Asked Questions</h2>
+            
+            <div class="space-y-4" x-data="{ openFaq: null }">
+                <!-- FAQ Item 1 -->
+                <div class="border border-gray-200 rounded-lg overflow-hidden" data-aos="fade-up">
+                    <button @click="openFaq === 1 ? openFaq = null : openFaq = 1" 
+                            class="w-full flex justify-between items-center p-6 bg-white hover:bg-gray-50 transition-colors text-left">
+                        <h3 class="text-lg font-semibold">Can I get another loan immediately?</h3>
+                        <i class="bi text-blue text-xl transition-transform duration-300" 
+                           :class="openFaq === 1 ? 'bi-dash-lg' : 'bi-plus-lg'"></i>
+                    </button>
+                    <div x-show="openFaq === 1" 
+                         x-collapse
+                         class="px-6 pb-6 bg-white">
+                        <p class="text-gray-600">Yes, you can apply for a new loan once your current loan is fully repaid. We also offer loan top-ups if you need additional funds while servicing an existing loan.</p>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 2 -->
+                <div class="border border-gray-200 rounded-lg overflow-hidden" data-aos="fade-up" data-aos-delay="100">
+                    <button @click="openFaq === 2 ? openFaq = null : openFaq = 2" 
+                            class="w-full flex justify-between items-center p-6 bg-white hover:bg-gray-50 transition-colors text-left">
+                        <h3 class="text-lg font-semibold">Do I need documents or collateral?</h3>
+                        <i class="bi text-blue text-xl transition-transform duration-300" 
+                           :class="openFaq === 2 ? 'bi-dash-lg' : 'bi-plus-lg'"></i>
+                    </button>
+                    <div x-show="openFaq === 2" 
+                         x-collapse
+                         class="px-6 pb-6 bg-white">
+                        <p class="text-gray-600">No collateral is required for our personal loans. You'll need to provide your BVN, valid ID, and proof of income during the application process.</p>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 3 -->
+                <div class="border border-gray-200 rounded-lg overflow-hidden" data-aos="fade-up" data-aos-delay="200">
+                    <button @click="openFaq === 3 ? openFaq = null : openFaq = 3" 
+                            class="w-full flex justify-between items-center p-6 bg-white hover:bg-gray-50 transition-colors text-left">
+                        <h3 class="text-lg font-semibold">How do I repay my loan?</h3>
+                        <i class="bi text-blue text-xl transition-transform duration-300" 
+                           :class="openFaq === 3 ? 'bi-dash-lg' : 'bi-plus-lg'"></i>
+                    </button>
+                    <div x-show="openFaq === 3" 
+                         x-collapse
+                         class="px-6 pb-6 bg-white">
+                        <p class="text-gray-600">You can repay your loan through our mobile app using your debit card, bank transfer, or by setting up automatic deductions from your salary account.</p>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 4 -->
+                <div class="border border-gray-200 rounded-lg overflow-hidden" data-aos="fade-up" data-aos-delay="300">
+                    <button @click="openFaq === 4 ? openFaq = null : openFaq = 4" 
+                            class="w-full flex justify-between items-center p-6 bg-white hover:bg-gray-50 transition-colors text-left">
+                        <h3 class="text-lg font-semibold">How long does approval take?</h3>
+                        <i class="bi text-blue text-xl transition-transform duration-300" 
+                           :class="openFaq === 4 ? 'bi-dash-lg' : 'bi-plus-lg'"></i>
+                    </button>
+                    <div x-show="openFaq === 4" 
+                         x-collapse
+                         class="px-6 pb-6 bg-white">
+                        <p class="text-gray-600">Most applications are approved within 5 minutes during business hours. Once approved, funds are disbursed instantly to your bank account.</p>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 5 -->
+                <div class="border border-gray-200 rounded-lg overflow-hidden" data-aos="fade-up" data-aos-delay="400">
+                    <button @click="openFaq === 5 ? openFaq = null : openFaq = 5" 
+                            class="w-full flex justify-between items-center p-6 bg-white hover:bg-gray-50 transition-colors text-left">
+                        <h3 class="text-lg font-semibold">What if I can't repay on time?</h3>
+                        <i class="bi text-blue text-xl transition-transform duration-300" 
+                           :class="openFaq === 5 ? 'bi-dash-lg' : 'bi-plus-lg'"></i>
+                    </button>
+                    <div x-show="openFaq === 5" 
+                         x-collapse
+                         class="px-6 pb-6 bg-white">
+                        <p class="text-gray-600">We offer loan extensions if you need more time to repay. Simply contact our customer support before your due date to discuss available options.</p>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 6 -->
+                <div class="border border-gray-200 rounded-lg overflow-hidden" data-aos="fade-up" data-aos-delay="500">
+                    <button @click="openFaq === 6 ? openFaq = null : openFaq = 6" 
+                            class="w-full flex justify-between items-center p-6 bg-white hover:bg-gray-50 transition-colors text-left">
+                        <h3 class="text-lg font-semibold">How do I contact customer service?</h3>
+                        <i class="bi text-blue text-xl transition-transform duration-300" 
+                           :class="openFaq === 6 ? 'bi-dash-lg' : 'bi-plus-lg'"></i>
+                    </button>
+                    <div x-show="openFaq === 6" 
+                         x-collapse
+                         class="px-6 pb-6 bg-white">
+                        <p class="text-gray-600">You can reach us via email at support@ovalfinance.com, call our helpline at 01-700-OVAL, or use the live chat feature in our mobile app.</p>
+                    </div>
+                </div>
             </div>
-          </div>
-          
-          <!-- FAQ Item 2 -->
-          <div class="border border-gray-200 rounded-lg overflow-hidden" data-aos="fade-up" data-aos-delay="100">
-            <button class="faq-toggle w-full flex justify-between items-center p-6 bg-white hover:bg-gray-50 transition-colors text-left" onclick="toggleFAQ(this)">
-              <h3 class="text-lg font-semibold">Do I need documents or collateral?</h3>
-              <i class="bi bi-plus-lg text-blue text-xl"></i>
-            </button>
-            <div class="faq-content px-6 pb-6 bg-white max-h-0 overflow-hidden transition-all duration-300">
-              <p class="text-gray-600">No collateral is required for our personal loans. You'll need to provide your BVN, valid ID, and proof of income during the application process.</p>
+            
+            <div class="mt-12 text-center" data-aos="fade-up">
+                <a href="faqs.html" class="inline-block px-6 py-3 border-2 border-blue font-medium text-blue rounded-md hover:bg-blue hover:text-white transition-colors">
+                    View All FAQs
+                </a>
             </div>
-          </div>
-          
-          <!-- FAQ Item 3 -->
-          <div class="border border-gray-200 rounded-lg overflow-hidden" data-aos="fade-up" data-aos-delay="200">
-            <button class="faq-toggle w-full flex justify-between items-center p-6 bg-white hover:bg-gray-50 transition-colors text-left" onclick="toggleFAQ(this)">
-              <h3 class="text-lg font-semibold">How much can I borrow and for how long?</h3>
-              <i class="bi bi-plus-lg text-blue text-xl"></i>
-            </button>
-            <div class="faq-content px-6 pb-6 bg-white max-h-0 overflow-hidden transition-all duration-300">
-              <p class="text-gray-600">Loan amounts range from ₦1,500 to ₦3,000,000 with repayment periods from 61 days up to 24 months. Your approved amount and terms depend on your creditworthiness.</p>
-            </div>
-          </div>
-          
-          <!-- FAQ Item 4 -->
-          <div class="border border-gray-200 rounded-lg overflow-hidden" data-aos="fade-up" data-aos-delay="300">
-            <button class="faq-toggle w-full flex justify-between items-center p-6 bg-white hover:bg-gray-50 transition-colors text-left" onclick="toggleFAQ(this)">
-              <h3 class="text-lg font-semibold">How can I get a loan?</h3>
-              <i class="bi bi-plus-lg text-blue text-xl"></i>
-            </button>
-            <div class="faq-content px-6 pb-6 bg-white max-h-0 overflow-hidden transition-all duration-300">
-              <p class="text-gray-600">Simply download our app, complete the registration, and apply for a loan. The entire process takes about 5 minutes, and if approved, funds are disbursed immediately to your bank account.</p>
-            </div>
-          </div>
         </div>
-        
-        <div class="mt-12 text-center" data-aos="fade-up">
-          <a href="faqs.html" class="text-blue font-semibold hover:underline">View all FAQs</a>
-        </div>
-      </div>
     </section>
 
     <!-- CTA Section -->
     <section class="py-16 px-6 lg:px-24 bg-blue text-white">
-      <div class="max-w-4xl mx-auto text-center" data-aos="zoom-in">
-        <h2 class="text-3xl font-bold mb-6">Ready to Get Your Personal Loan?</h2>
-        <p class="text-xl mb-8">Join thousands of satisfied customers who have achieved their financial goals with Oval Finance.</p>
-        <div class="flex flex-col sm:flex-row justify-center gap-4">
-          <a href="apply.html" class="px-8 py-4 bg-white text-blue font-bold rounded-lg hover:bg-gray-100 transition-colors">
-            Apply Now
-          </a>
-          <a href="contact.html" class="px-8 py-4 border-2 border-white text-white font-bold rounded-lg hover:bg-white hover:text-blue transition-colors">
-            Contact Us
-          </a>
+        <div class="max-w-4xl mx-auto text-center" data-aos="fade-up">
+            <h2 class="text-3xl font-bold mb-6">Ready to Get Started?</h2>
+            <p class="text-xl mb-8">Join thousands of Nigerians who trust Oval Finance for their quick loan needs. Download our app today!</p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#" class="px-6 py-3 bg-white text-blue font-bold rounded-lg hover:bg-gray-100 transition-colors flex items-center justify-center gap-2">
+                    <i class="bi bi-apple text-xl"></i>
+                    App Store
+                </a>
+                <a href="#" class="px-6 py-3 bg-white text-blue font-bold rounded-lg hover:bg-gray-100 transition-colors flex items-center justify-center gap-2">
+                    <i class="bi bi-google-play text-xl"></i>
+                    Google Play
+                </a>
+                <a href="apply.html" class="px-6 py-3 border-2 border-white text-white font-bold rounded-lg hover:bg-white hover:text-blue transition-colors">
+                    Apply Now
+                </a>
+            </div>
         </div>
-      </div>
     </section>
 
-    <footer class="bg-gray-900 text-white pt-16 pb-8 px-6 lg:px-24">
-      <div class="">
-        <!-- Top Section - Newsletter -->
-        <div
-          class="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 border-b border-gray-700 pb-12"
-        >
-          <div class="mb-8 md:mb-0 md:w-1/2">
-            <h3 class="text-2xl font-bold mb-4">
-              For next level financial insights
-            </h3>
-            <p class="text-gray-400">
-              Sign up to the Oval Finance mailing list
-            </p>
-          </div>
-          <div class="w-full md:w-1/2">
-            <form class="flex flex-col sm:flex-row gap-4">
-              <div class="flex-grow">
-                <label for="email" class="sr-only">Email</label>
-                <input
-                  type="email"
-                  id="email"
-                  placeholder="Email*"
-                  class="w-full px-6 py-4 rounded-lg bg-gray-800 border border-gray-700 focus:outline-none focus:ring-2 focus:ring-blue"
-                  required
-                />
-              </div>
-              <button
-                type="submit"
-                class="px-8 py-4 bg-blue hover:bg-[#2a5778] text-white rounded-lg font-medium transition-colors whitespace-nowrap"
-              >
-                Subscribe
-              </button>
-            </form>
-          </div>
-        </div>
-
-        <!-- Middle Section - Main Footer Content -->
-        <div
-          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12"
-        >
-          <!-- About Column -->
-          <div>
-            <h4 class="text-lg font-semibold mb-6">About us</h4>
-            <p class="text-gray-400 mb-6">
-              Oval Finance is on a mission to help small businesses grow. Our
-              vision is to provide inclusive financial solutions for low-income
-              entrepreneurs across Nigeria.
-            </p>
-          </div>
-
-          <!-- Offices Column -->
-          <div>
-            <h4 class="text-lg font-semibold mb-6">Our Offices</h4>
-            <div class="mb-8">
-              <h5 class="font-medium text-gray-300 mb-2">Nigeria Office</h5>
-              <p class="text-gray-400 mb-1">
-                +234 909 000 206 | +234 706 444 5282
-              </p>
-              <p class="text-gray-400">
-                10A Ashimi Close, Atunrase Estate, Gbagada, Lagos
-              </p>
-            </div>
-          </div>
-
-          <!-- Company Links Column -->
-          <div>
-            <h4 class="text-lg font-semibold mb-6">Company</h4>
-            <ul class="space-y-3">
-              <li>
-                <a
-                  href="business.html"
-                  class="text-gray-400 hover:text-white transition-colors"
-                  >Business App</a
-                >
-              </li>
-              <li>
-                <a
-                  href="personal.html"
-                  class="text-gray-400 hover:text-white transition-colors"
-                  >Loans Management</a
-                >
-              </li>
-              <li>
-                <a
-                  href="contact.html"
-                  class="text-gray-400 hover:text-white transition-colors"
-                  >Contact Us</a
-                >
-              </li>
-              <li>
-                <a
-                  href="about.html"
-                  class="text-gray-400 hover:text-white transition-colors"
-                  >About Oval Finance</a
-                >
-              </li>
-              <li>
-                <a
-                  href="#"
-                  class="text-gray-400 hover:text-white transition-colors"
-                  >Careers</a
-                >
-              </li>
-              <li>
-                <a
-                  href="faqs.html"
-                  class="text-gray-400 hover:text-white transition-colors"
-                  >Help Centre</a
-                >
-              </li>
-            </ul>
-          </div>
-
-          <!-- Legal & Business Types Column -->
-          <div class="grid grid-cols-2 gap-8">
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12 px-6 lg:px-24">
+        <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+            <!-- Company Info -->
             <div>
-              <h4 class="text-lg font-semibold mb-6">Legal</h4>
-              <ul class="space-y-3">
-                <li>
-                  <a
-                    href="#"
-                    class="text-gray-400 hover:text-white transition-colors"
-                    >Terms of Service</a
-                  >
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    class="text-gray-400 hover:text-white transition-colors"
-                    >Privacy Policy</a
-                  >
-                </li>
-              </ul>
+                <a href="index.html" class="w-32 block mb-6">
+                    <img src="./assets/images/logo.jpg" 
+                         alt="Oval Finance logo" 
+                         class="w-full object-cover rounded-lg">
+                </a>
+                <p class="mb-4 text-gray-400">Providing quick and easy access to personal and business loans in Nigeria since 2018.</p>
+                <div class="flex space-x-4">
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                        <i class="bi bi-facebook text-xl"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                        <i class="bi bi-twitter-x text-xl"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                        <i class="bi bi-instagram text-xl"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                        <i class="bi bi-linkedin text-xl"></i>
+                    </a>
+                </div>
             </div>
+            
+            <!-- Quick Links -->
             <div>
-              <h4 class="text-lg font-semibold mb-6">Your Business</h4>
-              <ul class="space-y-3">
-                <li>
-                  <a
-                    href="business.html"
-                    class="text-gray-400 hover:text-white transition-colors"
-                    >For Small Businesses</a
-                  >
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    class="text-gray-400 hover:text-white transition-colors"
-                    >For Banks</a
-                  >
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    class="text-gray-400 hover:text-white transition-colors"
-                    >For Microfinance</a
-                  >
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    class="text-gray-400 hover:text-white transition-colors"
-                    >For Corporates</a
-                  >
-                </li>
-              </ul>
+                <h3 class="text-lg font-semibold mb-6">Quick Links</h3>
+                <ul class="space-y-3">
+                    <li><a href="index.html" class="text-gray-400 hover:text-white transition-colors">Home</a></li>
+                    <li><a href="personal.html" class="text-gray-400 hover:text-white transition-colors">Personal Loans</a></li>
+                    <li><a href="business.html" class="text-gray-400 hover:text-white transition-colors">Business Loans</a></li>
+                    <li><a href="loan-calculator.html" class="text-gray-400 hover:text-white transition-colors">Loan Calculator</a></li>
+                    <li><a href="apply.html" class="text-gray-400 hover:text-white transition-colors">Apply Now</a></li>
+                </ul>
             </div>
-          </div>
-        </div>
-
-        <!-- Bottom Section - App Download & Social -->
-        <div
-          class="flex flex-col md:flex-row justify-between items-center pt-8 border-t border-gray-700"
-        >
-          <!-- App Download -->
-          <div class="mb-6 md:mb-0">
-            <h5 class="text-gray-300 mb-4">Download the app</h5>
-            <div class="flex space-x-4">
-              <a href="#" aria-label="Download on App Store">
-                <img
-                  src="./assets/images/app-store.png"
-                  alt="Download on App Store"
-                  class="h-10"
-                />
-              </a>
-              <a href="#" aria-label="Get it on Google Play">
-                <img
-                  src="./assets/images/play-store.png"
-                  alt="Get it on Google Play"
-                  class="h-10"
-                />
-              </a>
+            
+            <!-- Company -->
+            <div>
+                <h3 class="text-lg font-semibold mb-6">Company</h3>
+                <ul class="space-y-3">
+                    <li><a href="about.html" class="text-gray-400 hover:text-white transition-colors">About Us</a></li>
+                    <li><a href="contact.html" class="text-gray-400 hover:text-white transition-colors">Contact Us</a></li>
+                    <li><a href="faqs.html" class="text-gray-400 hover:text-white transition-colors">FAQs</a></li>
+                    <li><a href="blog.html" class="text-gray-400 hover:text-white transition-colors">Blog</a></li>
+                    <li><a href="careers.html" class="text-gray-400 hover:text-white transition-colors">Careers</a></li>
+                </ul>
             </div>
-          </div>
-
-          <!-- Social Media -->
-          <div class="flex items-center space-x-6">
-            <a
-              href="#"
-              aria-label="Facebook"
-              class="text-gray-400 hover:text-white transition-colors"
-            >
-              <i class="bi bi-facebook text-2xl"></i>
-            </a>
-            <a
-              href="#"
-              aria-label="Twitter"
-              class="text-gray-400 hover:text-white transition-colors"
-            >
-              <i class="bi bi-twitter-x text-2xl"></i>
-            </a>
-            <a
-              href="#"
-              aria-label="Instagram"
-              class="text-gray-400 hover:text-white transition-colors"
-            >
-              <i class="bi bi-instagram text-2xl"></i>
-            </a>
-            <a
-              href="#"
-              aria-label="LinkedIn"
-              class="text-gray-400 hover:text-white transition-colors"
-            >
-              <i class="bi bi-linkedin text-2xl"></i>
-            </a>
-          </div>
+            
+            <!-- Contact Info -->
+            <div>
+                <h3 class="text-lg font-semibold mb-6">Contact Us</h3>
+                <ul class="space-y-3">
+                    <li class="flex items-start">
+                        <i class="bi bi-geo-alt text-gray-400 mr-3 mt-1"></i>
+                        <span class="text-gray-400">12A Oyin Jolayemi Street, Victoria Island, Lagos</span>
+                    </li>
+                    <li class="flex items-center">
+                        <i class="bi bi-telephone text-gray-400 mr-3"></i>
+                        <span class="text-gray-400">01-700-OVAL (6825)</span>
+                    </li>
+                    <li class="flex items-center">
+                        <i class="bi bi-envelope text-gray-400 mr-3"></i>
+                        <span class="text-gray-400">hello@ovalfinance.com</span>
+                    </li>
+                    <li class="flex items-center">
+                        <i class="bi bi-clock text-gray-400 mr-3"></i>
+                        <span class="text-gray-400">Mon-Fri: 8am - 5pm</span>
+                    </li>
+                </ul>
+            </div>
         </div>
-
-        <!-- Copyright -->
-        <div class="mt-8 text-center text-gray-500 text-sm">
-          <p>© 2025 Oval Finance Limited. All rights reserved.</p>
+        
+        <div class="max-w-6xl mx-auto border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+            <p class="text-gray-400 text-sm mb-4 md:mb-0">© 2023 Oval Finance. All rights reserved.</p>
+            <div class="flex space-x-6">
+                <a href="privacy-policy.html" class="text-gray-400 hover:text-white text-sm transition-colors">Privacy Policy</a>
+                <a href="terms.html" class="text-gray-400 hover:text-white text-sm transition-colors">Terms of Service</a>
+                <a href="complaints.html" class="text-gray-400 hover:text-white text-sm transition-colors">Complaints</a>
+            </div>
         </div>
-      </div>
     </footer>
 
+    <!-- Scripts -->
     <script>
-      document.addEventListener("DOMContentLoaded", () => {
-        AOS.init({
-          once: false,
-          duration: 800,
-          easing: "ease-out-quart",
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize AOS animation library
+            AOS.init({
+                duration: 800,
+                easing: 'ease-in-out',
+                once: true
+            });
         });
-
-      });
     </script>
-    <script src="./assets/js/personal.js"></script>
-  </body>
+</body>
 </html>
