@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="shortcut icon"
+      href="./assets/images/favicon.ico"
+      type="image/x-icon"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./output.css" />
+    <title>About Us - Oval Finances</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css"
+    />
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  </head>
+  <body class="font-sans bg-gray-50">
+    <!-- Header -->
+    <header
+      class="flex flex-row items-center justify-between py-4 px-6 lg:px-24 sticky top-0 bg-white z-40 shadow-sm"
+    >
+      <!-- Logo -->
+      <a href="/" class="w-32 lg:w-40">
+        <img
+          src="./assets/images/Logo.jpg"
+          alt="Company logo"
+          class="w-full object-cover"
+        />
+      </a>
+
+      <!-- Desktop Navigation -->
+      <nav class="hidden lg:flex gap-10">
+        <div class="relative">
+          <a
+            href="/"
+            class="font-medium flex items-center gap-2 py-2 hover:text-blue transition-colors"
+          >
+            Home
+          </a>
+        </div>
+
+        <div class="relative group">
+          <button
+            class="font-medium flex items-center gap-2 py-2 hover:text-blue transition-colors group"
+          >
+            Products
+            <i
+              class="bi bi-chevron-down text-xs transition-transform duration-200 group-hover:rotate-180"
+            ></i>
+          </button>
+          <ul
+            class="absolute hidden group-hover:block left-0 top-10 w-48 rounded-md shadow-lg bg-white p-2 z-50 border border-gray-100"
+          >
+            <li class="py-2 px-4 hover:bg-blue/50 rounded transition">
+              <a href="./personal.html" class="block w-full">Personal Banking</a>
+            </li>
+            <li class="py-2 px-4 hover:bg-blue/50 rounded transition">
+              <a href="./business.html" class="block w-full">Business Solutions</a>
+            </li>
+            <li class="py-2 px-4 hover:bg-blue/50 rounded transition">
+              <a href="./loan-calculator.html" class="block w-full"
+                >Loan Calculator</a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <div class="relative group">
+          <button
+            class="font-medium flex items-center gap-2 py-2 hover:text-blue transition-colors group"
+          >
+            About Us
+            <i
+              class="bi bi-chevron-down text-xs transition-transform duration-200 group-hover:rotate-180"
+            ></i>
+          </button>
+          <ul
+            class="absolute hidden group-hover:block left-0 top-10 w-48 rounded-md shadow-lg bg-white p-2 z-50 border border-gray-100"
+          >
+            <li class="py-2 px-4 hover:bg-blue/50 rounded transition">
+              <a href="./about.html" class="block w-full">Our Story</a>
+            </li>
+            <li class="py-2 px-4 hover:bg-blue/50 rounded transition">
+              <a href="./faqs.html" class="block w-full">FAQs</a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="relative">
+          <a
+            href="./contact.html"
+            class="font-medium flex items-center gap-2 py-2 hover:text-blue transition-colors"
+          >
+            Contact Us
+          </a>
+        </div>
+      </nav>
+
+      <div class="hidden lg:flex items-center space-x-6">
+        <div class="relative">
+          <a
+            href="./auth/login.html"
+            class="font-medium flex items-center gap-2 py-2 hover:text-blue transition-colors"
+          >
+            Login
+          </a>
+        </div>
+        <!-- Desktop CTA Button -->
+        <a
+          href="./auth/signup.html"
+          class="px-4 py-2.5 border-2 border-blue font-medium bg-blue text-white rounded-md hover:bg-[#2a5778] hover:border-[#2a5778] transition-colors"
+        >
+          Apply for loan
+        </a>
+      </div>
+
+      <!-- Mobile Menu Button -->
+      <button id="mobile-menu-button" class="lg:hidden z-40">
+        <i class="bi bi-list text-2xl"></i>
+      </button>
+
+      <!-- Mobile Sidebar Overlay -->
+      <div
+        id="mobile-overlay"
+        class="hidden fixed inset-0 bg-black/50 z-30 overlay-transition opacity-0"
+      ></div>
+
+      <!-- Mobile Sidebar Navigation -->
+      <aside
+        id="mobile-sidebar"
+        class="hidden fixed top-0 right-0 h-full w-80 bg-white p-6 z-40 sidebar-transition translate-x-full shadow-xl"
+      >
+        <div class="relative flex flex-row items-start justify-between py-4">
+          <a href="/" class="w-32">
+            <img
+              src="./assets/images/Logo.jpg"
+              alt="Company logo"
+              class="w-full object-cover"
+            />
+          </a>
+          <button
+            id="close-sidebar-button"
+            class="text-gray-500 hover:text-gray-700"
+          >
+            <i class="bi bi-x text-2xl"></i>
+          </button>
+        </div>
+
+        <!-- Mobile Nav Links -->
+        <ul class="space-y-2 mt-6">
+          <li>
+            <a
+              href="/"
+              class="block font-medium py-3 px-4 hover:bg-blue/50 rounded-md transition-colors"
+              >Home</a
+            >
+          </li>
+
+          <li>
+            <button
+              class="flex justify-between items-center w-full font-medium py-3 px-4 hover:bg-blue/50 rounded-md transition-colors"
+              id="mobile-products-button"
+            >
+              <span>Products</span>
+              <i
+                class="bi bi-chevron-down text-xs transition-transform"
+                id="mobile-products-icon"
+              ></i>
+            </button>
+            <ul
+              id="mobile-products-dropdown"
+              class="hidden w-full pl-0 mt-1 dropdown-transition max-h-0 overflow-hidden"
+            >
+              <li class="py-2">
+                <a
+                  href="./personal.html"
+                  class="block w-full py-2 px-6 hover:bg-blue/50 rounded-md transition-colors"
+                  >Personal Banking</a
+                >
+              </li>
+              <li class="py-2">
+                <a
+                  href="./business.html"
+                  class="block w-full py-2 px-6 hover:bg-blue/50 rounded-md transition-colors"
+                  >Business Solutions</a
+                >
+              </li>
+              <li class="py-2">
+                <a
+                  href="./loan-calculator.html"
+                  class="block w-full py-2 px-6 hover:bg-blue/50 rounded-md transition-colors"
+                  >Loan Calculator</a
+                >
+              </li>
+            </ul>
+          </li>
+
+          <li>
+            <button
+              class="flex justify-between items-center w-full font-medium py-3 px-4 hover:bg-blue/50 rounded-md transition-colors"
+              id="mobile-about-button"
+            >
+              <span>About Us</span>
+              <i
+                class="bi bi-chevron-down text-xs transition-transform"
+                id="mobile-about-icon"
+              ></i>
+            </button>
+            <ul
+              id="mobile-about-dropdown"
+              class="hidden w-full pl-0 mt-1 dropdown-transition max-h-0 overflow-hidden"
+            >
+              <li class="py-2">
+                <a
+                  href="./about.html"
+                  class="block w-full py-2 px-6 hover:bg-blue/50 rounded-md transition-colors"
+                  >Our Story</a
+                >
+              </li>
+              <li class="py-2">
+                <a
+                  href="./faqs.html"
+                  class="block w-full py-2 px-6 hover:bg-blue/50 rounded-md transition-colors"
+                  >FAQs</a
+                >
+              </li>
+            </ul>
+          </li>
+
+          <li>
+            <a
+              href="./contact.html"
+              class="block font-medium py-3 px-4 hover:bg-blue/50 rounded-md transition-colors"
+              >Contact Us</a
+            >
+          </li>
+
+          <li>
+            <a
+              href="./auth/login.html"
+              class="block font-medium py-3 px-4 hover:bg-blue/50 rounded-md transition-colors"
+              >Login</a
+            >
+          </li>
+
+          <li class="mt-8 pt-4 border-t border-gray-100">
+            <a
+              href="./auth/signup.html"
+              class="block px-4 py-3 text-center font-medium bg-blue text-white rounded-md hover:bg-[#2a5778] transition-colors"
+            >
+              Apply for loan
+            </a>
+          </li>
+        </ul>
+      </aside>
+    </header>
+
+    <main>
+      <!-- Hero Section -->
+      <section class="relative overflow-hidden">
+        <div class="px-6 lg:px-16 py-20">
+          <div class="flex flex-col lg:flex-row items-center gap-12" data-aos="fade-up">
+            <div class="lg:w-1/2 space-y-8" data-aos="fade-right" data-aos-delay="100">
+              <h1 class="text-4xl md:text-5xl font-bold text-gray-900 leading-tight">
+                Bridging Financial Gaps, <span class="text-blue">Empowering Communities</span>
+              </h1>
+              <p class="text-lg text-gray-600">
+                Oval Finance is revolutionizing micro-lending in Nigeria by providing accessible financial solutions to underserved entrepreneurs and individuals, fostering economic growth one loan at a time.
+              </p>
+              <div class="flex flex-wrap gap-4">
+                <a href="/auth/signup" class="px-6 py-3 bg-blue text-white rounded-md hover:bg-dark transition-colors font-medium">
+                  Apply for Loan
+                </a>
+                <a href="/contact" class="px-6 py-3 border border-blue text-blue rounded-md hover:bg-blue hover:text-white transition-colors font-medium">
+                  Contact Our Team
+                </a>
+              </div>
+            </div>
+            <div class="lg:w-1/2 relative" data-aos="fade-left" data-aos-delay="200">
+              <div class="relative rounded-2xl overflow-hidden shadow-xl aspect-[4/3]">
+                <img src="./assets/images/about-hero.jpg" alt="Oval Finance team" class="w-full h-full object-cover">
+              </div>
+              <div class="absolute -bottom-6 -left-6 bg-white p-6 rounded-xl shadow-lg w-2/3 hidden lg:block" data-aos="zoom-in" data-aos-delay="300">
+                <div class="flex items-center space-x-4">
+                  <div class="bg-blue/10 p-3 rounded-lg text-blue">
+                    <i class="bi bi-people-fill text-2xl"></i>
+                  </div>
+                  <div>
+                    <p class="font-bold text-gray-900">500,000+</p>
+                    <p class="text-sm text-gray-600">Potential customers in Lagos</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Mission Section -->
+      <section class="py-20 bg-white">
+        <div class="px-6 lg:px-16">
+          <div class="text-center max-w-3xl mx-auto mb-16" data-aos="fade-up">
+            <span class="inline-block px-4 py-1 bg-blue/10 text-blue rounded-full text-sm font-medium mb-4" data-aos="zoom-in">Our Purpose</span>
+            <h2 class="text-3xl font-bold text-gray-900 mb-4" data-aos="fade-up" data-aos-delay="100">Driving Financial Inclusion Across Nigeria</h2>
+            <p class="text-gray-600" data-aos="fade-up" data-aos-delay="150">
+              We're committed to breaking down barriers and creating opportunities through innovative financial solutions.
+            </p>
+          </div>
+
+          <div class="grid md:grid-cols-2 gap-8">
+            <div class="bg-gray-50 p-10 rounded-2xl border border-gray-100 hover:shadow-lg transition-all" data-aos="fade-right" data-aos-delay="200">
+              <div class="flex items-start space-x-6">
+                <div class="bg-blue/10 p-4 rounded-xl text-blue">
+                  <i class="bi bi-bullseye text-3xl"></i>
+                </div>
+                <div>
+                  <h3 class="text-xl font-bold text-gray-900 mb-3">Our Mission</h3>
+                  <p class="text-gray-600">
+                    To provide inclusive financial solutions for low-income entrepreneurs across Nigeria, enhancing their access to essential credit and fostering economic empowerment.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="bg-gray-50 p-10 rounded-2xl border border-gray-100 hover:shadow-lg transition-all" data-aos="fade-left" data-aos-delay="200">
+              <div class="flex items-start space-x-6">
+                <div class="bg-blue/10 p-4 rounded-xl text-blue">
+                  <i class="bi bi-eye text-3xl"></i>
+                </div>
+                <div>
+                  <h3 class="text-xl font-bold text-gray-900 mb-3">Our Vision</h3>
+                  <p class="text-gray-600">
+                    To become Nigeria's leading micro-lender, connecting underserved communities with innovative, affordable financial services that transform lives and businesses.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Impact Section -->
+      <section class="py-20 bg-gradient-to-r from-blue to-dark">
+        <div class="px-6 lg:px-16">
+          <div class="text-center max-w-3xl mx-auto mb-16" data-aos="fade-up">
+            <span class="inline-block px-4 py-1 bg-white/10 text-white rounded-full text-sm font-medium mb-4" data-aos="zoom-in">Our Impact</span>
+            <h2 class="text-3xl font-bold text-white mb-4" data-aos="fade-up" data-aos-delay="100">Transforming Lives Through Microfinance</h2>
+            <p class="text-blue-100" data-aos="fade-up" data-aos-delay="150">
+              We measure our success by the positive change we create in our communities.
+            </p>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="bg-white/10 backdrop-blur-sm p-8 rounded-2xl text-center text-white border border-white/20" data-aos="fade-up" data-aos-delay="200">
+              <div class="text-5xl font-bold mb-2">95%</div>
+              <p class="text-blue-100 font-medium">Loan Repayment Rate</p>
+              <p class="text-sm text-blue-100 mt-3">Our target for sustainable operations and community trust.</p>
+            </div>
+            <div class="bg-white/10 backdrop-blur-sm p-8 rounded-2xl text-center text-white border border-white/20" data-aos="fade-up" data-aos-delay="300">
+              <div class="text-5xl font-bold mb-2">30%</div>
+              <p class="text-blue-100 font-medium">Annual Growth</p>
+              <p class="text-sm text-blue-100 mt-3">Expanding our reach to serve more entrepreneurs each year.</p>
+            </div>
+            <div class="bg-white/10 backdrop-blur-sm p-8 rounded-2xl text-center text-white border border-white/20" data-aos="fade-up" data-aos-delay="400">
+              <div class="text-5xl font-bold mb-2">70%</div>
+              <p class="text-blue-100 font-medium">Market Coverage</p>
+              <p class="text-sm text-blue-100 mt-3">Addressing Lagos's significant unmet credit demands.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Products Section -->
+      <section class="py-20 bg-white">
+        <div class="px-6 lg:px-16">
+          <div class="text-center max-w-3xl mx-auto mb-16" data-aos="fade-up">
+            <span class="inline-block px-4 py-1 bg-blue/10 text-blue rounded-full text-sm font-medium mb-4" data-aos="zoom-in">Our Solutions</span>
+            <h2 class="text-3xl font-bold text-gray-900 mb-4" data-aos="fade-up" data-aos-delay="100">Tailored Financial Products</h2>
+            <p class="text-gray-600" data-aos="fade-up" data-aos-delay="150">
+              Designed to meet the diverse needs of individuals and businesses at every stage.
+            </p>
+          </div>
+
+          <div class="grid md:grid-cols-3 gap-8">
+            <div class="bg-gray-50 rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all" data-aos="fade-up" data-aos-delay="200">
+              <div class="h-48 bg-blue/10 flex items-center justify-center text-blue">
+                <i class="bi bi-person-heart text-6xl"></i>
+              </div>
+              <div class="p-8">
+                <h3 class="text-xl font-bold text-gray-900 mb-3">Personal Microloans</h3>
+                <p class="text-gray-600 mb-6">
+                  For urgent personal expenses like education, healthcare, or emergencies for salary earners.
+                </p>
+                <div class="bg-blue/5 p-4 rounded-lg">
+                  <p class="font-medium text-blue">Loan range: ₦50,000 - ₦1,000,000</p>
+                </div>
+              </div>
+            </div>
+            
+            <div class="bg-gray-50 rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all" data-aos="fade-up" data-aos-delay="300">
+              <div class="h-48 bg-blue/10 flex items-center justify-center text-blue">
+                <i class="bi bi-shop-window text-6xl"></i>
+              </div>
+              <div class="p-8">
+                <h3 class="text-xl font-bold text-gray-900 mb-3">Business Microloans</h3>
+                <p class="text-gray-600 mb-6">
+                  For small business owners and entrepreneurs to grow or sustain their operations.
+                </p>
+                <div class="bg-blue/5 p-4 rounded-lg">
+                  <p class="font-medium text-blue">Loan range: ₦50,000 - ₦1,000,000</p>
+                </div>
+              </div>
+            </div>
+            
+            <div class="bg-gray-50 rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all" data-aos="fade-up" data-aos-delay="400">
+              <div class="h-48 bg-blue/10 flex items-center justify-center text-blue">
+                <i class="bi bi-people-fill text-6xl"></i>
+              </div>
+              <div class="p-8">
+                <h3 class="text-xl font-bold text-gray-900 mb-3">Group Loans</h3>
+                <p class="text-gray-600 mb-6">
+                  For community groups, associations, or cooperatives with joint accountability in repayment.
+                </p>
+                <div class="bg-blue/5 p-4 rounded-lg">
+                  <p class="font-medium text-blue">Special lower rates for groups</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Team Section -->
+      <section class="py-20 bg-gray-50">
+        <div class="px-6 lg:px-16">
+          <div class="text-center max-w-3xl mx-auto mb-16" data-aos="fade-up">
+            <span class="inline-block px-4 py-1 bg-blue/10 text-blue rounded-full text-sm font-medium mb-4" data-aos="zoom-in">Our Team</span>
+            <h2 class="text-3xl font-bold text-gray-900 mb-4" data-aos="fade-up" data-aos-delay="100">Meet The Leadership</h2>
+            <p class="text-gray-600" data-aos="fade-up" data-aos-delay="150">
+              A dedicated team committed to financial inclusion and community empowerment.
+            </p>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all" data-aos="fade-up" data-aos-delay="200">
+              <div class="h-64 bg-gray-200 overflow-hidden">
+                <img src="./assets/images/team-adebayo.jpg" alt="Adebayo ADEDAYO" class="w-full h-full object-cover">
+              </div>
+              <div class="p-6">
+                <h3 class="text-xl font-bold text-gray-900 mb-1">Adebayo ADEDAYO</h3>
+                <p class="text-blue font-medium mb-4">MD/CEO</p>
+                <p class="text-gray-600 text-sm">
+                  Leading Oval Finance's vision to become Nigeria's leading micro-lender with over 15 years of financial expertise.
+                </p>
+                <div class="mt-4 flex space-x-4">
+                  <a href="#" class="text-gray-400 hover:text-blue transition-colors">
+                    <i class="bi bi-linkedin text-lg"></i>
+                  </a>
+                  <a href="#" class="text-gray-400 hover:text-blue transition-colors">
+                    <i class="bi bi-twitter-x text-lg"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+            
+            <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all" data-aos="fade-up" data-aos-delay="300">
+              <div class="h-64 bg-gray-200 overflow-hidden">
+                <img src="./assets/images/team-femi.jpg" alt="Femi ARIBISALA" class="w-full h-full object-cover">
+              </div>
+              <div class="p-6">
+                <h3 class="text-xl font-bold text-gray-900 mb-1">Femi ARIBISALA</h3>
+                <p class="text-blue font-medium mb-4">HEAD, MARKETING</p>
+                <p class="text-gray-600 text-sm">
+                  Driving customer acquisition and brand awareness with innovative strategies that connect with our communities.
+                </p>
+                <div class="mt-4 flex space-x-4">
+                  <a href="#" class="text-gray-400 hover:text-blue transition-colors">
+                    <i class="bi bi-linkedin text-lg"></i>
+                  </a>
+                  <a href="#" class="text-gray-400 hover:text-blue transition-colors">
+                    <i class="bi bi-twitter-x text-lg"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+            
+            <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all" data-aos="fade-up" data-aos-delay="400">
+              <div class="h-64 bg-gray-200 overflow-hidden">
+                <img src="./assets/images/team-risk.jpg" alt="Risk Management Head" class="w-full h-full object-cover">
+              </div>
+              <div class="p-6">
+                <h3 class="text-xl font-bold text-gray-900 mb-1">[Name]</h3>
+                <p class="text-blue font-medium mb-4">HEAD, RISK MANAGEMENT</p>
+                <p class="text-gray-600 text-sm">
+                  Ensuring sustainable lending practices and financial stability through rigorous risk assessment frameworks.
+                </p>
+                <div class="mt-4 flex space-x-4">
+                  <a href="#" class="text-gray-400 hover:text-blue transition-colors">
+                    <i class="bi bi-linkedin text-lg"></i>
+                  </a>
+                  <a href="#" class="text-gray-400 hover:text-blue transition-colors">
+                    <i class="bi bi-twitter-x text-lg"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA Section -->
+      <section class="py-20 bg-blue">
+        <div class="px-6 lg:px-16">
+          <div class="bg-white rounded-2xl p-12 text-center" data-aos="zoom-in">
+            <h2 class="text-3xl font-bold text-gray-900 mb-4">Ready to Begin Your Financial Journey?</h2>
+            <p class="text-gray-600 max-w-2xl mx-auto mb-8">
+              Whether you're seeking financial support or looking to invest in our mission, we're here to help you take the next step.
+            </p>
+            <div class="flex flex-wrap justify-center gap-4">
+              <a href="/auth/signup" class="px-6 py-3 bg-blue text-white rounded-md hover:bg-dark transition-colors font-medium">
+                Apply for Loan
+              </a>
+              <a href="/contact" class="px-6 py-3 border border-blue text-blue rounded-md hover:bg-blue hover:text-white transition-colors font-medium">
+                Contact Our Team
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white pt-20 pb-10">
+      <div class="px-6 lg:px-16">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+          <!-- About Column -->
+          <div data-aos="fade-up" data-aos-delay="100">
+            <h4 class="text-lg font-semibold mb-6">About Oval Finance</h4>
+            <p class="text-gray-400 mb-6">
+              We're on a mission to provide inclusive financial solutions for low-income entrepreneurs across Nigeria, enhancing access to essential credit.
+            </p>
+            <div class="flex space-x-4">
+              <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                <i class="bi bi-facebook text-xl"></i>
+              </a>
+              <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                <i class="bi bi-twitter-x text-xl"></i>
+              </a>
+              <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                <i class="bi bi-linkedin text-xl"></i>
+              </a>
+              <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                <i class="bi bi-instagram text-xl"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Quick Links -->
+          <div data-aos="fade-up" data-aos-delay="150">
+            <h4 class="text-lg font-semibold mb-6">Quick Links</h4>
+            <ul class="space-y-3">
+              <li><a href="/about" class="text-gray-400 hover:text-white transition-colors">About Us</a></li>
+              <li><a href="/products" class="text-gray-400 hover:text-white transition-colors">Our Products</a></li>
+              <li><a href="/faqs" class="text-gray-400 hover:text-white transition-colors">FAQs</a></li>
+              <li><a href="/contact" class="text-gray-400 hover:text-white transition-colors">Contact Us</a></li>
+              <li><a href="/careers" class="text-gray-400 hover:text-white transition-colors">Careers</a></li>
+            </ul>
+          </div>
+
+          <!-- Contact -->
+          <div data-aos="fade-up" data-aos-delay="200">
+            <h4 class="text-lg font-semibold mb-6">Contact Us</h4>
+            <address class="not-italic text-gray-400 space-y-3">
+              <p>10A Ashimi Close, Atunrase Estate, Gbagada, Lagos</p>
+              <p>+234 909 000 206</p>
+              <p>+234 706 444 5282</p>
+              <p>info@ovalfinances.com</p>
+            </address>
+          </div>
+
+          <!-- Newsletter -->
+          <div data-aos="fade-up" data-aos-delay="250">
+            <h4 class="text-lg font-semibold mb-6">Stay Updated</h4>
+            <p class="text-gray-400 mb-4">
+              Subscribe to our newsletter for financial tips and updates.
+            </p>
+            <form class="flex flex-col sm:flex-row gap-3">
+              <input type="email" placeholder="Your email" class="flex-grow px-4 py-3 bg-gray-800 border border-gray-700 rounded-md focus:outline-none focus:ring-2 focus:ring-blue">
+              <button type="submit" class="px-6 py-3 bg-blue text-white rounded-md hover:bg-dark transition-colors whitespace-nowrap">
+                Subscribe
+              </button>
+            </form>
+          </div>
+        </div>
+
+        <div class="pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center" data-aos="fade-up">
+          <p class="text-gray-500 text-sm mb-4 md:mb-0">
+            © 2025 Oval Finance Limited. All rights reserved.
+          </p>
+          <div class="flex space-x-6">
+            <a href="#" class="text-gray-500 hover:text-white transition-colors text-sm">Privacy Policy</a>
+            <a href="#" class="text-gray-500 hover:text-white transition-colors text-sm">Terms of Service</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // Initialize AOS animation library
+      document.addEventListener('DOMContentLoaded', function() {
+        AOS.init({
+          duration: 800, // Animation duration
+          easing: 'ease-in-out', // Animation easing
+          once: false, // Whether animation should happen only once
+          mirror: true, // Whether elements should animate out while scrolling past them
+        });
+      });
+    </script>
+    <script src="./script.js"></script>
+  </body>
+</html>
