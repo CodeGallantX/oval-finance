@@ -2119,6 +2119,10 @@ input[type="range"]::-webkit-slider-thumb {
   background-color: rgb(255 255 255 / 0.1);
 }
 
+.hover\:bg-blue\/5:hover {
+  background-color: rgb(54 111 154 / 0.05);
+}
+
 .hover\:text-\[\#2a5778\]:hover {
   --tw-text-opacity: 1;
   color: rgb(42 87 120 / var(--tw-text-opacity, 1));
@@ -2292,6 +2296,10 @@ input[type="range"]::-webkit-slider-thumb {
 
   .md\:items-end {
     align-items: flex-end;
+  }
+
+  .md\:items-center {
+    align-items: center;
   }
 
   .md\:p-10 {

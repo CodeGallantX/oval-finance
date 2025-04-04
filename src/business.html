@@ -156,20 +156,15 @@
     </aside>
 
     <!-- Hero Section - Redesigned -->
-    <section class="relative bg-gradient-to-r from-blue-900 to-blue-700 text-white overflow-hidden">
+    <section class="relative text-white overflow-hidden">
         <div class="absolute inset-0 bg-black/30 z-10"></div>
-        <div class="absolute inset-0">
-            <img 
-                 alt="Business team meeting" 
-                 class="w-full h-full object-cover object-center">
-        </div>
-        <div class="max-w-7xl mx-auto px-6 lg:px-24 py-32 relative z-20">
+        <div class="w-full px-6 lg:px-24 py-32 relative z-20">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                 <div data-aos="fade-right">
                     <h1 class="text-4xl md:text-5xl font-bold mb-6 leading-tight">Fuel Your Business Growth with Tailored Financing</h1>
                     <p class="text-xl mb-8 max-w-lg">Access up to ₦5 million in working capital with our streamlined SME loan process. Approval in 24 hours, flexible repayment terms, and no collateral required.</p>
                     <div class="flex flex-col sm:flex-row gap-4">
-                        <a href="apply.html" class="px-8 py-4 bg-white text-blue font-bold rounded-lg hover:bg-gray-100 transition-colors text-center shadow-lg transform hover:-translate-y-1 transition-transform">
+                        <a href="./auth/signup.html" class="px-8 py-4 bg-white text-blue font-bold rounded-lg hover:bg-gray-100 transition-colors text-center shadow-lg transform hover:-translate-y-1 transition-transform">
                             Apply for Business Loan
                         </a>
                         <a href="#features" class="px-8 py-4 border-2 border-white text-white font-bold rounded-lg hover:bg-white/10 transition-colors text-center">
@@ -197,7 +192,8 @@
                              alt="Business owner reviewing documents" 
                              class="w-full rounded-xl shadow-2xl transform rotate-1 hover:rotate-0 transition-transform duration-300">
                     </div>
-                    <div class="absolute -bottom-6 -left-6 w-64 h-64 bg-yellow-400 rounded-xl shadow-lg z-0"></div>
+                    <div class="absolute -top-6 -right-6 w-64 h-64 bg-blue rounded-xl shadow-lg z-0"></div>
+                    <div class="absolute -bottom-6 -left-6 w-64 h-64 bg-grey rounded-xl shadow-lg z-00"></div>
                 </div>
             </div>
         </div>
@@ -205,7 +201,7 @@
 
     <!-- Stats Section - Animated Counters -->
     <section class="py-16 px-6 lg:px-24 bg-white">
-        <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+        <div class="w-full grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
             <div class="p-8" data-aos="fade-up">
                 <h3 class="text-5xl font-bold text-blue mb-2">
                     <span class="counter" data-target="8000">0</span>+
@@ -229,7 +225,7 @@
 
     <!-- Features Section -->
     <section id="features" class="py-16 px-6 lg:px-24 bg-gray-50">
-        <div class="max-w-6xl mx-auto">
+        <div class="w-full">
             <div class="text-center mb-12" data-aos="fade-up">
                 <span class="inline-block px-4 py-1 bg-blue/10 text-blue rounded-full text-sm font-medium mb-4">Business Solutions</span>
                 <h2 class="text-3xl font-bold">Accelerate Your Business Growth</h2>
@@ -274,7 +270,7 @@
 
     <!-- Value Proposition Section -->
     <section class="py-16 px-6 lg:px-24 bg-white">
-        <div class="max-w-6xl mx-auto">
+        <div class="w-full">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
                 <div data-aos="fade-right">
                     <img src="https://images.unsplash.com/photo-1556742044-3c52d6e88c62?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80" 
@@ -343,126 +339,197 @@
     </section>
 
     <!-- Eligibility Section - Vertical Tabs -->
-    <section class="py-16 px-6 lg:px-24 bg-gray-50">
-        <div class="max-w-6xl mx-auto">
-            <div class="text-center mb-12" data-aos="fade-up">
-                <h2 class="text-3xl font-bold mb-4">Eligibility & Requirements</h2>
-                <p class="text-gray-600 max-w-2xl mx-auto">Simple criteria to qualify for our business financing solutions</p>
+<section class="py-16 px-6 lg:px-24 bg-gray-50">
+    <div class="w-full">
+        <div class="text-center mb-12" data-aos="fade-up">
+            <h2 class="text-3xl font-bold mb-4">Eligibility & Requirements</h2>
+            <p class="text-gray-600 max-w-2xl mx-auto">Simple criteria to qualify for our business financing solutions</p>
+        </div>
+        
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8" data-aos="fade-up">
+            <!-- Vertical Tabs -->
+            <div class="bg-white rounded-xl shadow-sm overflow-hidden">
+                <div class="p-6 border-b border-gray-100">
+                    <h3 class="text-xl font-semibold">Basic Requirements</h3>
+                </div>
+                <div class="divide-y divide-gray-100">
+                    <button 
+                        @click="activeTab = 1" 
+                        :class="{'bg-blue/5 border-l-4 border-blue': activeTab === 1}"
+                        class="w-full px-6 py-4 text-left hover:bg-gray-50 transition-colors flex items-center"
+                    >
+                        <span class="w-8 h-8 bg-blue text-white rounded-full flex items-center justify-center mr-4">1</span>
+                        <span>Documentation</span>
+                    </button>
+                    
+                    <button 
+                        @click="activeTab = 2" 
+                        :class="{'bg-blue/5 border-l-4 border-blue': activeTab === 2}"
+                        class="w-full px-6 py-4 text-left hover:bg-gray-50 transition-colors flex items-center"
+                    >
+                        <span class="w-8 h-8 bg-blue text-white rounded-full flex items-center justify-center mr-4">2</span>
+                        <span>Business Details</span>
+                    </button>
+                    
+                    <button 
+                        @click="activeTab = 3" 
+                        :class="{'bg-blue/5 border-l-4 border-blue': activeTab === 3}"
+                        class="w-full px-6 py-4 text-left hover:bg-gray-50 transition-colors flex items-center"
+                    >
+                        <span class="w-8 h-8 bg-blue text-white rounded-full flex items-center justify-center mr-4">3</span>
+                        <span>Banking Requirements</span>
+                    </button>
+                </div>
             </div>
             
-            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8" data-aos="fade-up">
-                <!-- Vertical Tabs -->
-                <div class="bg-white rounded-xl shadow-sm overflow-hidden">
-                    <div class="p-6 border-b border-gray-100">
-                        <h3 class="text-xl font-semibold">Basic Requirements</h3>
-                    </div>
-                    <div class="divide-y divide-gray-100" x-data="{ activeTab: 1 }">
-                        <button @click="activeTab = 1" 
-                                class="w-full px-6 py-4 text-left hover:bg-gray-50 transition-colors flex items-center"
-                                :class="activeTab === 1 ? 'bg-blue/5 border-l-4 border-blue' : ''">
-                            <span class="w-8 h-8 bg-blue text-white rounded-full flex items-center justify-center mr-4">1</span>
-                            <span>Documentation</span>
-                        </button>
-                        
-                        <button @click="activeTab = 2" 
-                                class="w-full px-6 py-4 text-left hover:bg-gray-50 transition-colors flex items-center"
-                                :class="activeTab === 2 ? 'bg-blue/5 border-l-4 border-blue' : ''">
-                            <span class="w-8 h-8 bg-blue text-white rounded-full flex items-center justify-center mr-4">2</span>
-                            <span>Business Details</span>
-                        </button>
-                        
-                        <button @click="activeTab = 3" 
-                                class="w-full px-6 py-4 text-left hover:bg-gray-50 transition-colors flex items-center"
-                                :class="activeTab === 3 ? 'bg-blue/5 border-l-4 border-blue' : ''">
-                            <span class="w-8 h-8 bg-blue text-white rounded-full flex items-center justify-center mr-4">3</span>
-                            <span>Banking Requirements</span>
-                        </button>
-                    </div>
+            <!-- Tab Content -->
+            <div class="lg:col-span-2" x-data="{ activeTab: 1 }">
+                <div 
+                    x-show="activeTab === 1" 
+                    x-transition:enter="transition ease-out duration-300"
+                    x-transition:enter-start="opacity-0 translate-y-4"
+                    x-transition:enter-end="opacity-100 translate-y-0"
+                    x-transition:leave="transition ease-in duration-200"
+                    x-transition:leave-start="opacity-100 translate-y-0"
+                    x-transition:leave-end="opacity-0 translate-y-4"
+                    class="bg-white p-8 rounded-xl shadow-sm"
+                >
+                    <h3 class="text-xl font-semibold mb-4">Required Documentation</h3>
+                    <ul class="space-y-4">
+                        <li class="flex items-start">
+                            <i class="bi bi-check-circle-fill text-blue mt-1 mr-3"></i>
+                            <span>6 months business bank statements</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="bi bi-check-circle-fill text-blue mt-1 mr-3"></i>
+                            <span>Valid government-issued ID (National ID, Voter's Card, Driver's License, or International Passport)</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="bi bi-check-circle-fill text-blue mt-1 mr-3"></i>
+                            <span>Proof of business address (Utility bill or bank statement)</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="bi bi-check-circle-fill text-blue mt-1 mr-3"></i>
+                            <span>Bank Verification Number (BVN)</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="bi bi-check-circle-fill text-blue mt-1 mr-3"></i>
+                            <span>Recent passport photograph</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="bi bi-check-circle-fill text-blue mt-1 mr-3"></i>
+                            <span>Tax identification number (TIN)</span>
+                        </li>
+                    </ul>
                 </div>
                 
-                <!-- Tab Content -->
-                <div class="lg:col-span-2">
-                    <div x-show="activeTab === 1" x-transition class="bg-white p-8 rounded-xl shadow-sm">
-                        <h3 class="text-xl font-semibold mb-4">Required Documentation</h3>
-                        <ul class="space-y-4">
-                            <li class="flex items-start">
-                                <i class="bi bi-check-circle-fill text-blue mt-1 mr-3"></i>
-                                <span>6 months business bank statements</span>
-                            </li>
-                            <li class="flex items-start">
-                                <i class="bi bi-check-circle-fill text-blue mt-1 mr-3"></i>
-                                <span>Valid government-issued ID (National ID, Voter's Card, Driver's License, or International Passport)</span>
-                            </li>
-                            <li class="flex items-start">
-                                <i class="bi bi-check-circle-fill text-blue mt-1 mr-3"></i>
-                                <span>Proof of business address (Utility bill or bank statement)</span>
-                            </li>
-                            <li class="flex items-start">
-                                <i class="bi bi-check-circle-fill text-blue mt-1 mr-3"></i>
-                                <span>Bank Verification Number (BVN)</span>
-                            </li>
-                        </ul>
-                    </div>
-                    
-                    <div x-show="activeTab === 2" x-transition class="bg-white p-8 rounded-xl shadow-sm">
-                        <h3 class="text-xl font-semibold mb-4">Business Information</h3>
-                        <ul class="space-y-4">
-                            <li class="flex items-start">
-                                <i class="bi bi-check-circle-fill text-blue mt-1 mr-3"></i>
-                                <span>CAC registration documents (if registered)</span>
-                            </li>
-                            <li class="flex items-start">
-                                <i class="bi bi-check-circle-fill text-blue mt-1 mr-3"></i>
-                                <span>Business owner passport photograph</span>
-                            </li>
-                            <li class="flex items-start">
-                                <i class="bi bi-check-circle-fill text-blue mt-1 mr-3"></i>
-                                <span>Minimum 6 months in operation</span>
-                            </li>
-                            <li class="flex items-start">
-                                <i class="bi bi-check-circle-fill text-blue mt-1 mr-3"></i>
-                                <span>Business owner age between 22 and 65 years</span>
-                            </li>
-                        </ul>
-                    </div>
-                    
-                    <div x-show="activeTab === 3" x-transition class="bg-white p-8 rounded-xl shadow-sm">
-                        <h3 class="text-xl font-semibold mb-4">Banking Requirements</h3>
-                        <ul class="space-y-4">
-                            <li class="flex items-start">
-                                <i class="bi bi-check-circle-fill text-blue mt-1 mr-3"></i>
-                                <span>Active business bank account</span>
-                            </li>
-                            <li class="flex items-start">
-                                <i class="bi bi-check-circle-fill text-blue mt-1 mr-3"></i>
-                                <span>Regular cash flow activity</span>
-                            </li>
-                            <li class="flex items-start">
-                                <i class="bi bi-check-circle-fill text-blue mt-1 mr-3"></i>
-                                <span>No history of fraudulent transactions</span>
-                            </li>
-                            <li class="flex items-start">
-                                <i class="bi bi-check-circle-fill text-blue mt-1 mr-3"></i>
-                                <span>No outstanding non-performing loans with other institutions</span>
-                            </li>
-                        </ul>
-                    </div>
-                    
-                    <div class="mt-8 bg-blue/5 border border-blue/10 rounded-xl p-8" data-aos="fade-up">
-                        <h3 class="text-xl font-semibold mb-4">Ready to grow your business?</h3>
-                        <p class="text-gray-600 mb-6">Our business loans are designed to help Nigerian entrepreneurs access the capital they need to expand, purchase inventory, or cover operational expenses.</p>
-                        <a href="apply.html" class="inline-block px-8 py-3 bg-blue text-white font-bold rounded-lg hover:bg-[#2a5778] transition-colors">
-                            Apply for Business Loan
-                        </a>
+                <div 
+                    x-show="activeTab === 2" 
+                    x-transition:enter="transition ease-out duration-300"
+                    x-transition:enter-start="opacity-0 translate-y-4"
+                    x-transition:enter-end="opacity-100 translate-y-0"
+                    x-transition:leave="transition ease-in duration-200"
+                    x-transition:leave-start="opacity-100 translate-y-0"
+                    x-transition:leave-end="opacity-0 translate-y-4"
+                    class="bg-white p-8 rounded-xl shadow-sm"
+                >
+                    <h3 class="text-xl font-semibold mb-4">Business Information</h3>
+                    <ul class="space-y-4">
+                        <li class="flex items-start">
+                            <i class="bi bi-check-circle-fill text-blue mt-1 mr-3"></i>
+                            <span>CAC registration documents (if registered)</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="bi bi-check-circle-fill text-blue mt-1 mr-3"></i>
+                            <span>Business owner passport photograph</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="bi bi-check-circle-fill text-blue mt-1 mr-3"></i>
+                            <span>Minimum 6 months in operation</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="bi bi-check-circle-fill text-blue mt-1 mr-3"></i>
+                            <span>Business owner age between 22 and 65 years</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="bi bi-check-circle-fill text-blue mt-1 mr-3"></i>
+                            <span>Business plan or financial projections (for loans above ₦2M)</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="bi bi-check-circle-fill text-blue mt-1 mr-3"></i>
+                            <span>Evidence of business ownership</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div 
+                    x-show="activeTab === 3" 
+                    x-transition:enter="transition ease-out duration-300"
+                    x-transition:enter-start="opacity-0 translate-y-4"
+                    x-transition:enter-end="opacity-100 translate-y-0"
+                    x-transition:leave="transition ease-in duration-200"
+                    x-transition:leave-start="opacity-100 translate-y-0"
+                    x-transition:leave-end="opacity-0 translate-y-4"
+                    class="bg-white p-8 rounded-xl shadow-sm"
+                >
+                    <h3 class="text-xl font-semibold mb-4">Banking Requirements</h3>
+                    <ul class="space-y-4">
+                        <li class="flex items-start">
+                            <i class="bi bi-check-circle-fill text-blue mt-1 mr-3"></i>
+                            <span>Active business bank account</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="bi bi-check-circle-fill text-blue mt-1 mr-3"></i>
+                            <span>Regular cash flow activity (minimum ₦100,000 monthly turnover)</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="bi bi-check-circle-fill text-blue mt-1 mr-3"></i>
+                            <span>No history of fraudulent transactions</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="bi bi-check-circle-fill text-blue mt-1 mr-3"></i>
+                            <span>No outstanding non-performing loans with other institutions</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="bi bi-check-circle-fill text-blue mt-1 mr-3"></i>
+                            <span>Positive account balance history</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="bi bi-check-circle-fill text-blue mt-1 mr-3"></i>
+                            <span>No recent bounced checks or returned debits</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="mt-8 bg-blue/5 border border-blue/10 rounded-xl p-8" data-aos="fade-up">
+                    <div class="flex flex-col md:flex-row items-start md:items-center gap-6">
+                        <div class="flex-shrink-0">
+                            <div class="w-16 h-16 bg-blue/10 rounded-full flex items-center justify-center">
+                                <i class="bi bi-headset text-2xl text-blue"></i>
+                            </div>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-semibold mb-2">Need help with your application?</h3>
+                            <p class="text-gray-600 mb-4">Our business banking specialists are available to guide you through the process and answer any questions.</p>
+                            <div class="flex flex-col sm:flex-row gap-4">
+                                <a href="apply.html" class="px-6 py-3 bg-blue text-white font-medium rounded-lg hover:bg-[#2a5778] transition-colors text-center">
+                                    Apply Now
+                                </a>
+                                <a href="contact.html" class="px-6 py-3 border border-blue text-blue font-medium rounded-lg hover:bg-blue/5 transition-colors text-center">
+                                    Contact Support
+                                </a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
     <!-- Testimonials - Carousel Style -->
     <section class="py-16 px-6 lg:px-24 bg-white">
-        <div class="max-w-6xl mx-auto">
+        <div class="w-full">
             <div class="text-center mb-12" data-aos="fade-up">
                 <span class="inline-block px-4 py-1 bg-blue/10 text-blue rounded-full text-sm font-medium mb-4">Success Stories</span>
                 <h2 class="text-3xl font-bold">Businesses Thriving with Oval Finance</h2>
@@ -608,7 +675,7 @@
 
     <!-- Business Solutions CTA -->
     <section class="py-16 px-6 lg:px-24 bg-blue text-white">
-        <div class="max-w-6xl mx-auto">
+        <div class="w-full">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                 <div data-aos="fade-right">
                     <h2 class="text-3xl font-bold mb-6">Comprehensive Business Banking Solutions</h2>
@@ -650,7 +717,7 @@
 
     <!-- Business Tools -->
     <section class="py-16 px-6 lg:px-24 bg-white">
-        <div class="max-w-6xl mx-auto">
+        <div class="w-full">
             <div class="text-center mb-12" data-aos="fade-up">
                 <span class="inline-block px-4 py-1 bg-blue/10 text-blue rounded-full text-sm font-medium mb-4">Business Tools</span>
                 <h2 class="text-3xl font-bold mb-4">Solutions Designed for Your Business Needs</h2>
@@ -711,7 +778,7 @@
 
     <!-- Fast Approval Section -->
     <section class="py-16 px-6 lg:px-24 bg-gray-50">
-        <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+        <div class="w-full grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div data-aos="fade-right">
                 <span class="inline-block px-4 py-1 bg-blue/10 text-blue rounded-full text-sm font-medium mb-4">Quick Access</span>
                 <h2 class="text-3xl font-bold mb-6">Simplified Approval Process</h2>
@@ -756,14 +823,14 @@
                 <img src="https://images.unsplash.com/photo-1556740738-b6a63e27c4df?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80" 
                      alt="Business owner reviewing documents" 
                      class="w-full rounded-xl shadow-xl z-10 relative">
-                <div class="absolute -bottom-6 -right-6 w-64 h-64 bg-yellow-400 rounded-xl z-0"></div>
+                <div class="absolute -bottom-6 -right-6 w-64 h-64 bg-blue rounded-xl z-0"></div>
             </div>
         </div>
     </section>
 
     <!-- POS Section -->
     <section class="py-16 px-6 lg:px-24 bg-white">
-        <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+        <div class="w-full grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div data-aos="fade-right" class="relative">
                 <img src="https://images.unsplash.com/photo-1604594849809-dfedbc827105?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80" 
                      alt="Point of Sale terminal" 
@@ -815,7 +882,7 @@
 
     <!-- Business Types -->
     <section class="py-16 px-6 lg:px-24 bg-gray-50">
-        <div class="max-w-6xl mx-auto text-center">
+        <div class="w-full text-center">
             <div class="mb-12" data-aos="fade-up">
                 <h2 class="text-3xl font-bold mb-4">Solutions for All Business Types</h2>
                 <p class="text-gray-600 max-w-2xl mx-auto">We serve businesses across various sectors with tailored financial products</p>
