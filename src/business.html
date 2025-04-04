@@ -199,29 +199,31 @@
         </div>
     </section>
 
-    <!-- Stats Section - Animated Counters -->
-    <section class="py-16 px-6 lg:px-24 bg-white">
-        <div class="w-full grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-            <div class="p-8" data-aos="fade-up">
-                <h3 class="text-5xl font-bold text-blue mb-2">
-                    <span class="counter" data-target="8000">0</span>+
-                </h3>
-                <p class="text-gray-600">Businesses Funded</p>
-            </div>
-            <div class="p-8" data-aos="fade-up" data-aos-delay="100">
-                <h3 class="text-5xl font-bold text-blue mb-2">
-                    <span class="counter" data-target="24">0</span>
-                </h3>
-                <p class="text-gray-600">Hour Approval Time</p>
-            </div>
-            <div class="p-8" data-aos="fade-up" data-aos-delay="200">
-                <h3 class="text-5xl font-bold text-blue mb-2">
-                    ₦<span class="counter" data-target="5">0</span>M
-                </h3>
-                <p class="text-gray-600">Maximum Loan Amount</p>
-            </div>
-        </div>
-    </section>
+    <!-- Stats Section with Counter Animation -->
+<section class="py-16 px-6 lg:px-24 bg-white">
+  <div class="w-full grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+      <div class="p-8" data-aos="fade-up">
+          <h3 class="text-5xl font-bold text-blue mb-2">
+              <span class="counter" data-target="8000" data-duration="2000">0</span>+
+          </h3>
+          <p class="text-gray-600">Businesses Funded</p>
+      </div>
+      <div class="p-8" data-aos="fade-up" data-aos-delay="100">
+          <h3 class="text-5xl font-bold text-blue mb-2">
+              <span class="counter" data-target="24" data-duration="1500">0</span>
+          </h3>
+          <p class="text-gray-600">Hour Approval Time</p>
+      </div>
+      <div class="p-8" data-aos="fade-up" data-aos-delay="200">
+          <h3 class="text-5xl font-bold text-blue mb-2">
+              ₦<span class="counter" data-target="5" data-duration="1000">0</span>M
+          </h3>
+          <p class="text-gray-600">Maximum Loan Amount</p>
+      </div>
+  </div>
+</section>
+
+
 
     <!-- Features Section -->
     <section id="features" class="py-16 px-6 lg:px-24 bg-gray-50">
@@ -1177,32 +1179,61 @@
     </footer>
 
     <!-- Scripts -->
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Initialize AOS animation library
-            AOS.init({
-                duration: 800,
-                easing: 'ease-in-out',
-                once: true
-            });
-
-            // Initialize counter animation
-            const counters = document.querySelectorAll('.counter');
-            const options = {
-                duration: 2,
-                useEasing: true,
-            };
-
-            counters.forEach(counter => {
+    
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // Function to check if element is in viewport
+    function isInViewport(element) {
+        const rect = element.getBoundingClientRect();
+        return (
+            rect.top >= 0 &&
+            rect.left >= 0 &&
+            rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+            rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+        );
+    }
+  
+    // Function to handle counter animation
+    function animateCounters() {
+        const counters = document.querySelectorAll('.counter');
+        const speed = 200; // Lower number = faster animation
+        
+        counters.forEach(counter => {
+            if (!counter.classList.contains('animated') && isInViewport(counter)) {
                 const target = +counter.getAttribute('data-target');
-                const countUp = new CountUp(counter, target, options);
-                if (!countUp.error) {
-                    countUp.start();
-                } else {
-                    console.error(countUp.error);
-                }
-            });
+                const duration = +counter.getAttribute('data-duration') || 2000;
+                const count = +counter.innerText;
+                const increment = target / (duration / speed);
+                
+                const updateCount = () => {
+                    const currentCount = +counter.innerText;
+                    if (currentCount < target) {
+                        counter.innerText = Math.ceil(currentCount + increment);
+                        setTimeout(updateCount, speed);
+                    } else {
+                        counter.innerText = target;
+                    }
+                };
+                
+                updateCount();
+                counter.classList.add('animated');
+            }
         });
-    </script>
+    }
+  
+    // Initialize counters when page loads (if already in view)
+    animateCounters();
+    
+    // Add scroll event listener to trigger counters when scrolled into view
+    window.addEventListener('scroll', animateCounters);
+    
+    // Initialize AOS animation library
+    AOS.init({
+        duration: 800,
+        easing: 'ease-in-out',
+        once: true
+    });
+  });
+  </script>
 </body>
 </html>
