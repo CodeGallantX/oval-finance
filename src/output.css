@@ -937,6 +937,10 @@ video {
   height: 100%;
 }
 
+.h-4 {
+  height: 1rem;
+}
+
 .max-h-0 {
   max-height: 0px;
 }
@@ -1015,6 +1019,10 @@ video {
 
 .w-full {
   width: 100%;
+}
+
+.w-4 {
+  width: 1rem;
 }
 
 .min-w-full {
@@ -1322,6 +1330,10 @@ video {
 
 .overflow-hidden {
   overflow: hidden;
+}
+
+.scroll-smooth {
+  scroll-behavior: smooth;
 }
 
 .whitespace-nowrap {
@@ -1763,6 +1775,10 @@ video {
 
 .font-semibold {
   font-weight: 600;
+}
+
+.not-italic {
+  font-style: normal;
 }
 
 .leading-relaxed {
