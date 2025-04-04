@@ -1,271 +1,879 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
+<html lang="en" x-data="{ mobileMenuOpen: false, mobileProductsOpen: false, mobileAboutOpen: false }">
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="shortcut icon"
-      href="./assets/images/favicon.ico"
-      type="image/x-icon"
-    />
+    <meta name="description" content="Get SME business loans up to ₦5,000,000 with Oval Finance. Quick approval in 24 hours, no collateral needed. Grow your business today!">
+    <meta name="keywords" content="business loans Nigeria, SME financing, quick business loans Lagos, Oval Finance business loans, no collateral business loans">
+    <title>Business Loans - Oval Finance | SME Financing Solutions in Nigeria</title>
+    <link rel="shortcut icon" href="./assets/images/favicon.ico" type="image/x-icon" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="./output.css" />
-    <title>Business - Oval Finances</title>
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css"
-    />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" />
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-  </head>
-  <body class="font-sans">
-    <header
-      class="flex flex-row items-center justify-between py-4 px-6 lg:px-24 sticky top-0 bg-white z-40 shadow-sm"
-    >
-      <!-- Logo -->
-      <a href="/" class="w-32 lg:w-40">
-        <img
-          src="./assets/images/Logo.jpg"
-          alt="Company logo"
-          class="w-full object-cover"
-        />
-      </a>
-
-      <!-- Desktop Navigation -->
-      <nav class="hidden lg:flex gap-10">
-        <div class="relative">
-          <a
-            href="/"
-            class="font-medium flex items-center gap-2 py-2 hover:text-blue transition-colors"
-          >
-            Home
-          </a>
-        </div>
-
-        <div class="relative group">
-          <button
-            class="font-medium flex items-center gap-2 py-2 hover:text-blue transition-colors group"
-          >
-            Products
-            <i
-              class="bi bi-chevron-down text-xs transition-transform duration-200 group-hover:rotate-180"
-            ></i>
-          </button>
-          <ul
-            class="absolute hidden group-hover:block left-0 top-10 w-48 rounded-md shadow-lg bg-white p-2 z-50 border border-gray-100"
-          >
-            <li class="py-2 px-4 hover:bg-blue/50 rounded transition">
-              <a href="/personal" class="block w-full">Personal Banking</a>
-            </li>
-            <li class="py-2 px-4 hover:bg-blue/50 rounded transition">
-              <a href="/business" class="block w-full">Business Solutions</a>
-            </li>
-            <li class="py-2 px-4 hover:bg-blue/50 rounded transition">
-              <a href="/loan-calculator" class="block w-full"
-                >Loan Calculator</a
-              >
-            </li>
-          </ul>
-        </div>
-
-        <div class="relative group">
-          <button
-            class="font-medium flex items-center gap-2 py-2 hover:text-blue transition-colors group"
-          >
-            About Us
-            <i
-              class="bi bi-chevron-down text-xs transition-transform duration-200 group-hover:rotate-180"
-            ></i>
-          </button>
-          <ul
-            class="absolute hidden group-hover:block left-0 top-10 w-48 rounded-md shadow-lg bg-white p-2 z-50 border border-gray-100"
-          >
-            <li class="py-2 px-4 hover:bg-blue/50 rounded transition">
-              <a href="/about" class="block w-full">Our Story</a>
-            </li>
-            <li class="py-2 px-4 hover:bg-blue/50 rounded transition">
-              <a href="/faqs" class="block w-full">FAQs</a>
-            </li>
-          </ul>
-        </div>
-
-        <div class="relative">
-          <a
-            href="/contact"
-            class="font-medium flex items-center gap-2 py-2 hover:text-blue transition-colors"
-          >
-            Contact Us
-          </a>
-        </div>
-      </nav>
-
-      <div class="hidden lg:flex items-center space-x-6">
-        <div class="relative">
-          <a
-            href="/login"
-            class="font-medium flex items-center gap-2 py-2 hover:text-blue transition-colors"
-          >
-            Login
-          </a>
-        </div>
-        <!-- Desktop CTA Button -->
-        <a
-          href="/auth/signup"
-          class="px-4 py-2.5 border-2 border-blue font-medium bg-blue text-white rounded-md hover:bg-[#2a5778] hover:border-[#2a5778] transition-colors"
-        >
-          Apply for loan
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/countup.js@2.6.0/dist/countUp.min.js"></script>
+</head>
+<body class="font-sans">
+    <header class="flex flex-row items-center justify-between py-4 px-6 lg:px-24 sticky top-0 bg-white z-40 shadow-sm">
+        <!-- Logo -->
+        <a href="index.html" class="w-32 lg:w-40">
+            <img src="./assets/images/logo.jpg" 
+                 alt="Oval Finance logo" 
+                 class="w-full object-cover rounded-lg">
         </a>
-      </div>
 
-      <!-- Mobile Menu Button -->
-      <button id="mobile-menu-button" class="lg:hidden z-40">
-        <i class="bi bi-list text-2xl"></i>
-      </button>
+        <!-- Desktop Navigation -->
+        <nav class="hidden lg:flex gap-10">
+            <div class="relative">
+                <a href="index.html" class="font-medium flex items-center gap-2 py-2 hover:text-blue transition-colors">Home</a>
+            </div>
+            <div class="relative group">
+                <button class="font-medium flex items-center gap-2 py-2 hover:text-blue transition-colors group">
+                    Products
+                    <i class="bi bi-chevron-down text-xs transition-transform duration-200 group-hover:rotate-180"></i>
+                </button>
+                <ul class="absolute hidden group-hover:block left-0 top-10 w-48 rounded-md shadow-lg bg-white p-2 z-50 border border-gray-100">
+                    <li class="py-2 px-4 hover:bg-blue/50 rounded transition">
+                        <a href="personal.html" class="block w-full">Personal Banking</a>
+                    </li>
+                    <li class="py-2 px-4 hover:bg-blue/50 rounded transition">
+                        <a href="business.html" class="block w-full">Business Solutions</a>
+                    </li>
+                    <li class="py-2 px-4 hover:bg-blue/50 rounded transition">
+                        <a href="loan-calculator.html" class="block w-full">Loan Calculator</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="relative group">
+                <button class="font-medium flex items-center gap-2 py-2 hover:text-blue transition-colors group">
+                    About Us
+                    <i class="bi bi-chevron-down text-xs transition-transform duration-200 group-hover:rotate-180"></i>
+                </button>
+                <ul class="absolute hidden group-hover:block left-0 top-10 w-48 rounded-md shadow-lg bg-white p-2 z-50 border border-gray-100">
+                    <li class="py-2 px-4 hover:bg-blue/50 rounded transition">
+                        <a href="about.html" class="block w-full">Our Story</a>
+                    </li>
+                    <li class="py-2 px-4 hover:bg-blue/50 rounded transition">
+                        <a href="faqs.html" class="block w-full">FAQs</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="relative">
+                <a href="contact.html" class="font-medium flex items-center gap-2 py-2 hover:text-blue transition-colors">Contact Us</a>
+            </div>
+        </nav>
 
-      <!-- Mobile Sidebar Overlay -->
-      <div
-        id="mobile-overlay"
-        class="hidden fixed inset-0 bg-black/50 z-30 overlay-transition opacity-0"
-      ></div>
-
-      <!-- Mobile Sidebar Navigation -->
-      <aside
-        id="mobile-sidebar"
-        class="hidden fixed top-0 right-0 h-full w-80 bg-white p-6 z-40 sidebar-transition translate-x-full shadow-xl"
-      >
-        <div class="relative flex flex-row items-start justify-between py-4">
-          <a href="/" class="w-32">
-            <img
-              src="./assets/images/Logo.jpg"
-              alt="Company logo"
-              class="w-full object-cover"
-            />
-          </a>
-          <button
-            id="close-sidebar-button"
-            class="text-gray-500 hover:text-gray-700"
-          >
-            <i class="bi bi-x text-2xl"></i>
-          </button>
+        <div class="hidden lg:flex items-center space-x-6">
+            <div class="relative">
+                <a href="login.html" class="font-medium flex items-center gap-2 py-2 hover:text-blue transition-colors">Login</a>
+            </div>
+            <a href="apply.html" class="px-4 py-2.5 border-2 border-blue font-medium bg-blue text-white rounded-md hover:bg-[#2a5778] hover:border-[#2a5778] transition-colors">
+                Apply for loan
+            </a>
         </div>
 
-        <!-- Mobile Nav Links -->
-        <ul class="space-y-2 mt-6">
-          <li>
-            <a
-              href="/"
-              class="block font-medium py-3 px-4 hover:bg-blue/50 rounded-md transition-colors"
-              >Home</a
-            >
-          </li>
-
-          <li>
-            <button
-              class="flex justify-between items-center w-full font-medium py-3 px-4 hover:bg-blue/50 rounded-md transition-colors"
-              id="mobile-products-button"
-            >
-              <span>Products</span>
-              <i
-                class="bi bi-chevron-down text-xs transition-transform"
-                id="mobile-products-icon"
-              ></i>
-            </button>
-            <ul
-              id="mobile-products-dropdown"
-              class="hidden w-full pl-0 mt-1 dropdown-transition max-h-0 overflow-hidden"
-            >
-              <li class="py-2">
-                <a
-                  href="/personal"
-                  class="block w-full py-2 px-6 hover:bg-blue/50 rounded-md transition-colors"
-                  >Personal Banking</a
-                >
-              </li>
-              <li class="py-2">
-                <a
-                  href="/business"
-                  class="block w-full py-2 px-6 hover:bg-blue/50 rounded-md transition-colors"
-                  >Business Solutions</a
-                >
-              </li>
-              <li class="py-2">
-                <a
-                  href="/loan-calculator"
-                  class="block w-full py-2 px-6 hover:bg-blue/50 rounded-md transition-colors"
-                  >Loan Calculator</a
-                >
-              </li>
-            </ul>
-          </li>
-
-          <li>
-            <button
-              class="flex justify-between items-center w-full font-medium py-3 px-4 hover:bg-blue/50 rounded-md transition-colors"
-              id="mobile-about-button"
-            >
-              <span>About Us</span>
-              <i
-                class="bi bi-chevron-down text-xs transition-transform"
-                id="mobile-about-icon"
-              ></i>
-            </button>
-            <ul
-              id="mobile-about-dropdown"
-              class="hidden w-full pl-0 mt-1 dropdown-transition max-h-0 overflow-hidden"
-            >
-              <li class="py-2">
-                <a
-                  href="/about"
-                  class="block w-full py-2 px-6 hover:bg-blue/50 rounded-md transition-colors"
-                  >Our Story</a
-                >
-              </li>
-              <li class="py-2">
-                <a
-                  href="/faqs"
-                  class="block w-full py-2 px-6 hover:bg-blue/50 rounded-md transition-colors"
-                  >FAQs</a
-                >
-              </li>
-            </ul>
-          </li>
-
-          <li>
-            <a
-              href="/contact"
-              class="block font-medium py-3 px-4 hover:bg-blue/50 rounded-md transition-colors"
-              >Contact Us</a
-            >
-          </li>
-
-          <li>
-            <a
-              href="./login.html"
-              class="block font-medium py-3 px-4 hover:bg-blue/50 rounded-md transition-colors"
-              >Login</a
-            >
-          </li>
-
-          <li class="mt-8 pt-4 border-t border-gray-100">
-            <a
-              href="./signup.html"
-              class="block px-4 py-3 text-center font-medium bg-blue text-white rounded-md hover:bg-[#2a5778] transition-colors"
-            >
-              Apply for loan
-            </a>
-          </li>
-        </ul>
-      </aside>
+        <!-- Mobile Menu Button -->
+        <button @click="mobileMenuOpen = true" class="lg:hidden z-40">
+            <i class="bi bi-list text-2xl"></i>
+        </button>
     </header>
-    
 
-    
+    <!-- Mobile Sidebar Navigation -->
+    <aside x-show="mobileMenuOpen" 
+           @click.away="mobileMenuOpen = false"
+           class="fixed inset-0 z-50 overflow-hidden">
+        <div class="absolute inset-0 bg-black/50" @click="mobileMenuOpen = false"></div>
+        <div class="absolute top-0 right-0 h-full w-80 bg-white p-6 shadow-xl transform transition-transform duration-300"
+             :class="mobileMenuOpen ? 'translate-x-0' : 'translate-x-full'">
+            <div class="relative flex flex-row items-start justify-between py-4">
+                <a href="index.html" class="w-32">
+                    <img src="./assets/images/logo.jpg" 
+                         alt="Oval Finance logo" 
+                         class="w-full object-cover rounded-lg">
+                </a>
+                <button @click="mobileMenuOpen = false" class="text-gray-500 hover:text-gray-700">
+                    <i class="bi bi-x text-2xl"></i>
+                </button>
+            </div>
 
+            <!-- Mobile Nav Links -->
+            <ul class="space-y-2 mt-6">
+                <li>
+                    <a href="index.html" class="block font-medium py-3 px-4 hover:bg-blue/50 rounded-md transition-colors">Home</a>
+                </li>
+                <li>
+                    <button @click="mobileProductsOpen = !mobileProductsOpen" class="flex justify-between items-center w-full font-medium py-3 px-4 hover:bg-blue/50 rounded-md transition-colors">
+                        <span>Products</span>
+                        <i class="bi bi-chevron-down text-xs transition-transform" :class="mobileProductsOpen ? 'rotate-180' : ''"></i>
+                    </button>
+                    <ul x-show="mobileProductsOpen" 
+                        x-collapse
+                        class="w-full pl-0 mt-1 overflow-hidden transition-all duration-300">
+                        <li class="py-2">
+                            <a href="personal.html" class="block w-full py-2 px-6 hover:bg-blue/50 rounded-md transition-colors">Personal Banking</a>
+                        </li>
+                        <li class="py-2">
+                            <a href="business.html" class="block w-full py-2 px-6 hover:bg-blue/50 rounded-md transition-colors">Business Solutions</a>
+                        </li>
+                        <li class="py-2">
+                            <a href="loan-calculator.html" class="block w-full py-2 px-6 hover:bg-blue/50 rounded-md transition-colors">Loan Calculator</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <button @click="mobileAboutOpen = !mobileAboutOpen" class="flex justify-between items-center w-full font-medium py-3 px-4 hover:bg-blue/50 rounded-md transition-colors">
+                        <span>About Us</span>
+                        <i class="bi bi-chevron-down text-xs transition-transform" :class="mobileAboutOpen ? 'rotate-180' : ''"></i>
+                    </button>
+                    <ul x-show="mobileAboutOpen" 
+                        x-collapse
+                        class="w-full pl-0 mt-1 overflow-hidden transition-all duration-300">
+                        <li class="py-2">
+                            <a href="about.html" class="block w-full py-2 px-6 hover:bg-blue/50 rounded-md transition-colors">Our Story</a>
+                        </li>
+                        <li class="py-2">
+                            <a href="faqs.html" class="block w-full py-2 px-6 hover:bg-blue/50 rounded-md transition-colors">FAQs</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="contact.html" class="block font-medium py-3 px-4 hover:bg-blue/50 rounded-md transition-colors">Contact Us</a>
+                </li>
+                <li>
+                    <a href="login.html" class="block font-medium py-3 px-4 hover:bg-blue/50 rounded-md transition-colors">Login</a>
+                </li>
+                <li class="mt-8 pt-4 border-t border-gray-100">
+                    <a href="apply.html" class="block px-4 py-3 text-center font-medium bg-blue text-white rounded-md hover:bg-[#2a5778] transition-colors">
+                        Apply for loan
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </aside>
+
+    <!-- Hero Section - Redesigned -->
+    <section class="relative bg-gradient-to-r from-blue-900 to-blue-700 text-white overflow-hidden">
+        <div class="absolute inset-0 bg-black/30 z-10"></div>
+        <div class="absolute inset-0">
+            <img 
+                 alt="Business team meeting" 
+                 class="w-full h-full object-cover object-center">
+        </div>
+        <div class="max-w-7xl mx-auto px-6 lg:px-24 py-32 relative z-20">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div data-aos="fade-right">
+                    <h1 class="text-4xl md:text-5xl font-bold mb-6 leading-tight">Fuel Your Business Growth with Tailored Financing</h1>
+                    <p class="text-xl mb-8 max-w-lg">Access up to ₦5 million in working capital with our streamlined SME loan process. Approval in 24 hours, flexible repayment terms, and no collateral required.</p>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="apply.html" class="px-8 py-4 bg-white text-blue font-bold rounded-lg hover:bg-gray-100 transition-colors text-center shadow-lg transform hover:-translate-y-1 transition-transform">
+                            Apply for Business Loan
+                        </a>
+                        <a href="#features" class="px-8 py-4 border-2 border-white text-white font-bold rounded-lg hover:bg-white/10 transition-colors text-center">
+                            Learn More
+                        </a>
+                    </div>
+                    <div class="mt-12 flex flex-wrap items-center gap-6">
+                        <div class="flex items-center gap-3 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-lg">
+                            <img src="./assets/images/coat-of-arms.a56de41a.svg" 
+                                 alt="Licensed by CBN" 
+                                 class="h-8 object-contain">
+                            <span class="text-sm">Licensed by CBN</span>
+                        </div>
+                        <div class="flex items-center gap-3 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-lg">
+                            <img src="./assets/images/ndic-logo.webp" 
+                                 alt="Deposits Insured by NDIC" 
+                                 class="h-8 object-contain">
+                            <span class="text-sm">NDIC Insured</span>
+                        </div>
+                    </div>
+                </div>
+                <div data-aos="fade-left" class="hidden lg:block relative">
+                    <div class="relative z-10">
+                        <!-- <img src="https://images.unsplash.com/photo-1556742044-3c52d6e88c62?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80" 
+                             alt="Business owner reviewing documents" 
+                             class="w-full rounded-xl shadow-2xl transform rotate-1 hover:rotate-0 transition-transform duration-300"> -->
+                    </div>
+                    <div class="absolute -bottom-6 -left-6 w-64 h-64 bg-yellow-400 rounded-xl shadow-lg z-0"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section - Animated Counters -->
+    <section class="py-16 px-6 lg:px-24 bg-white">
+        <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+            <div class="p-8" data-aos="fade-up">
+                <h3 class="text-5xl font-bold text-blue mb-2">
+                    <span class="counter" data-target="8000">0</span>+
+                </h3>
+                <p class="text-gray-600">Businesses Funded</p>
+            </div>
+            <div class="p-8" data-aos="fade-up" data-aos-delay="100">
+                <h3 class="text-5xl font-bold text-blue mb-2">
+                    <span class="counter" data-target="24">0</span>
+                </h3>
+                <p class="text-gray-600">Hour Approval Time</p>
+            </div>
+            <div class="p-8" data-aos="fade-up" data-aos-delay="200">
+                <h3 class="text-5xl font-bold text-blue mb-2">
+                    ₦<span class="counter" data-target="5">0</span>M
+                </h3>
+                <p class="text-gray-600">Maximum Loan Amount</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-16 px-6 lg:px-24 bg-gray-50">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-12" data-aos="fade-up">
+                <span class="inline-block px-4 py-1 bg-blue/10 text-blue rounded-full text-sm font-medium mb-4">Business Solutions</span>
+                <h2 class="text-3xl font-bold">Accelerate Your Business Growth</h2>
+                <p class="text-gray-600 mt-4 max-w-2xl mx-auto">Designed specifically for Nigerian SMEs to overcome financial hurdles and scale operations</p>
+            </div>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8" data-aos="fade-up">
+                <div class="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition-shadow group">
+                    <div class="w-16 h-16 bg-blue/10 rounded-full flex items-center justify-center mb-6 mx-auto group-hover:bg-blue group-hover:text-white transition-colors">
+                        <i class="bi bi-clock text-3xl text-blue group-hover:text-white transition-colors"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3 text-center">24-Hour Funding</h3>
+                    <p class="text-gray-600 text-center">From application to disbursement in one business day</p>
+                </div>
+                
+                <div class="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition-shadow group">
+                    <div class="w-16 h-16 bg-blue/10 rounded-full flex items-center justify-center mb-6 mx-auto group-hover:bg-blue group-hover:text-white transition-colors">
+                        <i class="bi bi-shield-check text-3xl text-blue group-hover:text-white transition-colors"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3 text-center">Collateral-Free</h3>
+                    <p class="text-gray-600 text-center">No assets required to secure your financing</p>
+                </div>
+                
+                <div class="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition-shadow group">
+                    <div class="w-16 h-16 bg-blue/10 rounded-full flex items-center justify-center mb-6 mx-auto group-hover:bg-blue group-hover:text-white transition-colors">
+                        <i class="bi bi-cash-stack text-3xl text-blue group-hover:text-white transition-colors"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3 text-center">Up to ₦5M</h3>
+                    <p class="text-gray-600 text-center">Significant capital to expand your operations</p>
+                </div>
+                
+                <div class="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition-shadow group">
+                    <div class="w-16 h-16 bg-blue/10 rounded-full flex items-center justify-center mb-6 mx-auto group-hover:bg-blue group-hover:text-white transition-colors">
+                        <i class="bi bi-calendar-range text-3xl text-blue group-hover:text-white transition-colors"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3 text-center">6-Month Terms</h3>
+                    <p class="text-gray-600 text-center">Flexible repayment aligned with cash flow</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Value Proposition Section -->
+    <section class="py-16 px-6 lg:px-24 bg-white">
+        <div class="max-w-6xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div data-aos="fade-right">
+                    <img src="https://images.unsplash.com/photo-1556742044-3c52d6e88c62?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80" 
+                         alt="Business owner reviewing documents" 
+                         class="w-full rounded-xl shadow-xl hover:shadow-2xl transition-shadow">
+                    <div class="mt-6 p-6 bg-blue/5 rounded-lg border border-blue/10">
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0">
+                                <div class="w-12 h-12 bg-blue/10 rounded-full flex items-center justify-center">
+                                    <i class="bi bi-lightning text-xl text-blue"></i>
+                                </div>
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="font-semibold">Quick Decision Process</h4>
+                                <p class="text-gray-600 mt-1">Our automated systems provide rapid responses to loan applications.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div data-aos="fade-left">
+                    <span class="inline-block px-4 py-1 bg-blue/10 text-blue rounded-full text-sm font-medium mb-4">Why Oval Finance</span>
+                    <h2 class="text-3xl font-bold mb-6">Strategic Financing for Ambitious Businesses</h2>
+                    <p class="text-gray-600 text-lg mb-8">We understand the unique challenges Nigerian SMEs face. Our business loans are structured to provide the working capital you need when you need it most.</p>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0">
+                                <div class="w-12 h-12 bg-blue/10 rounded-full flex items-center justify-center">
+                                    <i class="bi bi-percent text-xl text-blue"></i>
+                                </div>
+                            </div>
+                            <div class="ml-4">
+                                <h3 class="text-xl font-semibold mb-2">Competitive Rates</h3>
+                                <p class="text-gray-600">Our transparent pricing structure ensures you know exactly what you're paying.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0">
+                                <div class="w-12 h-12 bg-blue/10 rounded-full flex items-center justify-center">
+                                    <i class="bi bi-arrow-repeat text-xl text-blue"></i>
+                                </div>
+                            </div>
+                            <div class="ml-4">
+                                <h3 class="text-xl font-semibold mb-2">Flexible Repayment</h3>
+                                <p class="text-gray-600">Align payments with your business cash flow cycles.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0">
+                                <div class="w-12 h-12 bg-blue/10 rounded-full flex items-center justify-center">
+                                    <i class="bi bi-headset text-xl text-blue"></i>
+                                </div>
+                            </div>
+                            <div class="ml-4">
+                                <h3 class="text-xl font-semibold mb-2">Dedicated Support</h3>
+                                <p class="text-gray-600">Our business banking specialists are available to guide you.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Eligibility Section - Vertical Tabs -->
+    <section class="py-16 px-6 lg:px-24 bg-gray-50">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-12" data-aos="fade-up">
+                <h2 class="text-3xl font-bold mb-4">Eligibility & Requirements</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Simple criteria to qualify for our business financing solutions</p>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8" data-aos="fade-up">
+                <!-- Vertical Tabs -->
+                <div class="bg-white rounded-xl shadow-sm overflow-hidden">
+                    <div class="p-6 border-b border-gray-100">
+                        <h3 class="text-xl font-semibold">Basic Requirements</h3>
+                    </div>
+                    <div class="divide-y divide-gray-100" x-data="{ activeTab: 1 }">
+                        <button @click="activeTab = 1" 
+                                class="w-full px-6 py-4 text-left hover:bg-gray-50 transition-colors flex items-center"
+                                :class="activeTab === 1 ? 'bg-blue/5 border-l-4 border-blue' : ''">
+                            <span class="w-8 h-8 bg-blue text-white rounded-full flex items-center justify-center mr-4">1</span>
+                            <span>Documentation</span>
+                        </button>
+                        
+                        <button @click="activeTab = 2" 
+                                class="w-full px-6 py-4 text-left hover:bg-gray-50 transition-colors flex items-center"
+                                :class="activeTab === 2 ? 'bg-blue/5 border-l-4 border-blue' : ''">
+                            <span class="w-8 h-8 bg-blue text-white rounded-full flex items-center justify-center mr-4">2</span>
+                            <span>Business Details</span>
+                        </button>
+                        
+                        <button @click="activeTab = 3" 
+                                class="w-full px-6 py-4 text-left hover:bg-gray-50 transition-colors flex items-center"
+                                :class="activeTab === 3 ? 'bg-blue/5 border-l-4 border-blue' : ''">
+                            <span class="w-8 h-8 bg-blue text-white rounded-full flex items-center justify-center mr-4">3</span>
+                            <span>Banking Requirements</span>
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Tab Content -->
+                <div class="lg:col-span-2">
+                    <div x-show="activeTab === 1" x-transition class="bg-white p-8 rounded-xl shadow-sm">
+                        <h3 class="text-xl font-semibold mb-4">Required Documentation</h3>
+                        <ul class="space-y-4">
+                            <li class="flex items-start">
+                                <i class="bi bi-check-circle-fill text-blue mt-1 mr-3"></i>
+                                <span>6 months business bank statements</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="bi bi-check-circle-fill text-blue mt-1 mr-3"></i>
+                                <span>Valid government-issued ID (National ID, Voter's Card, Driver's License, or International Passport)</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="bi bi-check-circle-fill text-blue mt-1 mr-3"></i>
+                                <span>Proof of business address (Utility bill or bank statement)</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="bi bi-check-circle-fill text-blue mt-1 mr-3"></i>
+                                <span>Bank Verification Number (BVN)</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div x-show="activeTab === 2" x-transition class="bg-white p-8 rounded-xl shadow-sm">
+                        <h3 class="text-xl font-semibold mb-4">Business Information</h3>
+                        <ul class="space-y-4">
+                            <li class="flex items-start">
+                                <i class="bi bi-check-circle-fill text-blue mt-1 mr-3"></i>
+                                <span>CAC registration documents (if registered)</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="bi bi-check-circle-fill text-blue mt-1 mr-3"></i>
+                                <span>Business owner passport photograph</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="bi bi-check-circle-fill text-blue mt-1 mr-3"></i>
+                                <span>Minimum 6 months in operation</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="bi bi-check-circle-fill text-blue mt-1 mr-3"></i>
+                                <span>Business owner age between 22 and 65 years</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div x-show="activeTab === 3" x-transition class="bg-white p-8 rounded-xl shadow-sm">
+                        <h3 class="text-xl font-semibold mb-4">Banking Requirements</h3>
+                        <ul class="space-y-4">
+                            <li class="flex items-start">
+                                <i class="bi bi-check-circle-fill text-blue mt-1 mr-3"></i>
+                                <span>Active business bank account</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="bi bi-check-circle-fill text-blue mt-1 mr-3"></i>
+                                <span>Regular cash flow activity</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="bi bi-check-circle-fill text-blue mt-1 mr-3"></i>
+                                <span>No history of fraudulent transactions</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="bi bi-check-circle-fill text-blue mt-1 mr-3"></i>
+                                <span>No outstanding non-performing loans with other institutions</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="mt-8 bg-blue/5 border border-blue/10 rounded-xl p-8" data-aos="fade-up">
+                        <h3 class="text-xl font-semibold mb-4">Ready to grow your business?</h3>
+                        <p class="text-gray-600 mb-6">Our business loans are designed to help Nigerian entrepreneurs access the capital they need to expand, purchase inventory, or cover operational expenses.</p>
+                        <a href="apply.html" class="inline-block px-8 py-3 bg-blue text-white font-bold rounded-lg hover:bg-[#2a5778] transition-colors">
+                            Apply for Business Loan
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials - Carousel Style -->
+    <section class="py-16 px-6 lg:px-24 bg-white">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-12" data-aos="fade-up">
+                <span class="inline-block px-4 py-1 bg-blue/10 text-blue rounded-full text-sm font-medium mb-4">Success Stories</span>
+                <h2 class="text-3xl font-bold">Businesses Thriving with Oval Finance</h2>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8" data-aos="fade-up">
+                <div class="bg-gray-50 p-8 rounded-xl hover:shadow-md transition-shadow">
+                    <div class="flex items-center mb-6">
+                        <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=80" 
+                             alt="Olufunsho Pitan" 
+                             class="w-16 h-16 rounded-full object-cover mr-4">
+                        <div>
+                            <h4 class="font-semibold">Olufunsho Pitan</h4>
+                            <p class="text-gray-500 text-sm">Building Materials Supplier</p>
+                            <div class="flex text-yellow-400 mt-1">
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-700">"The application process was excellent, smooth and no negative comment. Other platforms charge nothing less than 10% and having this kind of wonderful initiative from Oval Finance SME is highly satisfying."</p>
+                </div>
+                
+                <div class="bg-gray-50 p-8 rounded-xl hover:shadow-md transition-shadow">
+                    <div class="flex items-center mb-6">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=80" 
+                             alt="Charles Obuekwe Chika" 
+                             class="w-16 h-16 rounded-full object-cover mr-4">
+                        <div>
+                            <h4 class="font-semibold">Charles Obuekwe Chika</h4>
+                            <p class="text-gray-500 text-sm">Retail Business Owner</p>
+                            <div class="flex text-yellow-400 mt-1">
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-half"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-700">"I won't give you guys just a pass mark, but a good one at that. The process was transparent and hope to have a greater partnership with Oval Finance in future."</p>
+                </div>
+                
+                <div class="bg-gray-50 p-8 rounded-xl hover:shadow-md transition-shadow">
+                    <div class="flex items-center mb-6">
+                        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=80" 
+                             alt="Peter Omoniyi Ilori" 
+                             class="w-16 h-16 rounded-full object-cover mr-4">
+                        <div>
+                            <h4 class="font-semibold">Peter Omoniyi Ilori</h4>
+                            <p class="text-gray-500 text-sm">Mobile Money Agent</p>
+                            <div class="flex text-yellow-400 mt-1">
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-700">"The process from start to finish was not rigorous. The interest rate is very okay compared to other platform. I've expanded my operations to three new locations."</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-16 px-6 lg:px-24 bg-gray-50">
+        <div class="max-w-4xl mx-auto">
+            <div class="text-center mb-12" data-aos="fade-up">
+                <h2 class="text-3xl font-bold mb-4">Frequently Asked Questions</h2>
+                <p class="text-gray-600">Find answers to common questions about our business loans</p>
+            </div>
+            
+            <div class="space-y-4" x-data="{ openFaq: null }">
+                <div class="border border-gray-200 rounded-lg overflow-hidden" data-aos="fade-up">
+                    <button @click="openFaq === 1 ? openFaq = null : openFaq = 1" 
+                            class="w-full flex justify-between items-center p-6 bg-white hover:bg-gray-50 transition-colors text-left">
+                        <h3 class="text-lg font-semibold">How will I receive the SME loan?</h3>
+                        <i class="bi text-blue text-xl transition-transform duration-300" 
+                           :class="openFaq === 1 ? 'bi-dash-lg' : 'bi-plus-lg'"></i>
+                    </button>
+                    <div x-show="openFaq === 1" 
+                         x-collapse
+                         class="px-6 pb-6 bg-white">
+                        <p class="text-gray-600">Once approved, your loan will be disbursed directly to your business bank account within 24 hours. You'll receive an SMS and email notification once the funds have been transferred.</p>
+                    </div>
+                </div>
+                
+                <div class="border border-gray-200 rounded-lg overflow-hidden" data-aos="fade-up" data-aos-delay="100">
+                    <button @click="openFaq === 2 ? openFaq = null : openFaq = 2" 
+                            class="w-full flex justify-between items-center p-6 bg-white hover:bg-gray-50 transition-colors text-left">
+                        <h3 class="text-lg font-semibold">Can I pay before the due date?</h3>
+                        <i class="bi text-blue text-xl transition-transform duration-300" 
+                           :class="openFaq === 2 ? 'bi-dash-lg' : 'bi-plus-lg'"></i>
+                    </button>
+                    <div x-show="openFaq === 2" 
+                         x-collapse
+                         class="px-6 pb-6 bg-white">
+                        <p class="text-gray-600">Yes, you can repay your loan early without any prepayment penalties. Early repayment may even improve your credit standing with us for future loan applications.</p>
+                    </div>
+                </div>
+                
+                <div class="border border-gray-200 rounded-lg overflow-hidden" data-aos="fade-up" data-aos-delay="200">
+                    <button @click="openFaq === 3 ? openFaq = null : openFaq = 3" 
+                            class="w-full flex justify-between items-center p-6 bg-white hover:bg-gray-50 transition-colors text-left">
+                        <h3 class="text-lg font-semibold">Can I extend my SME loan?</h3>
+                        <i class="bi text-blue text-xl transition-transform duration-300" 
+                           :class="openFaq === 3 ? 'bi-dash-lg' : 'bi-plus-lg'"></i>
+                    </button>
+                    <div x-show="openFaq === 3" 
+                         x-collapse
+                         class="px-6 pb-6 bg-white">
+                        <p class="text-gray-600">Yes, loan extensions are available. Please contact our customer service at least 3 days before your repayment due date to discuss extension options. Additional fees may apply for extended terms.</p>
+                    </div>
+                </div>
+                
+                <div class="border border-gray-200 rounded-lg overflow-hidden" data-aos="fade-up" data-aos-delay="300">
+                    <button @click="openFaq === 4 ? openFaq = null : openFaq = 4" 
+                            class="w-full flex justify-between items-center p-6 bg-white hover:bg-gray-50 transition-colors text-left">
+                        <h3 class="text-lg font-semibold">What happens if I miss a repayment?</h3>
+                        <i class="bi text-blue text-xl transition-transform duration-300" 
+                           :class="openFaq === 4 ? 'bi-dash-lg' : 'bi-plus-lg'"></i>
+                    </button>
+                    <div x-show="openFaq === 4" 
+                         x-collapse
+                         class="px-6 pb-6 bg-white">
+                        <p class="text-gray-600">We understand that businesses face challenges. If you anticipate difficulty making a payment, please contact us immediately. Late payments may incur additional charges and affect your credit rating.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-12 text-center" data-aos="fade-up">
+                <a href="faqs.html" class="inline-block px-6 py-3 border-2 border-blue font-medium text-blue rounded-md hover:bg-blue hover:text-white transition-colors">
+                    View All FAQs
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Business Solutions CTA -->
+    <section class="py-16 px-6 lg:px-24 bg-blue text-white">
+        <div class="max-w-6xl mx-auto">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div data-aos="fade-right">
+                    <h2 class="text-3xl font-bold mb-6">Comprehensive Business Banking Solutions</h2>
+                    <p class="text-xl mb-8">Beyond loans, we offer a suite of financial tools designed to help your business thrive:</p>
+                    <ul class="space-y-4">
+                        <li class="flex items-start">
+                            <i class="bi bi-check-circle-fill text-xl mr-3 mt-1"></i>
+                            <span>Business current accounts with competitive rates</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="bi bi-check-circle-fill text-xl mr-3 mt-1"></i>
+                            <span>Point-of-sale solutions for retail businesses</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="bi bi-check-circle-fill text-xl mr-3 mt-1"></i>
+                            <span>Payroll management for growing teams</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="bi bi-check-circle-fill text-xl mr-3 mt-1"></i>
+                            <span>Inventory financing solutions</span>
+                        </li>
+                    </ul>
+                </div>
+                <div data-aos="fade-left" class="bg-white/10 rounded-xl p-8 backdrop-blur-sm">
+                    <h3 class="text-2xl font-semibold mb-6">Ready to take your business to the next level?</h3>
+                    <p class="mb-8">Join thousands of Nigerian businesses that trust Oval Finance for their financial needs.</p>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="apply.html" class="px-8 py-4 bg-white text-blue font-bold rounded-lg hover:bg-gray-100 transition-colors text-center">
+                            Apply for Business Loan
+                        </a>
+                        <a href="contact.html" class="px-8 py-4 border-2 border-white text-white font-bold rounded-lg hover:bg-white/10 transition-colors text-center">
+                            Contact Our Team
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Business Tools -->
+    <section class="py-16 px-6 lg:px-24 bg-white">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-12" data-aos="fade-up">
+                <span class="inline-block px-4 py-1 bg-blue/10 text-blue rounded-full text-sm font-medium mb-4">Business Tools</span>
+                <h2 class="text-3xl font-bold mb-4">Solutions Designed for Your Business Needs</h2>
+                <p class="text-gray-600 max-w-3xl mx-auto">Custom-tailored financial products to support businesses at every stage of growth</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8" data-aos="fade-up">
+                <div class="bg-gray-50 p-8 rounded-xl hover:shadow-md transition-shadow group">
+                    <div class="w-16 h-16 bg-blue/10 rounded-full flex items-center justify-center mb-6 group-hover:bg-blue group-hover:text-white transition-colors">
+                        <i class="bi bi-graph-up text-3xl text-blue group-hover:text-white transition-colors"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4">Financial Insights</h3>
+                    <p class="text-gray-600">Monitor your business performance with real-time analytics and financial reporting tools.</p>
+                </div>
+                
+                <div class="bg-gray-50 p-8 rounded-xl hover:shadow-md transition-shadow group">
+                    <div class="w-16 h-16 bg-blue/10 rounded-full flex items-center justify-center mb-6 group-hover:bg-blue group-hover:text-white transition-colors">
+                        <i class="bi bi-receipt text-3xl text-blue group-hover:text-white transition-colors"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4">Bill Management</h3>
+                    <p class="text-gray-600">Handle all business expenses from one platform with automated bill payments and reminders.</p>
+                </div>
+                
+                <div class="bg-gray-50 p-8 rounded-xl hover:shadow-md transition-shadow group">
+                    <div class="w-16 h-16 bg-blue/10 rounded-full flex items-center justify-center mb-6 group-hover:bg-blue group-hover:text-white transition-colors">
+                        <i class="bi bi-arrow-left-right text-3xl text-blue group-hover:text-white transition-colors"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4">Seamless Transfers</h3>
+                    <p class="text-gray-600">Move money effortlessly between accounts with competitive transfer rates and limits.</p>
+                </div>
+                
+                <div class="bg-gray-50 p-8 rounded-xl hover:shadow-md transition-shadow group">
+                    <div class="w-16 h-16 bg-blue/10 rounded-full flex items-center justify-center mb-6 group-hover:bg-blue group-hover:text-white transition-colors">
+                        <i class="bi bi-cash-coin text-3xl text-blue group-hover:text-white transition-colors"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4">Growth Financing</h3>
+                    <p class="text-gray-600">Access capital when you need it with flexible loan products designed for business expansion.</p>
+                </div>
+                
+                <div class="bg-gray-50 p-8 rounded-xl hover:shadow-md transition-shadow group">
+                    <div class="w-16 h-16 bg-blue/10 rounded-full flex items-center justify-center mb-6 group-hover:bg-blue group-hover:text-white transition-colors">
+                        <i class="bi bi-wallet2 text-3xl text-blue group-hover:text-white transition-colors"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4">Custom Solutions</h3>
+                    <p class="text-gray-600">Financial products tailored to your specific industry needs and growth objectives.</p>
+                </div>
+                
+                <div class="bg-gray-50 p-8 rounded-xl hover:shadow-md transition-shadow group">
+                    <div class="w-16 h-16 bg-blue/10 rounded-full flex items-center justify-center mb-6 group-hover:bg-blue group-hover:text-white transition-colors">
+                        <i class="bi bi-calendar-check text-3xl text-blue group-hover:text-white transition-colors"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4">Cash Flow Management</h3>
+                    <p class="text-gray-600">Plan ahead with repayment schedules that align with your business revenue cycles.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Fast Approval Section -->
+    <section class="py-16 px-6 lg:px-24 bg-gray-50">
+        <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <div data-aos="fade-right">
+                <span class="inline-block px-4 py-1 bg-blue/10 text-blue rounded-full text-sm font-medium mb-4">Quick Access</span>
+                <h2 class="text-3xl font-bold mb-6">Simplified Approval Process</h2>
+                <p class="text-xl text-gray-600 mb-8">Traditional lenders often require extensive documentation and lengthy approval times. We've streamlined the process to get you funded quickly.</p>
+                <div class="space-y-6">
+                    <div class="flex items-start">
+                        <div class="flex-shrink-0">
+                            <div class="w-12 h-12 bg-blue/10 rounded-full flex items-center justify-center">
+                                <i class="bi bi-file-earmark-text text-xl text-blue"></i>
+                            </div>
+                        </div>
+                        <div class="ml-4">
+                            <h4 class="font-semibold">Minimal Documentation</h4>
+                            <p class="text-gray-600 mt-1">Basic business and personal identification documents only.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="flex-shrink-0">
+                            <div class="w-12 h-12 bg-blue/10 rounded-full flex items-center justify-center">
+                                <i class="bi bi-speedometer2 text-xl text-blue"></i>
+                            </div>
+                        </div>
+                        <div class="ml-4">
+                            <h4 class="font-semibold">Rapid Decisions</h4>
+                            <p class="text-gray-600 mt-1">Most applications receive approval within 24 hours.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="flex-shrink-0">
+                            <div class="w-12 h-12 bg-blue/10 rounded-full flex items-center justify-center">
+                                <i class="bi bi-phone text-xl text-blue"></i>
+                            </div>
+                        </div>
+                        <div class="ml-4">
+                            <h4 class="font-semibold">Digital Process</h4>
+                            <p class="text-gray-600 mt-1">Complete your application entirely online from any device.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div data-aos="fade-left" class="relative">
+                <img src="https://images.unsplash.com/photo-1556740738-b6a63e27c4df?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80" 
+                     alt="Business owner reviewing documents" 
+                     class="w-full rounded-xl shadow-xl z-10 relative">
+                <div class="absolute -bottom-6 -right-6 w-64 h-64 bg-yellow-400 rounded-xl z-0"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- POS Section -->
+    <section class="py-16 px-6 lg:px-24 bg-white">
+        <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <div data-aos="fade-right" class="relative">
+                <img src="https://images.unsplash.com/photo-1604594849809-dfedbc827105?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80" 
+                     alt="Point of Sale terminal" 
+                     class="w-full rounded-xl shadow-xl z-10 relative">
+                <div class="absolute -top-6 -left-6 w-64 h-64 bg-blue/10 rounded-xl z-0"></div>
+            </div>
+            <div data-aos="fade-left">
+                <span class="inline-block px-4 py-1 bg-blue/10 text-blue rounded-full text-sm font-medium mb-4">Payment Solutions</span>
+                <h2 class="text-3xl font-bold mb-6">Point-of-Sale Solutions</h2>
+                <p class="text-xl text-gray-600 mb-8">Enhance your sales flexibility by accepting in-store payments from any location. Our solution makes it easy and convenient for you to process payments wherever you are.</p>
+                <div class="space-y-6">
+                    <div class="flex items-start">
+                        <div class="flex-shrink-0">
+                            <div class="w-12 h-12 bg-blue/10 rounded-full flex items-center justify-center">
+                                <i class="bi bi-credit-card text-xl text-blue"></i>
+                            </div>
+                        </div>
+                        <div class="ml-4">
+                            <h4 class="font-semibold">Card Payments</h4>
+                            <p class="text-gray-600 mt-1">Accept all major debit and credit cards from your customers.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="flex-shrink-0">
+                            <div class="w-12 h-12 bg-blue/10 rounded-full flex items-center justify-center">
+                                <i class="bi bi-phone text-xl text-blue"></i>
+                            </div>
+                        </div>
+                        <div class="ml-4">
+                            <h4 class="font-semibold">Mobile POS</h4>
+                            <p class="text-gray-600 mt-1">Compact devices that work with your smartphone or tablet.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="flex-shrink-0">
+                            <div class="w-12 h-12 bg-blue/10 rounded-full flex items-center justify-center">
+                                <i class="bi bi-graph-up text-xl text-blue"></i>
+                            </div>
+                        </div>
+                        <div class="ml-4">
+                            <h4 class="font-semibold">Sales Analytics</h4>
+                            <p class="text-gray-600 mt-1">Track transactions and customer trends from your dashboard.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Business Types -->
+    <section class="py-16 px-6 lg:px-24 bg-gray-50">
+        <div class="max-w-6xl mx-auto text-center">
+            <div class="mb-12" data-aos="fade-up">
+                <h2 class="text-3xl font-bold mb-4">Solutions for All Business Types</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">We serve businesses across various sectors with tailored financial products</p>
+            </div>
+            
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-8" data-aos="fade-up">
+                <div class="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow">
+                    <div class="w-16 h-16 bg-blue/10 rounded-full flex items-center justify-center mb-4 mx-auto group-hover:bg-blue group-hover:text-white transition-colors">
+                        <i class="bi bi-egg-fried text-2xl text-blue group-hover:text-white transition-colors"></i>
+                    </div>
+                    <h3 class="font-semibold">Food & Beverage</h3>
+                    <p class="text-gray-500 text-sm mt-2">Restaurants, Caterers</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow">
+                    <div class="w-16 h-16 bg-blue/10 rounded-full flex items-center justify-center mb-4 mx-auto group-hover:bg-blue group-hover:text-white transition-colors">
+                        <i class="bi bi-bag text-2xl text-blue group-hover:text-white transition-colors"></i>
+                    </div>
+                    <h3 class="font-semibold">Retail</h3>
+                    <p class="text-gray-500 text-sm mt-2">Shops, Supermarkets</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow">
+                    <div class="w-16 h-16 bg-blue/10 rounded-full flex items-center justify-center mb-4 mx-auto group-hover:bg-blue group-hover:text-white transition-colors">
+                        <i class="bi bi-truck text-2xl text-blue group-hover:text-white transition-colors"></i>
+                    </div>
+                    <h3 class="font-semibold">Logistics</h3>
+                    <p class="text-gray-500 text-sm mt-2">Transport, Delivery</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow">
+                    <div class="w-16 h-16 bg-blue/10 rounded-full flex items-center justify-center mb-4 mx-auto group-hover:bg-blue group-hover:text-white transition-colors">
+                        <i class="bi bi-building text-2xl text-blue group-hover:text-white transition-colors"></i>
+                    </div>
+                    <h3 class="font-semibold">Services</h3>
+                    <p class="text-gray-500 text-sm mt-2">Consulting, Agencies</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="py-16 px-6 lg:px-24 bg-blue text-white text-center">
+        <div class="max-w-4xl mx-auto" data-aos="fade-up">
+            <h2 class="text-3xl font-bold mb-6">Ready to Grow Your Business?</h2>
+            <p class="text-xl mb-8">Join thousands of Nigerian entrepreneurs who trust Oval Finance for their business financing needs.</p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="apply.html" class="px-8 py-4 bg-white text-blue font-bold rounded-lg hover:bg-gray-100 transition-colors">
+                    Apply for Business Loan
+                </a>
+                <a href="contact.html" class="px-8 py-4 border-2 border-white text-white font-bold rounded-lg hover:bg-white/10 transition-colors">
+                    Speak to an Advisor
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
     <footer class="bg-gray-900 text-white pt-16 pb-8 px-6 lg:px-24">
       <div class="">
         <!-- Top Section - Newsletter -->
@@ -336,7 +944,7 @@
             <ul class="space-y-3">
               <li>
                 <a
-                  href="#"
+                  href="./business.html"
                   class="text-gray-400 hover:text-white transition-colors"
                   >Business App</a
                 >
@@ -350,14 +958,14 @@
               </li>
               <li>
                 <a
-                  href="#"
+                  href="./contact.html"
                   class="text-gray-400 hover:text-white transition-colors"
                   >Contact Us</a
                 >
               </li>
               <li>
                 <a
-                  href="#"
+                  href="./about.html"
                   class="text-gray-400 hover:text-white transition-colors"
                   >About Oval Finance</a
                 >
@@ -475,7 +1083,7 @@
               aria-label="Twitter"
               class="text-gray-400 hover:text-white transition-colors"
             >
-              <i class="bi bi-twitter-x text-2xl"></i>
+              <i class="bi bi-twitter text-2xl"></i>
             </a>
             <a
               href="#"
@@ -496,25 +1104,38 @@
 
         <!-- Copyright -->
         <div class="mt-8 text-center text-gray-500 text-sm">
-          <p>© 2023 Oval Finance Limited. All rights reserved.</p>
+          <p>© 2025 Oval Finance Limited. All rights reserved.</p>
         </div>
       </div>
     </footer>
 
-    <script src="./script.js"></script>
-    <script
-      defer
-      src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
-    ></script>
-    <!-- Initialize AOS -->
+    <!-- Scripts -->
     <script>
-      document.addEventListener("DOMContentLoaded", () => {
-        AOS.init({
-          once: false, // Animations only happen once
-          duration: 800,
-          easing: "ease-out-quart",
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize AOS animation library
+            AOS.init({
+                duration: 800,
+                easing: 'ease-in-out',
+                once: true
+            });
+
+            // Initialize counter animation
+            const counters = document.querySelectorAll('.counter');
+            const options = {
+                duration: 2,
+                useEasing: true,
+            };
+
+            counters.forEach(counter => {
+                const target = +counter.getAttribute('data-target');
+                const countUp = new CountUp(counter, target, options);
+                if (!countUp.error) {
+                    countUp.start();
+                } else {
+                    console.error(countUp.error);
+                }
+            });
         });
-      });
     </script>
-  </body>
+</body>
 </html>
