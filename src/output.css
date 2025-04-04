@@ -905,6 +905,10 @@ video {
   height: 5rem;
 }
 
+.h-4 {
+  height: 1rem;
+}
+
 .h-5 {
   height: 1.25rem;
 }
@@ -935,10 +939,6 @@ video {
 
 .h-full {
   height: 100%;
-}
-
-.h-4 {
-  height: 1rem;
 }
 
 .max-h-0 {
@@ -993,6 +993,10 @@ video {
   width: 8rem;
 }
 
+.w-4 {
+  width: 1rem;
+}
+
 .w-48 {
   width: 12rem;
 }
@@ -1021,10 +1025,6 @@ video {
   width: 100%;
 }
 
-.w-4 {
-  width: 1rem;
-}
-
 .min-w-full {
   min-width: 100%;
 }
@@ -1043,14 +1043,6 @@ video {
 
 .max-w-5xl {
   max-width: 64rem;
-}
-
-.max-w-6xl {
-  max-width: 72rem;
-}
-
-.max-w-7xl {
-  max-width: 80rem;
 }
 
 .max-w-lg {
@@ -1526,11 +1518,6 @@ video {
 
 .bg-white\/10 {
   background-color: rgb(255 255 255 / 0.1);
-}
-
-.bg-yellow-400 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(250 204 21 / var(--tw-bg-opacity, 1));
 }
 
 .bg-\[url\(\'https\:\/\/illustrations\.popsy\.co\/amber\/digital-nomad\.svg\'\)\] {
@@ -2102,6 +2089,10 @@ input[type="range"]::-webkit-slider-thumb {
   background-color: rgb(54 111 154 / var(--tw-bg-opacity, 1));
 }
 
+.hover\:bg-blue\/5:hover {
+  background-color: rgb(54 111 154 / 0.05);
+}
+
 .hover\:bg-blue\/50:hover {
   background-color: rgb(54 111 154 / 0.5);
 }
@@ -2133,10 +2124,6 @@ input[type="range"]::-webkit-slider-thumb {
 
 .hover\:bg-white\/10:hover {
   background-color: rgb(255 255 255 / 0.1);
-}
-
-.hover\:bg-blue\/5:hover {
-  background-color: rgb(54 111 154 / 0.05);
 }
 
 .hover\:text-\[\#2a5778\]:hover {
