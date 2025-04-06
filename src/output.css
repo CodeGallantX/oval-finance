@@ -1555,6 +1555,10 @@ video {
   background-color: rgb(255 255 255 / 0.1);
 }
 
+.bg-black\/10 {
+  background-color: rgb(0 0 0 / 0.1);
+}
+
 .bg-\[url\(\'https\:\/\/illustrations\.popsy\.co\/amber\/digital-nomad\.svg\'\)\] {
   background-image: url('https://illustrations.popsy.co/amber/digital-nomad.svg');
 }
@@ -1922,6 +1926,11 @@ video {
   color: rgb(250 204 21 / var(--tw-text-opacity, 1));
 }
 
+.text-black {
+  --tw-text-opacity: 1;
+  color: rgb(0 0 0 / var(--tw-text-opacity, 1));
+}
+
 .opacity-0 {
   opacity: 0;
 }
@@ -2190,6 +2199,10 @@ input[type="range"]::-webkit-slider-thumb {
 
 .hover\:bg-white\/10:hover {
   background-color: rgb(255 255 255 / 0.1);
+}
+
+.hover\:bg-blue\/10:hover {
+  background-color: rgb(54 111 154 / 0.1);
 }
 
 .hover\:text-\[\#2a5778\]:hover {
